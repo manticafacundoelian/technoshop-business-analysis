@@ -12,11 +12,18 @@ El objetivo del análisis es entender cómo evolucionó el negocio entre 2023 y 
 La empresa presenta una dinámica particular: el volumen de pedidos se mantiene relativamente estable, pero la rentabilidad cae con fuerza entre 2024 y 2025. A través de un enfoque basado en datos, este reporte desarmará los síntomas financieros macro para encontrar las causas raíz operativas y de comportamiento de clientes para poder hacer recomendaciones estratégicas para la toma de decisiones. 
 
 ---
+
 ## Reporte BI
 
 ## Dashboard 1 — Executive Overview — ¿Qué pasó?
 -Al cierre del año fiscal 2025, el retail presenta una **paradoja comercial crítica**: la fuerza operativa y la tracción del mercado se mantienen saludables, registrando un incremento del **+3.07% en pedidos entregados** (1,434 vs. 1,478 órdenes). Sin embargo, el negocio experimenta una destrucción masiva de valor: **la Ganancia Neta se derrumbó un -57.11%** (de $169,390 a $72,654) y el **Margen Neto Real se redujo a la mitad** (de 31.90% a 16.90%). 
 -Además se observa tambien un **traslado de la operación del Canal Fisico al Online** con una **caída del Ticket Promedio de 21.47%**.
+
+![Dashboard Ejecutivo](<./powerbi/executive_overview.gif>)
+
+## Dashboard 2 — Profitability Diagnosis — ¿Por qué pasó?
+
+
 
 
 
