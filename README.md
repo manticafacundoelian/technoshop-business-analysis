@@ -16,20 +16,24 @@ La empresa presenta una dinámica particular: el volumen de pedidos se mantiene 
 ## Reporte BI
 
 ## Dashboard 1 — Executive Overview — ¿Qué pasó?
--Al cierre del año fiscal 2025, el retail presenta una **paradoja comercial crítica**: la fuerza operativa y la tracción del mercado se mantienen saludables, registrando un incremento del **+3.07% en pedidos entregados** (1,434 vs. 1,478 órdenes). Sin embargo, el negocio experimenta una destrucción masiva de valor: **la Ganancia Neta se derrumbó un -57.11%** (de $169,390 a $72,654) y el **Margen Neto Real se redujo a la mitad** (de 31.90% a 16.90%).
+Al cierre del año fiscal 2025, el retail presenta una **paradoja comercial crítica**: la fuerza operativa y la tracción del mercado se mantienen saludables, registrando un incremento del **+3.07% en pedidos entregados** (1,434 vs. 1,478 órdenes). Sin embargo, el negocio experimenta una destrucción masiva de valor: **la Ganancia Neta se derrumbó un -57.11%** (de $169,390 a $72,654) y el **Margen Neto Real se redujo a la mitad** (de 31.90% a 16.90%).  
 Además se observa tambien un **traslado de la operación del Canal Fisico al Online** con una **caída del Ticket Promedio de 21.47%**.
 
 ![Dashboard Ejecutivo](<./powerbi/executive_overview.gif>)
 
 ## Dashboard 2 — Profitability Diagnosis — ¿Por qué pasó?
-Al analizar la estructura de costos, se detecta el origen macro de la crisis:
--La participación del **Costo de Mercaderia saltó del 66.07% al 78.84%** (+12.77 puntos porcentuales), aplastando el Margen de Ganancia para 2025. 
--En 2024, la empresa aumentó sus precios de venta un +15.01% interanual frente a un costo que solo subió un +2.00%. En 2025, la tendencia se invirtió: **los costos de proveedores explotaron un +45.08% (YoY)** y el retail, para no destruir la demanda, solo pudo ajustar precios un +17.39%. 
--Para 2025 el El crecimiento del canal Online triplicó su facturación ($313K), pero disparó el costo de envíos global del negocio del **2.03% al 4.25%**, canibalizando la utilidad neta de la empresa.
+Al analizar la estructura de costos, se detecta el origen macro de la crisis:  
+La participación del **Costo de Mercaderia saltó del 66.07% al 78.84%** (+12.77 puntos porcentuales), aplastando el Margen de Ganancia para 2025.  
+En 2024, la empresa aumentó sus precios de venta un +15.01% interanual frente a un costo que solo subió un +2.00%. En 2025, la tendencia se invirtió: **los costos de proveedores explotaron un +45.08% (YoY)** y el retail, para no destruir la demanda, solo pudo ajustar precios un +17.39%.  
+Para 2025 el El crecimiento del canal Online triplicó su facturación ($313K), pero disparó el costo de envíos global del negocio del **2.03% al 4.25%**, canibalizando la utilidad neta de la empresa.
 
 ![Dashboard Diagnostico de Rentabilidad](<./powerbi/profitability_diagnosis.gif>)
 
-
+## Dashboard 3 — Product Performance — ¿Dónde conviene intervenir?
+Auditando el catálogo vemos lo siguiente:  
+**Colapso de las categorías de Alto Ticket:** **Computación, Telefonía y TV/Video** sufrieron un golpe letal. Sus costos de mercadería empujaron sus márgenes netos por muy por debajo de la media de márgen, algunos incluso llegando a margen negativo, como vemos en el gráfico de dispersión.  
+**Accesorios como el "Salvavidas" Financiero:** El gráfico de cintas revela cómo la categoría *Accesorios* escaló desde los puestos bajos en 2023 hasta adueñarse del **primer lugar en contribución de ganancias en 2025 ($22,092)** debido a un colchón de margen original más alto que le permitió absorber el shock de costos mejor.  
+**Ineficiencia en Productos de bajo valor:** El ranking *Bottom 5* y el *Scatter Chart* exponen que productos masivos pero baratos (como el *Organizador de Cables* o *Limpiador de Pantallas*) operan con ganancia neta negativa, más aún en el canal online, debido a que el envio fijo debora el márgen.
 
 
 ---
