@@ -35,6 +35,8 @@ Auditando el catálogo vemos lo siguiente:
 **Accesorios como el "Salvavidas" Financiero:** El gráfico de cintas revela cómo la categoría *Accesorios* escaló desde los puestos bajos en 2023 hasta adueñarse del **primer lugar en contribución de ganancias en 2025 ($22,092)** debido a un colchón de margen original más alto que le permitió absorber el shock de costos mejor.  
 **Ineficiencia en Productos de bajo valor:** El ranking *Bottom 5* y el *Scatter Chart* exponen que productos masivos pero baratos (como el *Organizador de Cables* o *Limpiador de Pantallas*) operan con ganancia neta negativa, más aún en el canal online, debido a que el envio fijo debora el márgen.
 
+![Dashboard Performance de Producto](<./powerbi/product_performance.gif>)
+
 
 ---
 
