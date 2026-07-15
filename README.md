@@ -22,7 +22,10 @@ Además se observa tambien un **traslado de la operación del Canal Fisico al On
 ![Dashboard Ejecutivo](<./powerbi/executive_overview.gif>)
 
 ## Dashboard 2 — Profitability Diagnosis — ¿Por qué pasó?
-
+Al analizar la estructura de costos, se detecta el origen macro de la crisis:
+-La participación del **Costo de Mercaderia saltó del 66.07% al 78.84%** (+12.77 puntos porcentuales), aplastando el Margen de Ganancia para 2025. 
+-En 2024, la empresa aumentó sus precios de venta un +15.01% interanual frente a un costo que solo subió un +2.00%. En 2025, la tendencia se invirtió: **los costos de proveedores explotaron un +45.08% (YoY)** y el retail, para no destruir la demanda, solo pudo ajustar precios un +17.39%. 
+-Para 2025 el El crecimiento del canal Online triplicó su facturación ($313K), pero disparó el costo de envíos global del negocio del **2.03% al 4.25%**, canibalizando la utilidad neta de la empresa.
 
 
 
