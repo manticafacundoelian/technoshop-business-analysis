@@ -72,6 +72,7 @@ Auditando el catálogo vemos lo siguiente:
 *   **Modelado de Datos:** Esquema en Estrella (*Star Schema*) vinculando tablas de hechos (`fact_pedidos`) con dimensiones (`dim_productos`, `dim_clientes`, `dim_calendario`).
 *   **Origen de Datos:** Dataset sintético de Retail Omnicanal, creado en *Python* y *Faker* enfocado en simular shocks de mercado y dinámicas de portafolio complejas.
 
+![Vista de Modelo](<./powerbi/model_view.png>)
 
 ## 🧮 5. Ingeniería de Datos (DAX Snippets Destacados)
 
