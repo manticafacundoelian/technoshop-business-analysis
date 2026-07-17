@@ -74,38 +74,4 @@ Auditando el catálogo vemos lo siguiente:
 
 ![Vista de Modelo](<./powerbi/model_view.png>)
 
-## 🧮 5. Ingeniería de Datos (DAX Snippets Destacados)
 
-Para garantizar un modelo seguro, escalable y libre de errores como `Infinity` o `NaN`, se aplicó lógica de variables y funciones nativas avanzadas:
-
-### A. Rentabilidad por Unidad (KPI Cruzado de Eficiencia)
-```dax
-Rentabilidad por Unidad = 
-DIVIDE(
-    [Ganancia Neta Real], 
-    [Pedidos Entregados], 
-    0
-)
-```
-
-### B. Conteo de Clientes Retenidos (Intersección de Conjuntos de Usuarios)
-```dax
-Clientes Retenidos = 
-VAR AnioSeleccionado = IF(HASONEVALUE(dim_calendario[Año]), SELECTEDVALUE(dim_calendario[Año]), MAX(dim_calendario[Año]))
-VAR ClientesAnioAnterior = 
-    CALCULATETABLE(
-        VALUES(fact_pedidos_final[cliente_id]),
-        dim_calendario[Año] = AnioSeleccionado - 1,
-        fact_pedidos_final[estado_pedido] = "Entregado"
-    )
-VAR ClientesAnioActual = 
-    CALCULATETABLE(
-        VALUES(fact_pedidos_final[cliente_id]),
-        dim_calendario[Año] = AnioSeleccionado,
-        fact_pedidos_final[estado_pedido] = "Entregado"
-    )
-RETURN
-COUNTROWS(
-    INTERSECT(ClientesAnioAnterior, ClientesAnioActual)
-)
-```
