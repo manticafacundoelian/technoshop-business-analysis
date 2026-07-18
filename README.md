@@ -1,8 +1,9 @@
 # Technoshop | Análisis de Negocio *End-to-End*
 
-**Objetivo:** Identificar las causas raíz de la caída de rentabilidad de una empresa retail tecnológica (2023-2025) mediante un flujo de datos completo: desde el procesamiento del dataset sintético hasta la propuesta de recomendaciones estratégicas.
+**Objetivo:** Identificar las causas raíz de la caída de rentabilidad de una empresa retail tecnológica (2023-2025) y hacer recomendaciones basadas en datos que lleven a tomar mejores deciciones estrategicas.  
 
-🛠️ **Stack técnico:** Python (Pandas) | SQL | Power BI (*Star Schema*)
+**Stack Técnico Principal:**
+![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
 
 ---
 
@@ -10,7 +11,9 @@
 
 El volumen de pedidos se mantiene estable (**+3.07%**), pero el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.11%** debido a *shocks* de costos de proveedores (**+45.08%** YoY) y costos logísticos del *canal online* que canibalizan el margen de productos masivos.
 
-### 📊 Análisis en detalle (Reporte Power BI):
+---
+
+## 📊 Análisis detallado (Reporte Power BI):
 
 <details>
 <summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para ver)</b></summary>
@@ -105,7 +108,10 @@ El reporte implementa un enfoque de **Esquema en Estrella** (*Star Schema*) ópt
 
 
 ---
+El proyecto abarca todo el ciclo de vida del dato, pero con el fin de priorizar el valor de negocio, este documento presenta en primera instancia el **Análisis detallado en Power BI y las Recomendaciones Estratégicas**, para pasar luego a los fundamentos técnicos del proyecto (Pipeline ETL en Python y Modelado SQL).
 
+**Entorno de Desarrollo y Base de Datos:**
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=flat-square&logo=mysql&logoColor=white) ![DB Browser](https://img.shields.io/badge/DB_Browser-41292C?style=flat-square&logo=keepassxc&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05033?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
 ## Contexto de Negocio y Objetivo
 La empresa presenta una dinámica particular: el volumen de pedidos se mantiene relativamente estable, pero la rentabilidad cae con fuerza entre 2024 y 2025. A través de un enfoque basado en datos, este reporte desarmará los síntomas financieros macro para encontrar las causas raíz operativas y de comportamiento de clientes para poder hacer recomendaciones estratégicas para la toma de decisiones. 
