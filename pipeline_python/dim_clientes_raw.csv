@@ -1,0 +1,1201 @@
+cliente_id,nombre,apellido,genero,fecha_nacimiento,ciudad,provincia,fecha_registro,canal_adquisicion
+1,Lucas,Gonzalez,Masculino,1979-03-15,CABA,Buenos Aires,2025-01-29,Venta Directa
+2,Joaquin,Fernandez,Masculino,1967-06-18,Santa Fe Capital,Santa Fe,2023-05-23,Busqueda Organica
+3,Salvador,Paez,Masculino,1966-05-27,CABA,Buenos Aires,2024-08-27,Google Ads
+4,Mateo Benjamin,Gonzalez,Masculino,1966-11-11,CABA,Buenos Aires,2023-04-06,Referidos
+5,Mateo,Gimenez,Masculino,1962-04-17,Cordoba Capital,Cordoba,2024-07-28,Busqueda Organica
+6,Agustina,Vera,Femenino,2008-03-18,La Plata,Buenos Aires,2024-04-04,Venta Directa
+7,Bianca,Diaz,Femenino,2000-08-02,Rosario,Santa Fe,2025-02-16,Google Ads
+8,Emilia,Aguero,Femenino,1971-05-09,Mar del Plata,Buenos Aires,2023-10-12,Google Ads
+9,Tomas,Romero,Masculino,1971-01-25,Mar del Plata,Buenos Aires,2023-04-15,Instagram Ads
+10,Valentina,Coronel,Femenino,1967-06-11,CABA,Buenos Aires,2024-01-03,Instagram Ads
+11,Catalina,Gomez,Femenino,1983-11-23,Cordoba Capital,Cordoba,2025-01-17,Google Ads
+12,Manuel,Cordoba,Masculino,1991-10-02,Bahia Blanca,Buenos Aires,2023-03-22,Instagram Ads
+13,Guillermina,Valdez,Femenino,1986-03-31,Mar del Plata,Buenos Aires,2024-08-14,Referidos
+14,Bautista,Garcia,Masculino,2003-04-07,CABA,Buenos Aires,2024-11-08,Instagram Ads
+15,Sofía,Guzman,Femenino,1999-10-11,Cordoba Capital,Cordoba,2025-05-25,Google Ads
+16,Felipe,Rodriguez,Masculino,2005-06-26,Carlos Paz,Cordoba,2023-10-12,Google Ads
+17,Valentina,Garcia,Femenino,1965-12-01,La Plata,Buenos Aires,2024-01-15,Venta Directa
+18,Bautista Benjamin,Aguero,Masculino,1986-05-10,Godoy Cruz,Mendoza,2024-12-19,Referidos
+19,Santiago,Godoy,Masculino,1985-04-24,La Plata,Buenos Aires,2024-06-30,Google Ads
+20,Valentino,Sosa,Masculino,2006-02-03,Rio Cuarto,Cordoba,2024-04-18,Instagram Ads
+21,Emilia,Maidana,Femenino,2004-08-02,La Plata,Buenos Aires,2024-12-02,Instagram Ads
+22,Bautista,Godoy,Masculino,1996-11-01,La Plata,Buenos Aires,2025-04-21,Venta Directa
+23,Juliana,Lopez,Femenino,1986-04-23,Bahia Blanca,Buenos Aires,2023-10-02,Busqueda Organica
+24,Santiago,Blanco,Masculino,2007-04-26,Mar del Plata,Buenos Aires,2023-08-06,Instagram Ads
+25,Bianca,Castillo,Femenino,1964-04-17,Carlos Paz,Cordoba,2025-06-24,Google Ads
+26,Valentina,Gonzalez,Femenino,1981-12-14,San Rafael,Mendoza,2023-09-29,Referidos
+27,Benicio,Rodriguez,Masculino,1999-01-31,Godoy Cruz,Mendoza,2025-02-03,Venta Directa
+28,Luana,Sanchez,Femenino,2005-02-02,Carlos Paz,Cordoba,2024-01-06,Venta Directa
+29,Tomàs,Cruz,Masculino,2004-03-26,Bahia Blanca,Buenos Aires,2023-04-04,Google Ads
+30,Pedro,Perez,Masculino,1977-04-08,La Plata,Buenos Aires,2024-10-04,Instagram Ads
+31,Lucia,Rojas,Femenino,2000-04-07,CABA,Buenos Aires,2024-01-30,Google Ads
+32,Camila,Nuñez,Femenino,1985-02-13,Rafaela,Santa Fe,2024-07-20,Instagram Ads
+33,Mateo,Franco,Masculino,1995-02-28,Mar del Plata,Buenos Aires,2025-02-26,Busqueda Organica
+34,Jazmin,Navarro,Femenino,1967-12-13,CABA,Buenos Aires,2023-10-28,Referidos
+35,Valentino,Fernandez,Masculino,2006-10-17,Bahia Blanca,Buenos Aires,2023-01-04,Venta Directa
+36,Francesca,Rodriguez,Femenino,1986-06-16,Santa Fe Capital,Santa Fe,2024-06-03,Google Ads
+37,Maria Victoria,Herrera,Femenino,1977-08-05,La Plata,Buenos Aires,2023-06-06,Referidos
+38,Emiliano,Guzman,Masculino,1961-04-08,Rosario,Santa Fe,2024-09-05,Busqueda Organica
+39,Milagros,Gomez,Femenino,1997-01-10,Rosario,Santa Fe,2023-04-25,Google Ads
+40,Paloma,Vazquez,Femenino,1983-08-21,La Plata,Buenos Aires,2023-03-01,Google Ads
+41,Santino,Benitez,Masculino,1991-05-13,Rosario,Santa Fe,2025-01-19,Busqueda Organica
+42,Benjamin,Muñoz,Masculino,1978-05-30,La Plata,Buenos Aires,2023-05-12,Google Ads
+43,Uma ,Coronel,Femenino,1995-01-13,La Plata,Buenos Aires,2023-09-29,Instagram Ads
+44,Candela,Aguero,Femenino,1980-10-17,Santa Fe Capital,Santa Fe,2025-08-09,Busqueda Organica
+45,Lautaro Ezequiel,Gimenez,Masculino,1974-01-08,Rafaela,Santa Fe,2024-02-13,Instagram Ads
+46,Sofia,Coronel,Femenino,1997-03-11,Bahia Blanca,Buenos Aires,2025-07-10,Busqueda Organica
+47,Kiara,Ayala,Femenino,1960-07-11,Rosario,Santa Fe,2023-09-11,Busqueda Organica
+48,Juan Pablo,Suarez,Masculino,1968-02-06,Rafaela,Santa Fe,2023-01-22,Instagram Ads
+49,Ezequiel,Lucero,Masculino,1981-05-31,Rio Cuarto,Cordoba,2023-01-08,Instagram Ads
+50,Joaquin,Martinez,Masculino,1999-02-04,La Plata,Buenos Aires,2023-03-11,Google Ads
+51,Uma,Rodriguez,Femenino,1993-07-23,CABA,Buenos Aires,2024-06-10,Busqueda Organica
+52,Violeta,Bravo,Femenino,1996-09-26,Bahia Blanca,Buenos Aires,2023-08-08,Instagram Ads
+53,Ramiro,Fernandez,Masculino,1992-10-30,Maipu,Mendoza,2023-09-06,Google Ads
+54,Uma,Lopez,Femenino,1996-05-24,La Plata,Buenos Aires,2023-04-07,Referidos
+55,Zoe Jazmin,Flores,Femenino,1974-11-25,Mar del Plata,Buenos Aires,2024-03-09,Google Ads
+56,Luna,Navarro,Femenino,2007-06-07,CABA,Buenos Aires,2024-11-20,Google Ads
+57,Felipe,Sanchez,Masculino,2006-03-12,Mendoza Capital,Mendoza,2024-02-17,Referidos
+58,Lucía,Benitez,Femenino,1995-09-16,Cordoba Capital,Cordoba,2023-09-12,Referidos
+59,Ciro,Martinez,Masculino,1964-11-04,Venado Tuerto,Santa Fe,2023-05-24,Google Ads
+60,Juan Cruz,Nuñez,Masculino,1976-02-23,Rafaela,Santa Fe,2024-04-18,Busqueda Organica
+61,Mateo Benjamin,Gonzalez,Masculino,2003-06-08,Venado Tuerto,Santa Fe,2025-04-07,Venta Directa
+62,Bautista,Rodriguez,Masculino,1962-08-16,CABA,Buenos Aires,2024-10-29,Google Ads
+63,Camilo,Rodriguez,Masculino,1976-09-06,CABA,Buenos Aires,2025-08-06,Instagram Ads
+64,Santiago,Suarez,Masculino,1997-03-07,Venado Tuerto,Santa Fe,2024-05-12,Referidos
+65,Juan Ignacio,Maidana,Masculino,1999-05-07,Bahia Blanca,Buenos Aires,2025-07-13,Instagram Ads
+66,Bruno,Martinez,Masculino,1992-09-02,Bahia Blanca,Buenos Aires,2023-01-03,Google Ads
+67,Maia,Lopez,Femenino,1967-01-31,Bahia Blanca,Buenos Aires,2023-10-20,Instagram Ads
+68,Lara,Sosa,Femenino,1988-06-18,San Rafael,Mendoza,2023-07-14,Instagram Ads
+69,Lorenzo,Ojeda,Masculino,2006-04-23,Cordoba Capital,Cordoba,2024-08-16,Busqueda Organica
+70,Franco,Moreno,Masculino,1964-08-11,Mar del Plata,Buenos Aires,2023-02-28,Venta Directa
+71,Olivia,Romero,Femenino,1967-12-03,San Rafael,Mendoza,2023-02-28,Google Ads
+72,Joaquin,Lopez,Masculino,1991-01-06,La Plata,Buenos Aires,2023-03-12,Instagram Ads
+73,Juan Ignacio,Lopez,Masculino,1991-12-20,La Plata,Buenos Aires,2024-02-18,Google Ads
+74,Joaquin,Blanco,Masculino,1990-08-23,Cordoba Capital,Cordoba,2024-09-26,Instagram Ads
+75,Maia,Mendez,Femenino,1967-02-24,Mar del Plata,Buenos Aires,2025-08-15,Google Ads
+76,Benjamin,Franco,Masculino,1961-06-28,Godoy Cruz,Mendoza,2023-09-02,Google Ads
+77,Luz Maria,Blanco,Femenino,1976-07-28,La Plata,Buenos Aires,2024-11-18,Instagram Ads
+78,Delfina,Suarez,Femenino,1975-01-12,Maipu,Mendoza,2023-11-20,Google Ads
+79,Milo,Mendoza,Masculino,1971-09-10,Carlos Paz,Cordoba,2024-09-28,Referidos
+80,Lautaro,Velazquez,Masculino,1978-07-14,CABA,Buenos Aires,2024-07-04,Busqueda Organica
+81,Tiziana,Caceres,Femenino,1979-11-24,La Plata,Buenos Aires,2025-08-13,Busqueda Organica
+82,Thiago,Campos,Masculino,1998-04-22,Rio Cuarto,Cordoba,2024-01-14,Busqueda Organica
+83,Dante,Suarez,Masculino,1973-05-29,Bahia Blanca,Buenos Aires,2025-05-03,Referidos
+84,Juana,Martin,Femenino,1999-11-25,CABA,Buenos Aires,2024-11-14,Google Ads
+85,Constanza,Rodriguez,Femenino,1981-10-29,CABA,Buenos Aires,2025-08-19,Busqueda Organica
+86,Isabella,Nuñez,Femenino,1994-09-15,Cordoba Capital,Cordoba,2025-06-30,Google Ads
+87,Tobias,Pereyra,Masculino,1964-05-10,Villa Maria,Cordoba,2023-10-16,Google Ads
+88,Thiago Lionel,Rodriguez,Masculino,1973-02-17,Villa Maria,Cordoba,2023-07-28,Google Ads
+89,Isabella,Rodriguez,Femenino,1976-06-29,Carlos Paz,Cordoba,2023-09-15,Instagram Ads
+90,Benicio,Acuña,Masculino,1999-04-03,Maipu,Mendoza,2025-04-29,Google Ads
+91,Joaquin,Luna,Masculino,2002-08-20,CABA,Buenos Aires,2023-12-08,Google Ads
+92,Isabella,Dominguez,Femenino,1998-12-13,San Rafael,Mendoza,2025-01-29,Referidos
+93,Morena,Maidana,Femenino,1974-05-21,CABA,Buenos Aires,2023-04-25,Busqueda Organica
+94,Salvador,Sanchez,Masculino,1978-07-24,Rosario,Santa Fe,2025-05-04,Busqueda Organica
+95,Benicio,Carrizo,Masculino,1980-11-25,Carlos Paz,Cordoba,2023-05-11,Google Ads
+96,Lola,Soria,Femenino,1965-06-04,Mar del Plata,Buenos Aires,2025-07-09,Venta Directa
+97,Martina,Rios,Femenino,1998-10-19,San Rafael,Mendoza,2024-11-29,Busqueda Organica
+98,Santino Nicolas,Rodriguez,Masculino,1974-12-28,Mar del Plata,Buenos Aires,2025-03-09,Instagram Ads
+99,Pilar,Fernandez,Femenino,1984-03-27,Santa Fe Capital,Santa Fe,2025-08-05,Venta Directa
+100,Santiago Benjamin,Lucero,Masculino,1985-08-19,Santa Fe Capital,Santa Fe,2025-06-21,Referidos
+101,Santiago,Benitez,Masculino,1997-06-14,Rio Cuarto,Cordoba,2025-01-24,Google Ads
+102,Felicitas,Cabrera,Femenino,2004-12-27,La Plata,Buenos Aires,2023-10-01,Venta Directa
+103,Valentin,Carrizo,Masculino,1998-03-24,Carlos Paz,Cordoba,2025-06-12,Google Ads
+104,Juana,Dominguez,Femenino,1969-08-16,La Plata,Buenos Aires,2023-07-24,Busqueda Organica
+105,Emilia,Paez,Femenino,1998-02-18,Mar del Plata,Buenos Aires,2025-04-20,Google Ads
+106,Valentino,Garcia,Masculino,1974-10-27,Cordoba Capital,Cordoba,2024-11-06,Busqueda Organica
+107,Agostina,Diaz,Femenino,2003-08-25,Villa Maria,Cordoba,2023-10-13,Google Ads
+108,Sara,Gimenez,Femenino,1977-07-29,Rafaela,Santa Fe,2024-10-18,Google Ads
+109,Jazmín,Farias,Femenino,1966-10-08,Mar del Plata,Buenos Aires,2025-08-19,Busqueda Organica
+110,Lucas,Rivero,Masculino,1963-06-27,Villa Maria,Cordoba,2023-07-02,Referidos
+111,Martina,Vazquez,Femenino,2003-11-04,Cordoba Capital,Cordoba,2023-04-22,Busqueda Organica
+112,Carmela,Lopez,Femenino,1990-07-21,Mar del Plata,Buenos Aires,2025-01-16,Instagram Ads
+113,Bianca,Flores,Femenino,1961-02-22,CABA,Buenos Aires,2024-01-30,Google Ads
+114,Santino,Leiva,Masculino,2007-07-06,Godoy Cruz,Mendoza,2023-02-15,Instagram Ads
+115,Jazmín,Molina,Femenino,1985-08-11,Rosario,Santa Fe,2024-06-16,Busqueda Organica
+116,Mateo Benjamin,Fernandez,Masculino,1969-02-27,Rafaela,Santa Fe,2024-03-17,Instagram Ads
+117,Martina,Torres,Femenino,1963-03-15,Villa Maria,Cordoba,2024-11-10,Instagram Ads
+118,Elena,Diaz,Femenino,1977-06-20,Mar del Plata,Buenos Aires,2024-11-13,Busqueda Organica
+119,Ambar,Sosa,Femenino,1998-08-02,Bahia Blanca,Buenos Aires,2024-12-14,Google Ads
+120,Fausto,Ramirez,Masculino,2002-09-21,Rio Cuarto,Cordoba,2024-03-06,Google Ads
+121,Paloma,Blanco,Femenino,1976-08-06,San Rafael,Mendoza,2024-09-22,Venta Directa
+122,Milena,Bravo,Femenino,1972-07-14,Maipu,Mendoza,2024-07-15,Instagram Ads
+123,Giuliana,Gonzalez,Femenino,1983-02-03,Mar del Plata,Buenos Aires,2023-08-04,Venta Directa
+124,Zoe,Ramirez,Femenino,2006-01-27,Bahia Blanca,Buenos Aires,2024-03-28,Venta Directa
+125,Milo,Correa,Masculino,1978-08-23,Maipu,Mendoza,2025-03-23,Referidos
+126,Valentino,Quiroga,Masculino,1986-07-09,CABA,Buenos Aires,2023-10-18,Instagram Ads
+127,Zoe Jazmin,Mendez,Femenino,1975-08-16,Rosario,Santa Fe,2025-04-18,Instagram Ads
+128,Emma,Ayala,Femenino,1984-04-12,La Plata,Buenos Aires,2025-04-05,Busqueda Organica
+129,Francisco,Arias,Masculino,1975-12-22,Mendoza Capital,Mendoza,2023-02-17,Busqueda Organica
+130,Valentina,Dominguez,Femenino,1987-08-08,Cordoba Capital,Cordoba,2024-04-11,Google Ads
+131,Thiago Benjamin,Guzman,Masculino,1979-06-25,Carlos Paz,Cordoba,2024-05-21,Venta Directa
+132,Juan Cruz,Gimenez,Masculino,2006-09-23,La Plata,Buenos Aires,2024-11-02,Instagram Ads
+133,Tomas Benjamin,Rojas,Masculino,1962-05-14,Rosario,Santa Fe,2025-03-08,Busqueda Organica
+134,Santino,Valdez,Masculino,1972-08-21,Rio Cuarto,Cordoba,2025-04-03,Busqueda Organica
+135,Julia,Velazquez,Femenino,1963-02-02,CABA,Buenos Aires,2024-07-24,Instagram Ads
+136,Santino,Benitez,Masculino,1981-10-31,Venado Tuerto,Santa Fe,2023-05-17,Referidos
+137,Camila,Velazquez,Femenino,1968-05-10,Venado Tuerto,Santa Fe,2024-09-19,Venta Directa
+138,Guadalupe,Silva,Femenino,1977-10-27,Carlos Paz,Cordoba,2025-07-07,Instagram Ads
+139,Isabella,Benitez,Femenino,1995-11-13,Venado Tuerto,Santa Fe,2023-09-23,Busqueda Organica
+140,Tiziana,Rojas,Femenino,2006-02-14,Venado Tuerto,Santa Fe,2024-10-03,Referidos
+141,Emma,Benitez,Femenino,2005-09-08,Venado Tuerto,Santa Fe,2023-03-21,Instagram Ads
+142,Joaquina,Rios,Femenino,2005-08-18,La Plata,Buenos Aires,2023-10-06,Google Ads
+143,Zoe Valentina,Muñoz,Femenino,1980-12-03,Cordoba Capital,Cordoba,2023-05-22,Google Ads
+144,Tomàs,Carrizo,Masculino,1982-09-07,Bahia Blanca,Buenos Aires,2024-12-11,Busqueda Organica
+145,Benicio,Garcia,Masculino,1969-02-23,CABA,Buenos Aires,2024-02-29,Busqueda Organica
+146,Emma,Dominguez,Femenino,1986-04-15,Bahia Blanca,Buenos Aires,2024-03-01,Google Ads
+147,Salvador,Barrios,Masculino,2002-05-16,Venado Tuerto,Santa Fe,2024-02-03,Instagram Ads
+148,Maximo,Ramirez,Masculino,1960-07-07,Bahia Blanca,Buenos Aires,2024-05-03,Instagram Ads
+149,Juana,Diaz,Femenino,1999-12-15,Rafaela,Santa Fe,2025-02-10,Google Ads
+150,Mia,Sanchez,Femenino,1990-07-20,Rio Cuarto,Cordoba,2024-05-14,Google Ads
+151,Lola,Diaz,Femenino,1992-09-08,Bahia Blanca,Buenos Aires,2024-05-12,Busqueda Organica
+152,Paulina,Campos,Femenino,1972-01-13,Villa Maria,Cordoba,2024-11-15,Busqueda Organica
+153,Lara,Garcia,Femenino,2005-08-30,Santa Fe Capital,Santa Fe,2025-05-10,Venta Directa
+154,Lucas,Romero,Masculino,1976-06-20,Cordoba Capital,Cordoba,2025-07-17,Instagram Ads
+155,Salvador,Martinez,Masculino,1974-01-14,Rosario,Santa Fe,2024-10-20,Google Ads
+156,Juan Ignacio,Gonzalez,Masculino,1992-10-26,Bahia Blanca,Buenos Aires,2023-07-06,Google Ads
+157,Mia,Vazquez,Femenino,1991-06-24,Bahia Blanca,Buenos Aires,2023-12-02,Venta Directa
+158,Francesca,Morales,Femenino,1973-09-19,Rafaela,Santa Fe,2023-12-12,Busqueda Organica
+159,Agostina,Alvarez,Femenino,1987-09-07,Bahia Blanca,Buenos Aires,2023-09-16,Google Ads
+160,Victoria,Ferreyra,Femenino,1960-11-11,CABA,Buenos Aires,2025-02-06,Google Ads
+161,Martín,Guzman,Masculino,1967-09-28,Villa Maria,Cordoba,2023-08-18,Busqueda Organica
+162,Genaro,Diaz,Masculino,2007-11-04,Cordoba Capital,Cordoba,2025-02-11,Google Ads
+163,Facundo,Rodriguez,Masculino,1977-06-11,San Rafael,Mendoza,2025-05-09,Busqueda Organica
+164,Tobias,Gomez,Masculino,1969-07-24,Rio Cuarto,Cordoba,2023-05-10,Busqueda Organica
+165,Joaquín,Carrizo,Masculino,1998-07-10,La Plata,Buenos Aires,2024-04-21,Google Ads
+166,Maria Victoria,Duarte,Femenino,1990-08-09,Mar del Plata,Buenos Aires,2023-06-21,Referidos
+167,Nicolas,Muñoz,Masculino,1994-11-02,La Plata,Buenos Aires,2023-11-15,Google Ads
+168,Thiago,Barrios,Masculino,1990-10-31,Mar del Plata,Buenos Aires,2024-08-12,Google Ads
+169,Mia Jazmin,Villalba,Femenino,1992-10-15,Venado Tuerto,Santa Fe,2025-08-22,Busqueda Organica
+170,Ciro,Cardozo,Masculino,2003-11-18,CABA,Buenos Aires,2024-08-29,Google Ads
+171,Santiago,Ramos,Masculino,1993-06-18,CABA,Buenos Aires,2024-12-14,Instagram Ads
+172,Lautaro Benjamin,Perez,Masculino,1965-10-04,CABA,Buenos Aires,2023-12-22,Instagram Ads
+173,Agostina,Martinez,Femenino,1983-05-05,Mar del Plata,Buenos Aires,2023-03-12,Busqueda Organica
+174,Julieta,Rojas,Femenino,1969-11-26,Cordoba Capital,Cordoba,2025-05-19,Google Ads
+175,Sofia,Alvarez,Femenino,1970-11-19,CABA,Buenos Aires,2024-03-19,Busqueda Organica
+176,Amparo,Rodriguez,Femenino,1988-03-22,Rio Cuarto,Cordoba,2024-03-21,Referidos
+177,Josefina,Medina,Femenino,1964-09-21,Carlos Paz,Cordoba,2024-04-21,Google Ads
+178,Emma,Flores,Femenino,2000-03-26,Mar del Plata,Buenos Aires,2025-05-22,Busqueda Organica
+179,Juan Francisco,Gonzalez,Masculino,1999-08-30,Mar del Plata,Buenos Aires,2025-06-21,Busqueda Organica
+180,Lautaro,Gonzalez,Masculino,1984-06-04,Maipu,Mendoza,2024-08-06,Busqueda Organica
+181,Juana,Alvarez,Femenino,1988-12-31,Mar del Plata,Buenos Aires,2023-01-30,Busqueda Organica
+182,Guillermina,Ponce,Femenino,2001-07-15,La Plata,Buenos Aires,2024-05-14,Busqueda Organica
+183,Mia Jazmin,Suarez,Femenino,1979-01-22,Godoy Cruz,Mendoza,2023-12-15,Instagram Ads
+184,Camila,Gonzalez,Femenino,1983-05-12,Mendoza Capital,Mendoza,2024-06-13,Venta Directa
+185,Dante,Figueroa,Masculino,1971-09-20,La Plata,Buenos Aires,2025-01-07,Google Ads
+186,Alma Valentina,Ayala,Femenino,2002-10-31,La Plata,Buenos Aires,2024-12-08,Google Ads
+187,Guillermina,Barrios,Femenino,2000-10-06,Bahia Blanca,Buenos Aires,2025-03-22,Busqueda Organica
+188,Maximo,Gonzalez,Masculino,2004-03-23,Mar del Plata,Buenos Aires,2023-08-15,Instagram Ads
+189,Thiago,Aguero,Masculino,1972-11-07,Rafaela,Santa Fe,2024-11-10,Google Ads
+190,Isabella,Alvarez,Femenino,1974-11-21,Venado Tuerto,Santa Fe,2024-07-20,Instagram Ads
+191,Lola,Romero,Femenino,1986-04-15,Bahia Blanca,Buenos Aires,2025-02-02,Busqueda Organica
+192,Emilia,Duarte,Femenino,1989-03-05,Villa Maria,Cordoba,2024-12-20,Referidos
+193,Victoria,Rodriguez,Femenino,1961-10-21,Rafaela,Santa Fe,2023-09-15,Referidos
+194,Vicente,Rodriguez,Masculino,1984-04-20,La Plata,Buenos Aires,2023-11-20,Google Ads
+195,Mateo,Rodriguez,Masculino,2004-11-02,Santa Fe Capital,Santa Fe,2023-08-10,Referidos
+196,Martina,Gonzalez,Femenino,1977-04-25,Godoy Cruz,Mendoza,2025-01-11,Instagram Ads
+197,Emma,Gonzalez,Femenino,1970-11-09,CABA,Buenos Aires,2025-05-02,Referidos
+198,Victoria,Herrera,Femenino,1968-04-09,La Plata,Buenos Aires,2024-01-05,Venta Directa
+199,Agustina,Diaz,Femenino,2008-02-01,Rosario,Santa Fe,2024-12-26,Instagram Ads
+200,Joaquin,Torres,Masculino,2001-09-19,Rafaela,Santa Fe,2023-02-16,Referidos
+201,Mia,Cardozo,Femenino,1968-04-12,La Plata,Buenos Aires,2024-10-15,Venta Directa
+202,Genaro,Lopez,Masculino,1981-08-26,Cordoba Capital,Cordoba,2024-08-10,Referidos
+203,Catalina,Gonzalez,Femenino,1981-09-18,Bahia Blanca,Buenos Aires,2024-03-27,Venta Directa
+204,Bruno,Bustos,Masculino,1986-01-10,CABA,Buenos Aires,2023-09-16,Google Ads
+205,Benicio,Vera,Masculino,1965-08-28,Mendoza Capital,Mendoza,2024-02-15,Google Ads
+206,Juan Pablo,Rivero,Masculino,1977-01-05,CABA,Buenos Aires,2023-06-05,Venta Directa
+207,Catalina,Ramos,Femenino,2007-01-19,Mendoza Capital,Mendoza,2023-09-12,Busqueda Organica
+208,Maria Victoria,Gomez,Femenino,1998-12-31,Rio Cuarto,Cordoba,2025-03-05,Instagram Ads
+209,Zoe,Sosa,Femenino,1989-08-21,Bahia Blanca,Buenos Aires,2025-07-19,Instagram Ads
+210,Lara,Rodriguez,Femenino,2004-07-20,Carlos Paz,Cordoba,2023-11-09,Referidos
+211,Juan Cruz,Roldan,Masculino,1993-11-05,Rosario,Santa Fe,2025-08-28,Referidos
+212,Santino,Campos,Masculino,2003-09-27,Mar del Plata,Buenos Aires,2024-11-07,Instagram Ads
+213,Martín,Medina,Masculino,1970-11-24,La Plata,Buenos Aires,2023-06-27,Busqueda Organica
+214,Thiago,Ponce,Masculino,2004-10-01,La Plata,Buenos Aires,2023-01-03,Venta Directa
+215,Emilia,Cordoba,Femenino,1997-02-09,Bahia Blanca,Buenos Aires,2023-10-26,Google Ads
+216,Genaro,Medina,Masculino,2000-10-21,Mar del Plata,Buenos Aires,2024-12-24,Referidos
+217,Emilia,Roldan,Femenino,1966-05-21,Cordoba Capital,Cordoba,2024-12-04,Google Ads
+218,Emilia,Acosta,Femenino,1992-02-10,La Plata,Buenos Aires,2024-03-11,Busqueda Organica
+219,Bruno,Carrizo,Masculino,1983-05-19,La Plata,Buenos Aires,2025-07-19,Referidos
+220,Benjamin,Roldan,Masculino,1972-11-10,Rosario,Santa Fe,2023-03-03,Google Ads
+221,Malena,Sosa,Femenino,1978-01-25,Mar del Plata,Buenos Aires,2024-03-25,Venta Directa
+222,Josefina,Lucero,Femenino,2008-03-15,Mar del Plata,Buenos Aires,2024-12-17,Instagram Ads
+223,Giuliana,Castro,Femenino,1995-08-23,Venado Tuerto,Santa Fe,2024-03-24,Venta Directa
+224,Juan Francisco,Rodriguez,Masculino,1988-02-22,Maipu,Mendoza,2025-01-22,Referidos
+225,Malena,Navarro,Femenino,2007-06-26,CABA,Buenos Aires,2023-04-04,Google Ads
+226,Lorenzo,Vera,Masculino,1990-12-26,Rafaela,Santa Fe,2024-08-13,Busqueda Organica
+227,Lucio,Gomez,Masculino,1975-07-26,Bahia Blanca,Buenos Aires,2024-06-15,Venta Directa
+228,Olivia,Martinez,Femenino,2005-09-01,Mar del Plata,Buenos Aires,2023-07-05,Instagram Ads
+229,Julia,Herrera,Femenino,1996-08-13,Bahia Blanca,Buenos Aires,2023-04-04,Instagram Ads
+230,Josefina,Franco,Femenino,1997-12-09,Bahia Blanca,Buenos Aires,2023-12-08,Google Ads
+231,Thiago Benjamin,Quiroga,Masculino,1978-12-03,La Plata,Buenos Aires,2023-12-04,Busqueda Organica
+232,Julieta,Martinez,Femenino,1973-08-04,Rafaela,Santa Fe,2024-11-09,Busqueda Organica
+233,Thiago Benjamin,Villalba,Masculino,2007-06-15,Maipu,Mendoza,2023-04-01,Instagram Ads
+234,Emma,Diaz,Femenino,1993-06-08,Mar del Plata,Buenos Aires,2023-04-29,Referidos
+235,Santiago,Nuñez,Masculino,1996-03-09,Bahia Blanca,Buenos Aires,2024-02-28,Venta Directa
+236,Juan Pablo,Chavez,Masculino,1973-09-11,Mar del Plata,Buenos Aires,2024-09-29,Venta Directa
+237,Juana,Sosa,Femenino,1981-01-20,CABA,Buenos Aires,2023-07-28,Venta Directa
+238,Benjamin,Rojas,Masculino,1979-02-26,Villa Maria,Cordoba,2024-03-24,Venta Directa
+239,Isabella,Rodriguez,Femenino,1980-05-14,CABA,Buenos Aires,2023-01-30,Busqueda Organica
+240,Tomas,Fernandez,Masculino,1993-11-21,San Rafael,Mendoza,2023-11-15,Instagram Ads
+241,Santino,Gonzalez,Masculino,1979-11-02,Carlos Paz,Cordoba,2023-04-06,Busqueda Organica
+242,Lorenzo,Benitez,Masculino,1973-01-12,Bahia Blanca,Buenos Aires,2025-08-27,Busqueda Organica
+243,Enzo,Perez,Masculino,1992-12-30,Carlos Paz,Cordoba,2025-08-13,Venta Directa
+244,Catalina,Rodriguez,Femenino,1993-12-13,Mar del Plata,Buenos Aires,2024-03-01,Instagram Ads
+245,Isabella,Morales,Femenino,1964-02-19,San Rafael,Mendoza,2024-04-12,Venta Directa
+246,Valentino,Correa,Masculino,1981-02-28,Bahia Blanca,Buenos Aires,2023-07-15,Busqueda Organica
+247,Bautista,Martinez,Masculino,1998-06-18,CABA,Buenos Aires,2023-10-10,Google Ads
+248,Maria Paz,Juarez,Femenino,2002-07-27,Mar del Plata,Buenos Aires,2025-04-20,Instagram Ads
+249,Valentina,Pereyra,Femenino,1991-02-22,Villa Maria,Cordoba,2025-05-07,Google Ads
+250,Alma Mia,Garcia,Femenino,2000-07-14,San Rafael,Mendoza,2024-04-02,Venta Directa
+251,Maria Luz,Sanchez,Femenino,2002-09-30,Villa Maria,Cordoba,2023-12-07,Busqueda Organica
+252,Isabella,Campos,Femenino,1967-03-29,Bahia Blanca,Buenos Aires,2025-08-13,Referidos
+253,Juan Francisco,Diaz,Masculino,1974-11-06,Rio Cuarto,Cordoba,2024-08-08,Google Ads
+254,Santiago,Rodriguez,Masculino,1976-10-22,Maipu,Mendoza,2023-02-14,Referidos
+255,Delfina,Rodriguez,Femenino,1960-09-01,Maipu,Mendoza,2024-01-31,Busqueda Organica
+256,Guadalupe,Ledesma,Masculino,1992-06-18,Carlos Paz,Cordoba,2023-02-07,Instagram Ads
+257,Juana,Martinez,Femenino,1979-09-23,Mendoza Capital,Mendoza,2025-06-14,Referidos
+258,Tomas,Acosta,Masculino,2007-04-07,Bahia Blanca,Buenos Aires,2023-01-16,Google Ads
+259,Mateo,Perez,Masculino,2003-01-08,Bahia Blanca,Buenos Aires,2025-06-10,Referidos
+260,Mateo Benjamin,Cordoba,Masculino,1973-12-12,Mendoza Capital,Mendoza,2024-04-25,Google Ads
+261,Camila,Molina,Femenino,2004-07-23,Carlos Paz,Cordoba,2024-10-27,Instagram Ads
+262,Sofia,Perez,Femenino,1970-03-02,Maipu,Mendoza,2025-09-04,Referidos
+263,Isabella,Lopez,Femenino,1981-06-02,Rosario,Santa Fe,2024-09-24,Instagram Ads
+264,Juan Pablo,Paz,Masculino,1980-02-16,Mar del Plata,Buenos Aires,2023-08-21,Google Ads
+265,Ciro,Herrera,Masculino,1981-03-07,Bahia Blanca,Buenos Aires,2023-04-11,Referidos
+266,Tomas,Leiva,Masculino,1994-07-18,Venado Tuerto,Santa Fe,2023-06-20,Venta Directa
+267,Guillermina,Benitez,Femenino,2001-03-08,Mendoza Capital,Mendoza,2023-02-17,Busqueda Organica
+268,Benjamin,Benitez,Masculino,1982-06-03,Rafaela,Santa Fe,2024-01-03,Venta Directa
+269,Maria Victoria,Gonzalez,Femenino,1976-01-24,Santa Fe Capital,Santa Fe,2023-09-08,Google Ads
+270,Florencia,Miranda,Femenino,1999-08-18,La Plata,Buenos Aires,2023-06-24,Google Ads
+271,Mateo Benjamin,Gonzalez,Masculino,2006-03-27,Maipu,Mendoza,2024-09-26,Busqueda Organica
+272,Tiziano Benjamin,Silva,Masculino,1972-05-29,Bahia Blanca,Buenos Aires,2025-07-23,Busqueda Organica
+273,Lorenzo,Ferreyra,Masculino,1979-06-01,Rio Cuarto,Cordoba,2024-04-17,Instagram Ads
+274,Delfina,Nuñez,Femenino,2003-09-07,Bahia Blanca,Buenos Aires,2023-09-19,Busqueda Organica
+275,Ian Benjamin,Martin,Masculino,1992-06-21,Carlos Paz,Cordoba,2025-07-11,Referidos
+276,Juan Cruz,Romero,Masculino,2006-02-02,Cordoba Capital,Cordoba,2024-03-28,Referidos
+277,Catalina,Lopez,Femenino,1988-07-01,Carlos Paz,Cordoba,2024-12-07,Busqueda Organica
+278,Valentina ,Garcia,Femenino,1987-09-27,Rafaela,Santa Fe,2023-07-23,Instagram Ads
+279,Sol,Molina,Femenino,1991-06-09,CABA,Buenos Aires,2023-08-31,Google Ads
+280,Catalina,Perez,Femenino,1968-05-17,Rafaela,Santa Fe,2024-12-17,Busqueda Organica
+281,Emiliano,Ruiz,Masculino,1995-07-04,Venado Tuerto,Santa Fe,2023-10-09,Google Ads
+282,Tiziano Benjamin,Gonzalez,Masculino,1997-05-30,Bahia Blanca,Buenos Aires,2025-05-02,Google Ads
+283,Pedro,Rodriguez,Masculino,1995-10-07,Mar del Plata,Buenos Aires,2023-08-13,Busqueda Organica
+284,Ignacio,Navarro,Masculino,2003-01-17,Mar del Plata,Buenos Aires,2024-11-25,Instagram Ads
+285,Ciro,Rodriguez,Masculino,1978-08-29,Mendoza Capital,Mendoza,2025-07-14,Instagram Ads
+286,Juan Bautista,Blanco,Masculino,1990-04-20,Villa Maria,Cordoba,2025-03-18,Referidos
+287,Santiago Benjamin,Suarez,Masculino,1962-06-14,Mar del Plata,Buenos Aires,2025-01-19,Busqueda Organica
+288,Lautaro Nicolas,Cabrera,Masculino,1976-10-08,Rafaela,Santa Fe,2023-12-01,Venta Directa
+289,Amparo,Sanchez,Femenino,1961-06-01,La Plata,Buenos Aires,2023-07-25,Venta Directa
+290,Bianca,Gomez,Femenino,1968-03-17,Mar del Plata,Buenos Aires,2025-04-30,Google Ads
+291,Renata,Gomez,Femenino,1970-12-18,Bahia Blanca,Buenos Aires,2025-04-05,Venta Directa
+292,Jazmin,Vera,Femenino,1995-02-12,CABA,Buenos Aires,2024-04-24,Instagram Ads
+293,Julian,Ramirez,Masculino,1993-04-27,Rio Cuarto,Cordoba,2025-05-30,Google Ads
+294,Carmela,Martinez,Femenino,1997-12-31,Mar del Plata,Buenos Aires,2023-04-03,Google Ads
+295,Juan Ignacio,Lopez,Masculino,2001-04-10,Mar del Plata,Buenos Aires,2024-07-03,Google Ads
+296,Pilar,Lucero,Femenino,1965-03-28,Mar del Plata,Buenos Aires,2024-11-19,Busqueda Organica
+297,Emilia,Caceres,Femenino,1988-09-21,Bahia Blanca,Buenos Aires,2025-04-22,Instagram Ads
+298,Josefina,Caceres,Femenino,1978-09-01,Rosario,Santa Fe,2024-11-22,Instagram Ads
+299,Lourdes,Garcia,Femenino,1980-10-20,Cordoba Capital,Cordoba,2024-09-26,Google Ads
+300,Alma Valentina,Silva,Femenino,2005-05-24,La Plata,Buenos Aires,2024-10-25,Google Ads
+301,Malena,Fernandez,Femenino,1997-02-19,Mar del Plata,Buenos Aires,2024-10-26,Google Ads
+302,Simon,Romero,Masculino,1997-06-20,La Plata,Buenos Aires,2023-02-16,Google Ads
+303,Guadalupe,Maidana,Femenino,1973-04-28,Bahia Blanca,Buenos Aires,2023-04-29,Instagram Ads
+304,Tomas Benjamin,Martinez,Masculino,1986-07-19,La Plata,Buenos Aires,2024-02-02,Instagram Ads
+305,Valentina,Ramos,Femenino,1963-06-16,Carlos Paz,Cordoba,2024-08-24,Busqueda Organica
+306,Thiago Benjamin,Herrera,Masculino,1986-06-06,Bahia Blanca,Buenos Aires,2024-11-01,Referidos
+307,Guadalupe,Dominguez,Femenino,2004-11-09,Carlos Paz,Cordoba,2025-08-19,Google Ads
+308,Tomas Benjamin,Aguirre,Masculino,1963-01-03,Rafaela,Santa Fe,2023-08-11,Venta Directa
+309,Sofia,Martin,Femenino,1983-01-29,La Plata,Buenos Aires,2025-05-25,Google Ads
+310,Thiago Nahuel,Hernandez,Masculino,1990-06-13,Rafaela,Santa Fe,2024-07-11,Busqueda Organica
+311,Catalina,Bustos,Femenino,1961-07-13,CABA,Buenos Aires,2024-02-12,Google Ads
+312,Juan Manuel,Ramirez,Masculino,2005-01-16,CABA,Buenos Aires,2025-08-29,Instagram Ads
+313,Emiliano,Rodriguez,Masculino,1978-07-10,Rio Cuarto,Cordoba,2024-10-19,Instagram Ads
+314,Juan Cruz,Ledesma,Masculino,2004-09-15,CABA,Buenos Aires,2025-03-16,Busqueda Organica
+315,Bautista,Romero,Masculino,2006-05-18,La Plata,Buenos Aires,2025-03-16,Google Ads
+316,Camilo,Alvarez,Masculino,1982-01-13,Rosario,Santa Fe,2025-04-29,Venta Directa
+317,Lautaro Benjamin,Paez,Masculino,1993-09-10,Rio Cuarto,Cordoba,2025-04-12,Busqueda Organica
+318,Zoe Jazmin,Gonzalez,Femenino,1965-02-21,La Plata,Buenos Aires,2025-03-18,Instagram Ads
+319,Joaquin,Castillo,Masculino,1980-01-16,Villa Maria,Cordoba,2025-05-29,Google Ads
+320,Alvaro,Cardozo,Masculino,1990-01-07,Mar del Plata,Buenos Aires,2025-03-28,Instagram Ads
+321,Antonio,Coronel,Masculino,2008-05-21,CABA,Buenos Aires,2023-05-15,Instagram Ads
+322,Zoe Jazmin,Acosta,Femenino,2007-09-18,La Plata,Buenos Aires,2024-08-25,Instagram Ads
+323,Francisco,Gonzalez,Masculino,1982-07-24,La Plata,Buenos Aires,2023-09-29,Venta Directa
+324,Lucio,Garcia,Masculino,1985-12-29,Carlos Paz,Cordoba,2024-06-22,Busqueda Organica
+325,Thiago,Martinez,Masculino,1988-07-11,Venado Tuerto,Santa Fe,2024-04-04,Instagram Ads
+326,Maximo,Arias,Masculino,1972-01-20,Bahia Blanca,Buenos Aires,2024-05-30,Busqueda Organica
+327,Valentino,Cabrera,Masculino,1986-07-09,Villa Maria,Cordoba,2024-04-14,Busqueda Organica
+328,Nicolas,Martinez,Masculino,2000-03-03,CABA,Buenos Aires,2024-05-05,Google Ads
+329,Sofia,Medina,Femenino,1977-10-08,CABA,Buenos Aires,2024-05-17,Instagram Ads
+330,Renata,Carrizo,Femenino,1992-02-23,Cordoba Capital,Cordoba,2025-07-09,Busqueda Organica
+331,Elena,Peralta,Femenino,1971-03-28,La Plata,Buenos Aires,2023-03-09,Venta Directa
+332,Isabella,Leiva,Femenino,2000-06-21,Villa Maria,Cordoba,2024-01-26,Google Ads
+333,Juana,Soto,Femenino,2007-06-18,Bahia Blanca,Buenos Aires,2024-06-01,Google Ads
+334,Victoria,Farias,Femenino,1974-01-16,CABA,Buenos Aires,2025-03-23,Google Ads
+335,Alvaro,Roldan,Masculino,1967-09-29,La Plata,Buenos Aires,2024-03-16,Instagram Ads
+336,Joaquin,Silva,Masculino,1999-08-09,Bahia Blanca,Buenos Aires,2023-12-14,Venta Directa
+337,Juana,Quiroga,Femenino,1961-12-24,Bahia Blanca,Buenos Aires,2025-01-17,Instagram Ads
+338,Carmela,Dominguez,Femenino,1979-03-02,Bahia Blanca,Buenos Aires,2023-11-17,Venta Directa
+339,Martina,Guzman,Femenino,1963-10-29,Mar del Plata,Buenos Aires,2025-09-03,Instagram Ads
+340,Alma Mia,Villalba,Femenino,1979-12-18,Mendoza Capital,Mendoza,2023-04-04,Referidos
+341,Genaro,Martinez,Masculino,1984-06-17,Venado Tuerto,Santa Fe,2023-04-09,Google Ads
+342,Valentina,Lopez,Femenino,1977-07-17,La Plata,Buenos Aires,2024-07-23,Busqueda Organica
+343,Milagros,Muñoz,Femenino,2005-05-06,Mendoza Capital,Mendoza,2024-02-25,Busqueda Organica
+344,Milagros,Fernandez,Femenino,1967-02-06,Cordoba Capital,Cordoba,2023-10-22,Google Ads
+345,Jazmín,Moreno,Femenino,1981-07-05,Rafaela,Santa Fe,2023-04-17,Google Ads
+346,Thiago Agustin,Gonzalez,Masculino,1985-04-25,La Plata,Buenos Aires,2024-11-03,Instagram Ads
+347,Luca,Gomez,Masculino,1980-07-27,Cordoba Capital,Cordoba,2023-12-25,Google Ads
+348,Julieta,Ramirez,Femenino,1974-02-24,CABA,Buenos Aires,2025-02-19,Busqueda Organica
+349,Juan Ignacio,Rojas,Masculino,1985-05-20,Bahia Blanca,Buenos Aires,2025-05-15,Busqueda Organica
+350,Valentin,Avila,Masculino,1971-09-07,Mar del Plata,Buenos Aires,2023-01-30,Instagram Ads
+351,Victoria,Paz,Femenino,1993-04-11,Villa Maria,Cordoba,2025-08-01,Google Ads
+352,Luz Maria,Garcia,Femenino,1983-07-15,CABA,Buenos Aires,2023-07-05,Google Ads
+353,Sofia Belen,Herrera,Femenino,1965-08-11,CABA,Buenos Aires,2023-05-26,Venta Directa
+354,Juan Ignacio,Martin,Masculino,2006-07-06,CABA,Buenos Aires,2025-02-03,Referidos
+355,Juan Manuel,Chavez,Masculino,1998-05-31,Bahia Blanca,Buenos Aires,2024-03-05,Busqueda Organica
+356,Alma,Arias,Femenino,1961-06-07,Santa Fe Capital,Santa Fe,2024-01-14,Busqueda Organica
+357,Emilia,Gomez,Femenino,1985-07-27,CABA,Buenos Aires,2025-06-23,Instagram Ads
+358,Salvador,Carrizo,Masculino,2000-04-07,La Plata,Buenos Aires,2025-02-11,Venta Directa
+359,Lautaro,Godoy,Masculino,1985-10-07,Rosario,Santa Fe,2023-10-06,Venta Directa
+360,Catalina,Martinez,Femenino,1962-03-10,Bahia Blanca,Buenos Aires,2024-09-13,Busqueda Organica
+361,Sofía,Leiva,Femenino,1982-10-22,Godoy Cruz,Mendoza,2023-08-09,Google Ads
+362,Benjamin Ezequiel,Diaz,Masculino,1964-10-15,Mar del Plata,Buenos Aires,2024-03-16,Busqueda Organica
+363,Ana Paula,Medina,Femenino,2008-03-12,Carlos Paz,Cordoba,2024-06-23,Referidos
+364,Juana,Ramirez,Femenino,1969-12-31,CABA,Buenos Aires,2023-08-14,Referidos
+365,Benjamin,Gonzalez,Masculino,1994-01-04,CABA,Buenos Aires,2023-07-29,Google Ads
+366,Santino,Martinez,Masculino,1997-01-24,La Plata,Buenos Aires,2025-02-21,Referidos
+367,Sofia,Acosta,Femenino,2006-02-11,Villa Maria,Cordoba,2023-05-03,Instagram Ads
+368,Uma,Quiroga,Femenino,1997-03-31,Bahia Blanca,Buenos Aires,2023-06-29,Referidos
+369,Francesca,Villalba,Femenino,1971-01-01,La Plata,Buenos Aires,2024-05-27,Referidos
+370,Maite,Ferreyra,Femenino,1993-10-14,CABA,Buenos Aires,2024-02-11,Instagram Ads
+371,Nicolas,Acuña,Masculino,1979-07-10,Bahia Blanca,Buenos Aires,2023-01-20,Instagram Ads
+372,Benjamin,Torres,Masculino,1990-08-29,Rafaela,Santa Fe,2024-08-12,Instagram Ads
+373,Lola,Martinez,Femenino,1985-03-02,Bahia Blanca,Buenos Aires,2023-10-24,Venta Directa
+374,Catalina,Castillo,Femenino,1997-07-15,CABA,Buenos Aires,2023-11-29,Busqueda Organica
+375,Elena,Moreno,Femenino,1964-08-09,Godoy Cruz,Mendoza,2023-04-01,Busqueda Organica
+376,Benicio,Lopez,Masculino,1968-10-19,La Plata,Buenos Aires,2024-03-22,Venta Directa
+377,Uma,Paz,Femenino,1966-09-22,Cordoba Capital,Cordoba,2024-02-10,Instagram Ads
+378,Lara,Moreno,Femenino,2001-02-14,La Plata,Buenos Aires,2023-12-08,Referidos
+379,Emiliano,Rodriguez,Masculino,1983-03-08,Cordoba Capital,Cordoba,2024-06-27,Busqueda Organica
+380,Joaquin,Gomez,Masculino,1998-11-27,Rafaela,Santa Fe,2023-12-26,Referidos
+381,Felipe,Rivero,Masculino,1998-03-14,La Plata,Buenos Aires,2023-04-16,Instagram Ads
+382,Emma,Diaz,Femenino,1976-05-05,La Plata,Buenos Aires,2023-06-27,Busqueda Organica
+383,Thiago Benjamin,Fernandez,Masculino,2001-01-16,CABA,Buenos Aires,2023-07-01,Busqueda Organica
+384,Martina,Mendez,Femenino,1970-05-02,Venado Tuerto,Santa Fe,2025-02-11,Referidos
+385,Paula,Rojas,Femenino,1972-05-12,Mar del Plata,Buenos Aires,2025-06-03,Referidos
+386,Catalina,Aguero,Femenino,1969-06-15,La Plata,Buenos Aires,2024-03-26,Referidos
+387,Martina,Caceres,Femenino,1976-09-04,Bahia Blanca,Buenos Aires,2024-10-08,Instagram Ads
+388,Clara,Gonzalez,Femenino,1978-07-18,Rosario,Santa Fe,2023-12-27,Google Ads
+389,Benjamin,Villalba,Masculino,1996-04-14,Mar del Plata,Buenos Aires,2024-04-17,Busqueda Organica
+390,Santino,Rodriguez,Masculino,1990-12-28,Rosario,Santa Fe,2024-01-13,Busqueda Organica
+391,Genaro,Gutierrez,Masculino,1967-11-28,Cordoba Capital,Cordoba,2024-09-21,Busqueda Organica
+392,Lola,Diaz,Femenino,2002-05-06,Bahia Blanca,Buenos Aires,2024-08-17,Instagram Ads
+393,Benjamin,Vargas,Masculino,2005-04-29,Bahia Blanca,Buenos Aires,2025-07-19,Venta Directa
+394,Facundo,Medina,Masculino,1962-08-10,Villa Maria,Cordoba,2024-09-11,Instagram Ads
+395,Bautista,Suarez,Masculino,1987-10-26,CABA,Buenos Aires,2024-04-06,Venta Directa
+396,Camila,Gomez,Femenino,1990-09-02,CABA,Buenos Aires,2024-05-31,Busqueda Organica
+397,Bautista,Rodriguez,Masculino,2001-11-18,Cordoba Capital,Cordoba,2023-09-11,Busqueda Organica
+398,Sofia,Fernandez,Femenino,2002-12-21,Bahia Blanca,Buenos Aires,2024-06-20,Referidos
+399,Lucas,Molina,Masculino,1982-08-13,Godoy Cruz,Mendoza,2024-01-17,Busqueda Organica
+400,Guadalupe,Luna,Femenino,1980-07-21,Carlos Paz,Cordoba,2025-03-04,Venta Directa
+401,Pedro,Juarez,Masculino,1967-03-28,Rafaela,Santa Fe,2023-03-09,Google Ads
+402,Lucio,Gomez,Masculino,2005-01-14,Carlos Paz,Cordoba,2023-10-18,Busqueda Organica
+403,Franco,Vazquez,Masculino,1975-02-13,Mar del Plata,Buenos Aires,2023-03-25,Busqueda Organica
+404,Thiago,Paez,Masculino,1988-08-24,Godoy Cruz,Mendoza,2023-11-14,Venta Directa
+405,Josefina,Acosta,Femenino,1988-10-17,La Plata,Buenos Aires,2024-09-01,Google Ads
+406,Luca,Sanchez,Masculino,1981-10-02,Godoy Cruz,Mendoza,2024-07-26,Referidos
+407,Lara,Torres,Femenino,1970-11-15,La Plata,Buenos Aires,2024-11-17,Venta Directa
+408,Matias,Herrera,Masculino,1966-09-11,Venado Tuerto,Santa Fe,2024-06-04,Instagram Ads
+409,Thiago Valentin,Gomez,Masculino,1967-01-22,Villa Maria,Cordoba,2023-11-13,Instagram Ads
+410,Jeremias,Torres,Masculino,1969-05-05,Mar del Plata,Buenos Aires,2025-08-28,Instagram Ads
+411,Juan Bautista,Nuñez,Masculino,1998-09-14,Santa Fe Capital,Santa Fe,2023-05-21,Google Ads
+412,Maximo,Carrizo,Masculino,1988-06-10,Mar del Plata,Buenos Aires,2025-05-14,Instagram Ads
+413,Ignacio,Carrizo,Masculino,1989-04-08,Villa Maria,Cordoba,2025-06-16,Venta Directa
+414,Milo,Muñoz,Masculino,1980-01-23,Bahia Blanca,Buenos Aires,2023-06-07,Instagram Ads
+415,Juan Pablo,Sosa,Masculino,1999-10-25,Santa Fe Capital,Santa Fe,2025-01-08,Instagram Ads
+416,Tomàs,Fernandez,Masculino,1993-04-19,Bahia Blanca,Buenos Aires,2024-01-09,Instagram Ads
+417,Mateo,Gomez,Masculino,1998-05-05,Bahia Blanca,Buenos Aires,2024-09-17,Google Ads
+418,Alma,Coronel,Femenino,1999-07-22,La Plata,Buenos Aires,2024-06-30,Instagram Ads
+419,Valentina,Flores,Femenino,1998-08-29,Maipu,Mendoza,2025-07-14,Instagram Ads
+420,Alma Jazmin,Maldonado,Femenino,2002-03-29,Carlos Paz,Cordoba,2024-04-17,Busqueda Organica
+421,Milagros,Castro,Femenino,2001-12-05,Bahia Blanca,Buenos Aires,2023-06-15,Busqueda Organica
+422,Ezequiel,Rivero,Masculino,1978-09-08,Mar del Plata,Buenos Aires,2023-02-23,Venta Directa
+423,Martina,Perez,Femenino,1981-07-06,Mar del Plata,Buenos Aires,2024-07-21,Instagram Ads
+424,Gael,Sosa,Masculino,1972-10-30,Mar del Plata,Buenos Aires,2023-03-27,Venta Directa
+425,Ludmila,Ortiz,Femenino,1987-10-05,Carlos Paz,Cordoba,2025-07-16,Busqueda Organica
+426,Bautista,Villalba,Masculino,1962-07-28,Bahia Blanca,Buenos Aires,2023-04-04,Busqueda Organica
+427,Catalina,Pereyra,Femenino,1986-02-01,Mar del Plata,Buenos Aires,2025-08-10,Venta Directa
+428,Francesca,Romero,Femenino,1985-09-01,CABA,Buenos Aires,2024-02-10,Google Ads
+429,Julieta,Romero,Femenino,1999-02-10,La Plata,Buenos Aires,2024-01-31,Instagram Ads
+430,Maria Victoria,Cruz,Femenino,1971-01-27,Rio Cuarto,Cordoba,2023-01-29,Google Ads
+431,Valentino,Rios,Masculino,2006-05-08,Rafaela,Santa Fe,2025-03-21,Instagram Ads
+432,Bautista,Acosta,Masculino,1989-05-04,Cordoba Capital,Cordoba,2023-10-21,Instagram Ads
+433,Simon,Benitez,Masculino,1979-01-28,Bahia Blanca,Buenos Aires,2024-04-04,Busqueda Organica
+434,Mateo,Gutierrez,Masculino,1983-12-23,CABA,Buenos Aires,2023-01-20,Google Ads
+435,Thiago,Garcia,Masculino,2006-08-28,Santa Fe Capital,Santa Fe,2024-07-15,Venta Directa
+436,Clara,Pereyra,Femenino,1981-06-22,CABA,Buenos Aires,2025-03-05,Google Ads
+437,Benjamin,Ruiz,Masculino,2001-04-09,Villa Maria,Cordoba,2023-05-05,Instagram Ads
+438,Bautista,Diaz,Masculino,1974-11-11,Bahia Blanca,Buenos Aires,2024-10-16,Google Ads
+439,Maria Paz,Coronel,Femenino,1980-03-08,Rosario,Santa Fe,2023-04-24,Busqueda Organica
+440,Thiago Benjamin,Gonzalez,Masculino,1989-10-16,La Plata,Buenos Aires,2025-01-05,Google Ads
+441,Delfina,Alvarez,Femenino,2008-05-15,Bahia Blanca,Buenos Aires,2023-01-02,Busqueda Organica
+442,Valentina,Castro,Femenino,2005-12-12,La Plata,Buenos Aires,2024-08-07,Google Ads
+443,Lisandro,Rodriguez,Masculino,1963-05-14,Rosario,Santa Fe,2024-06-20,Google Ads
+444,Thiago,Medina,Masculino,1965-10-14,Cordoba Capital,Cordoba,2024-02-04,Google Ads
+445,Camilo,Silva,Masculino,1999-07-04,Bahia Blanca,Buenos Aires,2024-01-18,Google Ads
+446,Guadalupe,Godoy,Masculino,1980-03-09,Rafaela,Santa Fe,2025-03-18,Referidos
+447,Catalina,Gonzalez,Femenino,1982-08-03,Santa Fe Capital,Santa Fe,2025-01-20,Instagram Ads
+448,Valentino,Duarte,Masculino,1991-10-18,Villa Maria,Cordoba,2023-05-17,Google Ads
+449,Micaela,Ayala,Femenino,1966-06-26,Mar del Plata,Buenos Aires,2025-04-13,Venta Directa
+450,Thiago,Gomez,Masculino,1990-02-18,Bahia Blanca,Buenos Aires,2024-12-13,Google Ads
+451,Mateo Benjamin,Pereyra,Masculino,1987-06-02,La Plata,Buenos Aires,2023-03-06,Google Ads
+452,Ludmila,Villalba,Femenino,1975-07-26,CABA,Buenos Aires,2023-10-28,Busqueda Organica
+453,Thiago Benjamin,Lopez,Masculino,1995-03-24,La Plata,Buenos Aires,2025-06-26,Venta Directa
+454,Ana Paula,Pereyra,Femenino,1973-09-06,Rafaela,Santa Fe,2024-06-11,Instagram Ads
+455,Jazmín,Sosa,Femenino,2004-05-29,Mar del Plata,Buenos Aires,2023-02-07,Instagram Ads
+456,Sebastian,Martinez,Masculino,1970-06-14,Villa Maria,Cordoba,2024-01-01,Google Ads
+457,Victoria,Lopez,Femenino,1970-11-21,Villa Maria,Cordoba,2023-05-08,Instagram Ads
+458,Luz Milagros,Ferreyra,Femenino,1972-07-16,Carlos Paz,Cordoba,2025-01-31,Instagram Ads
+459,Kiara,Morales,Femenino,1992-01-22,Mar del Plata,Buenos Aires,2023-07-11,Venta Directa
+460,Paloma,Coronel,Femenino,1991-01-13,Rafaela,Santa Fe,2025-08-04,Google Ads
+461,Milagros,Cruz,Femenino,2004-03-29,Rosario,Santa Fe,2025-01-14,Instagram Ads
+462,Lucas,Morales,Masculino,2003-03-03,Venado Tuerto,Santa Fe,2024-09-08,Referidos
+463,Julieta,Benitez,Femenino,1992-05-25,Mar del Plata,Buenos Aires,2023-04-16,Google Ads
+464,Lola,Sanchez,Femenino,1979-03-07,Mar del Plata,Buenos Aires,2023-11-10,Busqueda Organica
+465,Clara,Sosa,Femenino,1965-07-15,Rio Cuarto,Cordoba,2024-12-07,Google Ads
+466,Julieta,Acosta,Femenino,1964-05-11,Bahia Blanca,Buenos Aires,2023-02-13,Referidos
+467,Guadalupe,Garcia,Femenino,2004-05-10,Maipu,Mendoza,2023-10-09,Instagram Ads
+468,Milo,Mendez,Masculino,2002-05-04,CABA,Buenos Aires,2024-11-18,Google Ads
+469,Maria Victoria,Alvarez,Femenino,1999-12-24,Mar del Plata,Buenos Aires,2024-06-09,Venta Directa
+470,Juan Bautista,Arias,Masculino,1963-04-12,CABA,Buenos Aires,2023-05-27,Busqueda Organica
+471,Lola,Correa,Femenino,2004-11-04,CABA,Buenos Aires,2023-05-10,Busqueda Organica
+472,Felipe,Juarez,Masculino,1994-08-09,Villa Maria,Cordoba,2024-01-06,Referidos
+473,Valentino,Rodriguez,Masculino,1967-07-13,La Plata,Buenos Aires,2024-11-26,Google Ads
+474,Sol,Miranda,Femenino,1966-03-24,Mar del Plata,Buenos Aires,2024-03-30,Venta Directa
+475,Tomàs,Lopez,Masculino,1977-05-06,Rafaela,Santa Fe,2024-02-12,Busqueda Organica
+476,Amparo,Olivera,Femenino,1996-02-24,Rio Cuarto,Cordoba,2025-09-10,Busqueda Organica
+477,Valentin,Fernandez,Masculino,1985-11-10,La Plata,Buenos Aires,2024-05-26,Venta Directa
+478,Morena Jazmin,Alvarez,Femenino,1983-07-07,CABA,Buenos Aires,2023-09-26,Instagram Ads
+479,Milagros,Rodriguez,Femenino,2003-06-02,Rio Cuarto,Cordoba,2024-09-18,Google Ads
+480,Lucía,Rodriguez,Femenino,1966-12-01,La Plata,Buenos Aires,2023-05-06,Busqueda Organica
+481,Juan Bautista,Alvarez,Masculino,1977-08-20,Bahia Blanca,Buenos Aires,2023-06-26,Busqueda Organica
+482,Helena,Ferreyra,Femenino,2001-07-02,CABA,Buenos Aires,2025-04-09,Instagram Ads
+483,Zoe Jazmin,Romero,Femenino,2000-02-22,Mar del Plata,Buenos Aires,2024-12-27,Instagram Ads
+484,Lara,Avila,Femenino,1981-08-06,Rafaela,Santa Fe,2025-05-21,Instagram Ads
+485,Enzo,Quiroga,Masculino,1987-02-28,Villa Maria,Cordoba,2024-06-04,Instagram Ads
+486,Juan Ignacio,Vega,Masculino,1966-04-02,Rio Cuarto,Cordoba,2025-03-22,Venta Directa
+487,Francisco,Alvarez,Masculino,1982-11-03,Venado Tuerto,Santa Fe,2023-01-27,Google Ads
+488,Sol,Carrizo,Femenino,2007-02-17,Bahia Blanca,Buenos Aires,2025-04-02,Google Ads
+489,Benjamin Ezequiel,Gomez,Masculino,2006-02-10,Cordoba Capital,Cordoba,2023-03-09,Google Ads
+490,Francesca,Sosa,Femenino,1985-02-28,Bahia Blanca,Buenos Aires,2024-06-22,Busqueda Organica
+491,Julieta,Duarte,Femenino,1983-09-28,CABA,Buenos Aires,2023-05-09,Referidos
+492,Juan Francisco,Suarez,Masculino,1975-11-26,Bahia Blanca,Buenos Aires,2024-04-22,Google Ads
+493,Nahiara Jazmin,Fernandez,Femenino,1980-08-12,Santa Fe Capital,Santa Fe,2025-06-18,Instagram Ads
+494,Gonzalo,Gomez,Masculino,1997-03-21,Rio Cuarto,Cordoba,2024-03-19,Instagram Ads
+495,Thiago Valentin,Cruz,Masculino,1963-01-21,CABA,Buenos Aires,2024-06-14,Referidos
+496,Lara,Hernandez,Femenino,2002-07-18,Santa Fe Capital,Santa Fe,2023-06-15,Busqueda Organica
+497,Juan Ignacio,Alvarez,Masculino,1971-07-12,Mar del Plata,Buenos Aires,2025-08-28,Busqueda Organica
+498,Delfina,Ledesma,Femenino,2003-01-01,CABA,Buenos Aires,2023-09-14,Google Ads
+499,Maia,Lopez,Femenino,1990-04-09,San Rafael,Mendoza,2024-10-02,Google Ads
+500,Benjamin,Torres,Masculino,1976-08-25,San Rafael,Mendoza,2024-08-29,Instagram Ads
+501,Emiliano,Cabrera,Masculino,1991-01-14,La Plata,Buenos Aires,2024-11-05,Busqueda Organica
+502,Valentina,Martinez,Femenino,1992-05-27,Rosario,Santa Fe,2025-04-25,Busqueda Organica
+503,Geronimo,Diaz,Masculino,2006-08-24,Rosario,Santa Fe,2025-08-29,Busqueda Organica
+504,Uma,Velazquez,Femenino,1991-11-27,Rio Cuarto,Cordoba,2025-02-24,Referidos
+505,Abril,Vargas,Femenino,1994-09-16,CABA,Buenos Aires,2024-05-24,Instagram Ads
+506,Morena,Martin,Femenino,1974-01-28,Mar del Plata,Buenos Aires,2024-05-09,Venta Directa
+507,Sofia Belen,Fernandez,Femenino,1977-07-01,Godoy Cruz,Mendoza,2024-04-09,Google Ads
+508,Benjamin,Suarez,Masculino,1985-09-30,Santa Fe Capital,Santa Fe,2024-03-26,Venta Directa
+509,Bianca,Gomez,Femenino,1995-08-05,Bahia Blanca,Buenos Aires,2023-07-28,Busqueda Organica
+510,Alejo,Garcia,Masculino,1971-05-25,Godoy Cruz,Mendoza,2025-06-01,Google Ads
+511,Emilia,Barrios,Femenino,1970-07-07,Villa Maria,Cordoba,2024-02-13,Instagram Ads
+512,Micaela,Gomez,Femenino,1975-08-06,Mendoza Capital,Mendoza,2023-11-23,Venta Directa
+513,Violeta,Cruz,Femenino,1962-04-20,Mendoza Capital,Mendoza,2023-10-01,Instagram Ads
+514,Guadalupe,Ruiz,Masculino,1985-12-07,Santa Fe Capital,Santa Fe,2023-04-10,Referidos
+515,Valentina,Toledo,Femenino,1985-12-31,Bahia Blanca,Buenos Aires,2025-06-03,Referidos
+516,Valentina,Sanchez,Femenino,1967-03-25,La Plata,Buenos Aires,2025-09-12,Busqueda Organica
+517,Alma Valentina,Ferreyra,Femenino,1970-06-05,Mar del Plata,Buenos Aires,2023-07-14,Google Ads
+518,Sofia,Garcia,Femenino,1992-08-20,Bahia Blanca,Buenos Aires,2024-05-25,Busqueda Organica
+519,Valentina ,Fernandez,Femenino,1992-05-29,CABA,Buenos Aires,2023-04-03,Busqueda Organica
+520,Lola,Gonzalez,Femenino,1965-11-17,La Plata,Buenos Aires,2023-08-09,Instagram Ads
+521,Martina,Diaz,Femenino,1970-08-30,Cordoba Capital,Cordoba,2023-02-21,Referidos
+522,Bianca,Ojeda,Femenino,1996-05-26,Bahia Blanca,Buenos Aires,2023-10-20,Busqueda Organica
+523,Thiago,Ramos,Masculino,1976-08-28,Rosario,Santa Fe,2024-03-17,Busqueda Organica
+524,Juana,Gonzalez,Femenino,1989-01-20,Mar del Plata,Buenos Aires,2025-02-21,Google Ads
+525,Ana Paula,Rios,Femenino,1964-10-05,Rosario,Santa Fe,2024-02-15,Google Ads
+526,Santino,Barrios,Masculino,2001-02-04,Rafaela,Santa Fe,2024-07-20,Instagram Ads
+527,Agustin,Morales,Masculino,1999-08-14,Maipu,Mendoza,2024-05-31,Referidos
+528,Victoria,Fernandez,Femenino,1989-09-11,Mendoza Capital,Mendoza,2023-05-12,Instagram Ads
+529,Martina,Sosa,Femenino,1999-04-27,Rafaela,Santa Fe,2025-03-24,Instagram Ads
+530,Francesca,Dominguez,Femenino,1966-04-24,La Plata,Buenos Aires,2023-07-23,Busqueda Organica
+531,Morena,Sosa,Femenino,1996-04-14,Rosario,Santa Fe,2023-02-16,Venta Directa
+532,Agustin,Caceres,Masculino,1995-01-12,Rafaela,Santa Fe,2025-04-03,Instagram Ads
+533,Bianca,Alvarez,Femenino,1992-06-24,La Plata,Buenos Aires,2024-09-12,Busqueda Organica
+534,Benjamin,Alvarez,Masculino,1985-11-21,Mar del Plata,Buenos Aires,2025-08-11,Google Ads
+535,Victoria,Gonzalez,Femenino,1965-01-31,La Plata,Buenos Aires,2024-02-07,Instagram Ads
+536,Josefina,Ponce,Femenino,2003-03-29,Mar del Plata,Buenos Aires,2024-06-03,Google Ads
+537,Catalina,Nuñez,Femenino,1983-02-11,Mar del Plata,Buenos Aires,2024-05-01,Google Ads
+538,Sofia,Sosa,Femenino,1983-07-11,Godoy Cruz,Mendoza,2024-11-20,Instagram Ads
+539,Sol,Lopez,Femenino,2007-01-29,Mar del Plata,Buenos Aires,2025-03-26,Busqueda Organica
+540,Pedro,Ledesma,Masculino,2003-06-23,Bahia Blanca,Buenos Aires,2023-09-29,Venta Directa
+541,Felipe,Fernandez,Masculino,1991-08-19,Rosario,Santa Fe,2024-08-20,Google Ads
+542,Benjamin,Diaz,Masculino,1974-01-22,Bahia Blanca,Buenos Aires,2023-06-01,Referidos
+543,Fausto,Sanchez,Masculino,1981-08-02,Mendoza Capital,Mendoza,2024-08-09,Instagram Ads
+544,Facundo,Olivera,Masculino,1997-06-10,Rio Cuarto,Cordoba,2023-01-20,Google Ads
+545,Renata,Gonzalez,Femenino,2004-07-04,Maipu,Mendoza,2023-06-05,Google Ads
+546,Felipe,Sosa,Masculino,1963-09-28,Maipu,Mendoza,2024-05-28,Busqueda Organica
+547,Milena,Romero,Femenino,1968-12-15,Cordoba Capital,Cordoba,2024-12-23,Instagram Ads
+548,Joaquín,Benitez,Masculino,1987-09-16,Mar del Plata,Buenos Aires,2024-11-09,Google Ads
+549,Lucia,Escobar,Femenino,1986-10-19,Mar del Plata,Buenos Aires,2025-09-06,Google Ads
+550,Josefina,Lopez,Femenino,2007-08-01,Rafaela,Santa Fe,2024-07-13,Instagram Ads
+551,Jazmin,Blanco,Femenino,1995-10-28,Bahia Blanca,Buenos Aires,2023-07-16,Venta Directa
+552,Emilia,Rodriguez,Femenino,1989-05-16,Rafaela,Santa Fe,2023-08-19,Venta Directa
+553,Isabella,Juarez,Femenino,1972-10-07,San Rafael,Mendoza,2024-12-07,Google Ads
+554,Bianca,Sanchez,Femenino,1965-12-08,Mar del Plata,Buenos Aires,2024-05-06,Referidos
+555,Josefina,Garcia,Femenino,1990-10-31,Villa Maria,Cordoba,2023-05-05,Google Ads
+556,Maria Victoria,Flores,Femenino,2007-06-05,Venado Tuerto,Santa Fe,2025-04-18,Google Ads
+557,Ciro,Acosta,Masculino,1984-06-23,Mar del Plata,Buenos Aires,2023-02-13,Busqueda Organica
+558,Nicolas,Benitez,Masculino,2004-01-02,Villa Maria,Cordoba,2025-08-04,Busqueda Organica
+559,Carmela,Duarte,Femenino,1965-08-05,Bahia Blanca,Buenos Aires,2023-08-08,Referidos
+560,Ambar,Ramirez,Femenino,1995-05-27,Mar del Plata,Buenos Aires,2023-05-21,Google Ads
+561,Joaquín,Peralta,Masculino,1962-08-10,Santa Fe Capital,Santa Fe,2023-02-21,Venta Directa
+562,Juan Ignacio,Cabrera,Masculino,1990-04-21,Santa Fe Capital,Santa Fe,2023-02-23,Referidos
+563,Martina,Rodriguez,Femenino,2004-05-22,Villa Maria,Cordoba,2025-01-04,Busqueda Organica
+564,Ignacio,Alvarez,Masculino,1999-02-01,La Plata,Buenos Aires,2023-01-06,Instagram Ads
+565,Benjamin,Fernandez,Masculino,1991-02-07,Bahia Blanca,Buenos Aires,2024-10-30,Google Ads
+566,Uma,Torres,Femenino,1965-09-19,Santa Fe Capital,Santa Fe,2025-02-13,Instagram Ads
+567,Julia,Pereyra,Femenino,1987-07-29,Mar del Plata,Buenos Aires,2024-10-23,Google Ads
+568,Thiago Benjamin,Garcia,Masculino,1968-03-16,Rio Cuarto,Cordoba,2024-07-01,Google Ads
+569,Benjamin,Lopez,Masculino,1995-09-20,Santa Fe Capital,Santa Fe,2024-03-03,Instagram Ads
+570,Lautaro,Castro,Masculino,1978-04-20,Bahia Blanca,Buenos Aires,2025-03-17,Busqueda Organica
+571,Genaro,Vega,Masculino,1975-02-02,Rafaela,Santa Fe,2025-06-16,Instagram Ads
+572,Santino Nicolas,Garcia,Masculino,1993-11-29,Villa Maria,Cordoba,2024-08-04,Busqueda Organica
+573,Felipe,Fernandez,Masculino,1965-07-11,Mar del Plata,Buenos Aires,2023-10-19,Referidos
+574,Lola,Mendoza,Femenino,1990-10-11,Santa Fe Capital,Santa Fe,2025-05-21,Busqueda Organica
+575,Nahiara Jazmin,Correa,Femenino,1982-03-27,Rafaela,Santa Fe,2023-07-17,Referidos
+576,Ambar,Vega,Femenino,1997-11-30,Santa Fe Capital,Santa Fe,2025-01-18,Referidos
+577,Guillermina,Paez,Femenino,1971-03-16,Rio Cuarto,Cordoba,2023-01-15,Busqueda Organica
+578,Amparo,Blanco,Femenino,2003-11-19,Villa Maria,Cordoba,2024-08-04,Referidos
+579,Valentino,Sosa,Masculino,1975-09-30,La Plata,Buenos Aires,2024-09-17,Venta Directa
+580,Catalina,Diaz,Femenino,1969-12-08,Venado Tuerto,Santa Fe,2024-06-11,Google Ads
+581,Joaquin,Aguirre,Masculino,1985-01-17,Venado Tuerto,Santa Fe,2024-11-16,Google Ads
+582,Juan Bautista,Torres,Masculino,1998-01-10,La Plata,Buenos Aires,2024-05-03,Busqueda Organica
+583,Juan Ignacio,Cruz,Masculino,1964-12-17,CABA,Buenos Aires,2023-09-25,Referidos
+584,Francisco,Franco,Masculino,1993-01-22,Venado Tuerto,Santa Fe,2025-02-10,Instagram Ads
+585,Morena,Vazquez,Femenino,1999-08-11,Mar del Plata,Buenos Aires,2024-08-19,Instagram Ads
+586,Bautista,Valdez,Masculino,2004-03-13,Villa Maria,Cordoba,2024-10-31,Venta Directa
+587,Bautista,Medina,Masculino,1995-09-11,Cordoba Capital,Cordoba,2024-11-14,Google Ads
+588,Josefina,Lucero,Femenino,1998-01-01,Villa Maria,Cordoba,2023-06-13,Busqueda Organica
+589,Ana Paula,Lopez,Femenino,1969-04-08,Rosario,Santa Fe,2024-10-16,Google Ads
+590,Camila,Bustos,Femenino,1964-04-04,Santa Fe Capital,Santa Fe,2023-08-13,Busqueda Organica
+591,Micaela,Gutierrez,Femenino,1981-03-08,San Rafael,Mendoza,2024-04-10,Instagram Ads
+592,Delfina,Sanchez,Femenino,1975-10-31,Carlos Paz,Cordoba,2024-12-19,Venta Directa
+593,Josefina,Acuña,Femenino,1979-10-26,La Plata,Buenos Aires,2025-02-19,Venta Directa
+594,Gonzalo,Martinez,Masculino,2003-09-14,Carlos Paz,Cordoba,2024-06-24,Google Ads
+595,Alfonsina,Perez,Femenino,2003-01-08,CABA,Buenos Aires,2025-07-28,Busqueda Organica
+596,Francisco,Rojas,Masculino,1994-09-08,CABA,Buenos Aires,2025-04-28,Busqueda Organica
+597,Tiziano,Luna,Masculino,2000-01-01,La Plata,Buenos Aires,2023-06-18,Busqueda Organica
+598,Delfina,Dominguez,Femenino,2001-08-31,CABA,Buenos Aires,2024-11-27,Referidos
+599,Josefina,Blanco,Femenino,1963-04-16,Mendoza Capital,Mendoza,2025-07-09,Venta Directa
+600,Lourdes,Gonzalez,Femenino,1963-07-31,Rosario,Santa Fe,2024-04-09,Google Ads
+601,Uma,Vazquez,Femenino,1978-07-01,Venado Tuerto,Santa Fe,2024-07-31,Google Ads
+602,Mia Valentina,Vazquez,Femenino,1988-11-01,Mar del Plata,Buenos Aires,2025-01-10,Instagram Ads
+603,Sofía,Gonzalez,Femenino,2003-03-02,Mar del Plata,Buenos Aires,2025-04-16,Referidos
+604,Agustin,Moreno,Masculino,1981-01-16,Cordoba Capital,Cordoba,2023-02-16,Instagram Ads
+605,Malena,Cordoba,Femenino,2007-02-06,CABA,Buenos Aires,2024-07-08,Venta Directa
+606,Guadalupe,Acosta,Masculino,2007-05-07,Bahia Blanca,Buenos Aires,2023-02-02,Instagram Ads
+607,Isabella,Benitez,Femenino,1993-06-10,La Plata,Buenos Aires,2025-02-26,Referidos
+608,Renata,Romero,Femenino,1970-04-06,Villa Maria,Cordoba,2025-07-01,Google Ads
+609,Julieta,Vera,Femenino,1983-12-28,Bahia Blanca,Buenos Aires,2024-01-20,Busqueda Organica
+610,Antonio,Fernandez,Masculino,1985-09-13,Villa Maria,Cordoba,2023-05-02,Google Ads
+611,Pilar,Gomez,Femenino,1976-12-08,San Rafael,Mendoza,2025-01-15,Google Ads
+612,Lorenzo,Perez,Masculino,1977-05-11,CABA,Buenos Aires,2023-11-02,Venta Directa
+613,Sofia,Rodriguez,Femenino,1986-08-18,Bahia Blanca,Buenos Aires,2025-04-23,Busqueda Organica
+614,Milo,Ramirez,Masculino,1971-05-10,Bahia Blanca,Buenos Aires,2023-12-21,Google Ads
+615,Sol,Maidana,Femenino,1981-10-07,San Rafael,Mendoza,2025-08-17,Instagram Ads
+616,Felipe,Fernandez,Masculino,1995-07-07,Rosario,Santa Fe,2025-04-08,Google Ads
+617,Renata,Lucero,Femenino,1994-05-02,CABA,Buenos Aires,2023-09-04,Google Ads
+618,Benjamin,Leiva,Masculino,1994-11-18,Cordoba Capital,Cordoba,2024-08-31,Instagram Ads
+619,Lola,Martinez,Femenino,2000-03-08,Rosario,Santa Fe,2023-09-08,Instagram Ads
+620,Ignacio,Rodriguez,Masculino,1994-03-01,Maipu,Mendoza,2024-03-25,Google Ads
+621,Juan Pablo,Mansilla,Masculino,2006-04-02,Rosario,Santa Fe,2023-05-24,Referidos
+622,Renata,Rojas,Femenino,1967-10-20,Santa Fe Capital,Santa Fe,2025-04-15,Referidos
+623,Camila,Cruz,Femenino,1985-05-18,Rafaela,Santa Fe,2023-08-31,Busqueda Organica
+624,Ramiro,Torres,Masculino,1987-09-30,La Plata,Buenos Aires,2024-02-28,Google Ads
+625,Isabella,Castro,Femenino,1985-02-26,Mendoza Capital,Mendoza,2024-07-24,Busqueda Organica
+626,Juan Bautista,Rodriguez,Masculino,1994-10-20,Venado Tuerto,Santa Fe,2024-07-23,Instagram Ads
+627,Ciro,Molina,Masculino,2002-11-24,Mar del Plata,Buenos Aires,2025-08-22,Google Ads
+628,Milagros,Gomez,Femenino,1967-01-25,Villa Maria,Cordoba,2024-12-14,Instagram Ads
+629,Olivia,Arias,Femenino,1983-07-25,La Plata,Buenos Aires,2023-11-04,Instagram Ads
+630,Juan Bautista,Torres,Masculino,1970-04-21,Bahia Blanca,Buenos Aires,2023-09-04,Busqueda Organica
+631,Emma,Gimenez,Femenino,1994-07-08,La Plata,Buenos Aires,2025-04-05,Referidos
+632,Benjamin,Gonzalez,Masculino,1983-02-24,Bahia Blanca,Buenos Aires,2024-03-02,Instagram Ads
+633,Lisandro,Gutierrez,Masculino,1970-08-15,Bahia Blanca,Buenos Aires,2023-09-06,Google Ads
+634,Manuel,Gutierrez,Masculino,1982-10-21,Mar del Plata,Buenos Aires,2024-10-24,Instagram Ads
+635,Luna,Sanchez,Femenino,1987-03-24,Villa Maria,Cordoba,2023-04-05,Instagram Ads
+636,Tiziano Valentin,Villalba,Masculino,1980-11-06,Cordoba Capital,Cordoba,2023-10-02,Referidos
+637,Juan Pablo,Gimenez,Masculino,1995-03-05,Rosario,Santa Fe,2023-07-12,Google Ads
+638,Valentin,Vega,Masculino,1980-11-20,Bahia Blanca,Buenos Aires,2023-08-02,Google Ads
+639,Renata,Gonzalez,Femenino,1983-01-11,CABA,Buenos Aires,2023-08-05,Venta Directa
+640,Salvador,Chavez,Masculino,2000-03-16,Bahia Blanca,Buenos Aires,2025-07-25,Instagram Ads
+641,Francisco,Mendoza,Masculino,2007-04-23,Carlos Paz,Cordoba,2025-07-26,Busqueda Organica
+642,Mora,Luna,Femenino,1978-07-22,Villa Maria,Cordoba,2024-01-25,Google Ads
+643,Luz Maria,Vargas,Femenino,1999-11-08,Mar del Plata,Buenos Aires,2023-09-25,Instagram Ads
+644,Julia,Muñoz,Femenino,2000-03-12,Bahia Blanca,Buenos Aires,2023-04-11,Instagram Ads
+645,Malena,Pereyra,Femenino,2002-08-29,Mar del Plata,Buenos Aires,2025-07-25,Google Ads
+646,Maria Emilia,Alvarez,Femenino,2006-10-23,Mar del Plata,Buenos Aires,2024-02-28,Google Ads
+647,Joaquin,Silva,Masculino,2008-02-27,Rio Cuarto,Cordoba,2023-01-17,Busqueda Organica
+648,Catalina,Gonzalez,Femenino,1981-10-31,Rafaela,Santa Fe,2023-06-06,Google Ads
+649,Francesca,Ramirez,Femenino,1974-05-12,La Plata,Buenos Aires,2024-01-24,Google Ads
+650,Guadalupe,Ramos,Masculino,1992-07-30,Carlos Paz,Cordoba,2024-07-17,Busqueda Organica
+651,Zoe Jazmin,Ponce,Femenino,1964-09-22,Mar del Plata,Buenos Aires,2025-02-20,Venta Directa
+652,Amparo,Gutierrez,Femenino,1998-08-27,Bahia Blanca,Buenos Aires,2023-06-22,Busqueda Organica
+653,Julieta,Dominguez,Femenino,1996-03-30,Santa Fe Capital,Santa Fe,2023-05-24,Referidos
+654,Guadalupe,Campos,Femenino,1991-10-07,Santa Fe Capital,Santa Fe,2025-07-27,Referidos
+655,Benjamin Ezequiel,Romero,Masculino,1984-08-05,CABA,Buenos Aires,2025-05-09,Referidos
+656,Salvador,Aguero,Masculino,2006-10-24,CABA,Buenos Aires,2024-02-27,Venta Directa
+657,Tiziano,Ledesma,Masculino,2002-01-01,Cordoba Capital,Cordoba,2024-12-25,Referidos
+658,Simon,Campos,Masculino,1979-06-22,La Plata,Buenos Aires,2024-06-01,Busqueda Organica
+659,Agustina,Martinez,Femenino,1980-09-27,Cordoba Capital,Cordoba,2024-09-24,Busqueda Organica
+660,Abril,Vega,Femenino,2007-06-17,Bahia Blanca,Buenos Aires,2023-01-17,Google Ads
+661,Felicitas,Sanchez,Femenino,1984-03-22,CABA,Buenos Aires,2023-01-18,Google Ads
+662,Agustina,Maidana,Femenino,1979-02-04,Rafaela,Santa Fe,2023-01-18,Google Ads
+663,Juana,Silva,Femenino,1997-06-14,San Rafael,Mendoza,2023-04-20,Instagram Ads
+664,Lautaro,Chavez,Masculino,1983-12-22,La Plata,Buenos Aires,2023-07-16,Referidos
+665,Alfonsina,Cordoba,Femenino,1980-04-02,Villa Maria,Cordoba,2023-10-01,Instagram Ads
+666,Benjamin,Moyano,Masculino,1965-11-12,Villa Maria,Cordoba,2025-09-09,Busqueda Organica
+667,Josefina,Benitez,Femenino,1977-12-08,La Plata,Buenos Aires,2024-12-14,Venta Directa
+668,Lucia,Diaz,Femenino,1997-02-19,Mendoza Capital,Mendoza,2024-10-31,Busqueda Organica
+669,Santiago,Castro,Masculino,1978-12-21,CABA,Buenos Aires,2024-02-20,Busqueda Organica
+670,Sofia,Cabrera,Femenino,2000-06-02,Bahia Blanca,Buenos Aires,2023-02-27,Google Ads
+671,Joaquin,Rodriguez,Masculino,1996-08-16,La Plata,Buenos Aires,2023-03-26,Instagram Ads
+672,Valentina,Martinez,Femenino,1967-04-22,Rafaela,Santa Fe,2024-08-02,Busqueda Organica
+673,Guadalupe,Vera,Masculino,1967-05-01,Santa Fe Capital,Santa Fe,2023-08-05,Instagram Ads
+674,Milagros,Fernandez,Femenino,1997-12-09,Mar del Plata,Buenos Aires,2023-02-17,Instagram Ads
+675,Carmela,Fernandez,Femenino,2004-11-30,Mendoza Capital,Mendoza,2023-07-03,Google Ads
+676,Miguel Angel,Lucero,Masculino,1992-12-23,Santa Fe Capital,Santa Fe,2024-08-24,Busqueda Organica
+677,Lucía,Navarro,Femenino,1980-01-13,CABA,Buenos Aires,2023-11-03,Busqueda Organica
+678,Thiago Benjamin,Moreno,Masculino,1966-07-29,Bahia Blanca,Buenos Aires,2024-11-24,Referidos
+679,Mia Valentina,Martinez,Femenino,1963-01-10,Maipu,Mendoza,2025-02-12,Instagram Ads
+680,Benjamin Ezequiel,Lopez,Masculino,1972-06-13,CABA,Buenos Aires,2024-05-27,Busqueda Organica
+681,Francisca,Gonzalez,Femenino,1987-07-03,Mendoza Capital,Mendoza,2023-04-11,Google Ads
+682,Thiago Agustin,Lopez,Masculino,1980-03-08,Cordoba Capital,Cordoba,2023-12-15,Busqueda Organica
+683,Luana,Gonzalez,Femenino,1999-02-19,Rafaela,Santa Fe,2023-01-31,Google Ads
+684,Maria Victoria,Soria,Femenino,1983-04-15,Venado Tuerto,Santa Fe,2024-05-17,Venta Directa
+685,Juana,Olivera,Femenino,1997-06-16,Bahia Blanca,Buenos Aires,2024-03-18,Google Ads
+686,Morena,Paez,Femenino,1969-08-14,Mendoza Capital,Mendoza,2025-03-01,Google Ads
+687,Zoe Valentina,Herrera,Femenino,1973-08-10,Santa Fe Capital,Santa Fe,2024-12-31,Instagram Ads
+688,Lisandro,Romero,Masculino,1991-09-19,Mar del Plata,Buenos Aires,2023-06-07,Referidos
+689,Tiziano,Muñoz,Masculino,1961-06-12,Bahia Blanca,Buenos Aires,2023-11-21,Instagram Ads
+690,Santino Benjamin,Arias,Masculino,1999-02-15,CABA,Buenos Aires,2023-01-06,Busqueda Organica
+691,Ambar,Lopez,Femenino,2002-01-23,Mar del Plata,Buenos Aires,2025-02-18,Instagram Ads
+692,Bautista Benjamin,Escobar,Masculino,1989-08-04,San Rafael,Mendoza,2023-03-31,Google Ads
+693,Pilar,Rodriguez,Femenino,2006-01-11,Carlos Paz,Cordoba,2024-07-24,Instagram Ads
+694,Catalina,Chavez,Femenino,1992-12-23,Rosario,Santa Fe,2023-01-27,Google Ads
+695,Julieta,Martinez,Femenino,1978-03-26,Mendoza Capital,Mendoza,2024-09-03,Instagram Ads
+696,Guadalupe,Acosta,Femenino,1978-08-28,Bahia Blanca,Buenos Aires,2023-01-13,Google Ads
+697,Alfonsina,Sanchez,Femenino,1999-06-21,Bahia Blanca,Buenos Aires,2025-03-08,Instagram Ads
+698,Benjamin,Ferreyra,Masculino,2007-08-18,La Plata,Buenos Aires,2024-12-02,Referidos
+699,Joaquin,Carrizo,Masculino,1992-02-27,La Plata,Buenos Aires,2023-10-03,Google Ads
+700,Julieta,Ramirez,Femenino,1994-09-07,Carlos Paz,Cordoba,2023-05-30,Busqueda Organica
+701,Gael,Paez,Masculino,1981-08-25,Bahia Blanca,Buenos Aires,2023-10-10,Google Ads
+702,Valentina ,Godoy,Femenino,1980-07-25,Bahia Blanca,Buenos Aires,2025-03-12,Busqueda Organica
+703,Alma,Diaz,Femenino,1969-07-29,Villa Maria,Cordoba,2025-08-24,Instagram Ads
+704,Malena,Medina,Femenino,2001-09-15,Santa Fe Capital,Santa Fe,2024-04-13,Referidos
+705,Lautaro,Quiroga,Masculino,1992-07-11,Villa Maria,Cordoba,2023-01-07,Referidos
+706,Luz Milagros,Figueroa,Femenino,1975-05-08,Bahia Blanca,Buenos Aires,2025-04-03,Google Ads
+707,Maria Paz,Peralta,Femenino,2001-01-12,Mar del Plata,Buenos Aires,2024-03-16,Google Ads
+708,Thiago Nahuel,Rodriguez,Masculino,1990-11-20,Villa Maria,Cordoba,2023-11-25,Venta Directa
+709,Valentin,Sosa,Masculino,1998-11-17,Bahia Blanca,Buenos Aires,2023-11-18,Google Ads
+710,Catalina,Rivero,Femenino,1994-11-19,Mar del Plata,Buenos Aires,2023-10-26,Venta Directa
+711,Emma,Rojas,Femenino,1971-09-07,La Plata,Buenos Aires,2023-11-30,Instagram Ads
+712,Josefina,Gutierrez,Femenino,1968-05-25,Bahia Blanca,Buenos Aires,2024-01-09,Google Ads
+713,Matias,Vera,Masculino,1993-10-01,San Rafael,Mendoza,2024-11-29,Venta Directa
+714,Santino,Gutierrez,Masculino,1964-04-09,Bahia Blanca,Buenos Aires,2025-08-23,Venta Directa
+715,Pedro,Gutierrez,Masculino,1991-07-28,Carlos Paz,Cordoba,2025-03-27,Referidos
+716,Maximo,Castro,Masculino,2006-04-08,Bahia Blanca,Buenos Aires,2024-11-20,Instagram Ads
+717,Lisandro,Muñoz,Masculino,1987-06-07,Mar del Plata,Buenos Aires,2023-09-05,Busqueda Organica
+718,Joaquin,Gonzalez,Masculino,1975-04-25,Bahia Blanca,Buenos Aires,2025-03-19,Google Ads
+719,Bruno,Gonzalez,Masculino,1983-12-07,Bahia Blanca,Buenos Aires,2024-09-04,Busqueda Organica
+720,Felicitas,Rojas,Femenino,1964-08-02,Bahia Blanca,Buenos Aires,2024-07-10,Busqueda Organica
+721,Francisca,Rodriguez,Femenino,1992-08-11,Mendoza Capital,Mendoza,2023-04-22,Google Ads
+722,Martina,Ramirez,Femenino,1969-09-14,Rio Cuarto,Cordoba,2024-10-24,Instagram Ads
+723,Ramiro,Bravo,Masculino,2004-06-09,Venado Tuerto,Santa Fe,2025-02-09,Google Ads
+724,Mia Morena,Torres,Femenino,1986-07-07,Cordoba Capital,Cordoba,2023-01-11,Referidos
+725,Lola,Avila,Femenino,1986-03-05,San Rafael,Mendoza,2024-06-06,Busqueda Organica
+726,Lautaro,Castillo,Masculino,2005-07-09,Bahia Blanca,Buenos Aires,2024-01-19,Busqueda Organica
+727,Zoe Jazmin,Fernandez,Femenino,1984-02-25,Santa Fe Capital,Santa Fe,2023-12-20,Busqueda Organica
+728,Catalina,Toledo,Femenino,1987-03-27,CABA,Buenos Aires,2023-10-30,Venta Directa
+729,Valentin,Ojeda,Masculino,1975-08-22,Cordoba Capital,Cordoba,2025-05-01,Busqueda Organica
+730,Thiago Valentin,Navarro,Masculino,1980-10-15,Mar del Plata,Buenos Aires,2023-11-16,Busqueda Organica
+731,Renata,Muñoz,Femenino,1989-05-07,La Plata,Buenos Aires,2024-06-17,Busqueda Organica
+732,Guillermina,Paz,Femenino,1977-04-30,Bahia Blanca,Buenos Aires,2023-04-10,Busqueda Organica
+733,Renata,Fernandez,Femenino,1973-04-24,Godoy Cruz,Mendoza,2023-03-10,Google Ads
+734,Juan Gabriel,Muñoz,Masculino,1968-03-01,Mendoza Capital,Mendoza,2023-01-24,Instagram Ads
+735,Benjamin,Dominguez,Masculino,2002-05-01,Santa Fe Capital,Santa Fe,2025-08-10,Referidos
+736,Ramiro,Cruz,Masculino,1961-07-20,Rio Cuarto,Cordoba,2024-07-19,Busqueda Organica
+737,Victoria,Rodriguez,Femenino,2000-11-26,Venado Tuerto,Santa Fe,2025-09-08,Instagram Ads
+738,Benjamin,Luna,Masculino,2008-05-06,Bahia Blanca,Buenos Aires,2024-10-06,Busqueda Organica
+739,Thiago Nahuel,Martinez,Masculino,1963-07-01,Venado Tuerto,Santa Fe,2024-02-10,Referidos
+740,Benicio,Martinez,Masculino,1975-04-10,Venado Tuerto,Santa Fe,2024-08-29,Instagram Ads
+741,Paloma,Ramos,Femenino,1970-01-09,Rosario,Santa Fe,2024-12-22,Google Ads
+742,Tomàs,Garcia,Masculino,1999-09-10,Villa Maria,Cordoba,2025-02-09,Google Ads
+743,Thiago Benjamin,Luna,Masculino,2006-04-02,CABA,Buenos Aires,2025-03-29,Instagram Ads
+744,Sebastian,Martinez,Masculino,1970-03-27,Mar del Plata,Buenos Aires,2023-11-30,Busqueda Organica
+745,Paula,Pereyra,Femenino,1988-08-18,CABA,Buenos Aires,2023-09-26,Instagram Ads
+746,Juana,Rodriguez,Femenino,2000-09-30,Mar del Plata,Buenos Aires,2024-09-03,Instagram Ads
+747,Luana,Bustos,Femenino,2003-02-01,CABA,Buenos Aires,2023-12-23,Google Ads
+748,Milagros,Castro,Femenino,1963-09-05,Rio Cuarto,Cordoba,2025-04-13,Busqueda Organica
+749,Uma ,Acuña,Femenino,2006-03-04,Cordoba Capital,Cordoba,2024-11-19,Instagram Ads
+750,Guadalupe,Pereyra,Femenino,2007-11-14,CABA,Buenos Aires,2023-09-02,Referidos
+751,Guadalupe,Fernandez,Masculino,1986-02-07,Rio Cuarto,Cordoba,2024-01-18,Instagram Ads
+752,Felipe,Rojas,Masculino,1976-11-19,Bahia Blanca,Buenos Aires,2024-03-04,Instagram Ads
+753,Alejo,Garcia,Masculino,1970-04-23,Bahia Blanca,Buenos Aires,2024-03-09,Instagram Ads
+754,Maia,Avila,Femenino,1998-10-04,Rio Cuarto,Cordoba,2024-07-22,Busqueda Organica
+755,Francesca,Ramirez,Femenino,1996-07-21,Villa Maria,Cordoba,2023-05-24,Referidos
+756,Sofia,Martinez,Femenino,1974-04-28,Venado Tuerto,Santa Fe,2024-09-26,Busqueda Organica
+757,Josefina,Rodriguez,Femenino,1991-02-04,Mendoza Capital,Mendoza,2024-05-11,Google Ads
+758,Gonzalo,Gomez,Masculino,1973-06-13,Bahia Blanca,Buenos Aires,2024-07-29,Google Ads
+759,Isabella,Alvarez,Femenino,2001-08-27,Carlos Paz,Cordoba,2024-12-02,Venta Directa
+760,Maria Victoria,Hernandez,Femenino,1973-04-16,Bahia Blanca,Buenos Aires,2024-05-15,Venta Directa
+761,Lisandro,Nuñez,Masculino,2006-03-06,CABA,Buenos Aires,2025-03-25,Venta Directa
+762,Agustina,Suarez,Femenino,1983-02-22,CABA,Buenos Aires,2023-10-09,Google Ads
+763,Juana,Bustos,Femenino,1974-11-25,La Plata,Buenos Aires,2025-03-10,Google Ads
+764,Francisca,Soto,Femenino,1968-06-20,CABA,Buenos Aires,2024-08-09,Instagram Ads
+765,Lucia,Navarro,Femenino,1976-12-29,Rafaela,Santa Fe,2024-07-09,Busqueda Organica
+766,Valentina ,Quiroga,Femenino,1987-06-24,La Plata,Buenos Aires,2024-03-11,Busqueda Organica
+767,Benjamin Ezequiel,Molina,Masculino,1979-10-01,Rafaela,Santa Fe,2025-06-14,Google Ads
+768,Guadalupe,Rojas,Femenino,1984-12-07,Mar del Plata,Buenos Aires,2023-12-23,Google Ads
+769,Julieta,Sosa,Femenino,1994-04-29,CABA,Buenos Aires,2025-03-05,Busqueda Organica
+770,Pedro,Cordoba,Masculino,1992-06-08,Mar del Plata,Buenos Aires,2025-05-31,Instagram Ads
+771,Maria Paz,Sanchez,Femenino,1974-04-23,Santa Fe Capital,Santa Fe,2024-09-22,Google Ads
+772,Lautaro,Ramirez,Masculino,1998-10-07,Rio Cuarto,Cordoba,2025-04-04,Google Ads
+773,Milena,Villalba,Femenino,1961-08-04,Godoy Cruz,Mendoza,2024-09-03,Instagram Ads
+774,Joaquin,Maidana,Masculino,1999-11-24,Rafaela,Santa Fe,2024-12-21,Busqueda Organica
+775,Agostina,Garcia,Femenino,1973-11-02,Mar del Plata,Buenos Aires,2025-09-02,Busqueda Organica
+776,Thiago Benjamin,Alvarez,Masculino,1977-03-17,San Rafael,Mendoza,2025-09-12,Busqueda Organica
+777,Tomàs,Ferreyra,Masculino,2007-02-02,Rafaela,Santa Fe,2025-06-06,Venta Directa
+778,Juan Cruz,Coronel,Masculino,1993-09-26,La Plata,Buenos Aires,2023-09-13,Google Ads
+779,Luz Maria,Moreno,Femenino,1993-11-14,Rio Cuarto,Cordoba,2025-02-18,Instagram Ads
+780,Renata,Ponce,Femenino,1984-06-14,Venado Tuerto,Santa Fe,2023-05-26,Venta Directa
+781,Delfina,Muñoz,Femenino,1993-09-19,Bahia Blanca,Buenos Aires,2024-01-20,Google Ads
+782,Felipe,Paez,Masculino,2004-02-29,Rosario,Santa Fe,2024-02-17,Google Ads
+783,Alfonsina,Pereyra,Femenino,1965-07-18,Rafaela,Santa Fe,2024-04-10,Instagram Ads
+784,Angelina,Carrizo,Femenino,1960-12-02,Cordoba Capital,Cordoba,2025-06-08,Google Ads
+785,Guadalupe,Mansilla,Masculino,1976-03-27,Carlos Paz,Cordoba,2024-10-12,Instagram Ads
+786,Isabella,Fernandez,Femenino,1975-05-16,Cordoba Capital,Cordoba,2025-03-25,Google Ads
+787,Pilar,Torres,Femenino,2002-07-13,Santa Fe Capital,Santa Fe,2024-03-15,Referidos
+788,Ana Paula,Maidana,Femenino,1993-05-15,Mar del Plata,Buenos Aires,2023-11-27,Google Ads
+789,Lara,Gonzalez,Femenino,1996-09-14,La Plata,Buenos Aires,2024-08-02,Busqueda Organica
+790,Bianca,Gonzalez,Femenino,1996-07-06,Cordoba Capital,Cordoba,2023-02-17,Busqueda Organica
+791,Helena,Rojas,Femenino,1979-12-30,CABA,Buenos Aires,2023-05-08,Instagram Ads
+792,Martina,Correa,Femenino,2006-05-10,Carlos Paz,Cordoba,2023-01-01,Instagram Ads
+793,Thiago,Acuña,Masculino,1972-09-07,San Rafael,Mendoza,2025-06-22,Google Ads
+794,Catalina,Gomez,Femenino,1970-08-14,Rio Cuarto,Cordoba,2025-06-14,Instagram Ads
+795,Joaquin,Rios,Masculino,1977-08-30,Mar del Plata,Buenos Aires,2023-09-14,Busqueda Organica
+796,Violeta,Perez,Femenino,1987-06-30,Rio Cuarto,Cordoba,2023-02-23,Venta Directa
+797,Isabella,Campos,Femenino,1991-09-21,La Plata,Buenos Aires,2024-03-15,Google Ads
+798,Maximo,Olivera,Masculino,1975-11-09,Rosario,Santa Fe,2023-01-02,Busqueda Organica
+799,Juana,Rivero,Femenino,1965-12-21,CABA,Buenos Aires,2023-05-16,Google Ads
+800,Franco,Mendez,Masculino,1962-08-23,Bahia Blanca,Buenos Aires,2023-01-10,Venta Directa
+801,Catalina,Alvarez,Femenino,1998-02-05,CABA,Buenos Aires,2025-05-30,Instagram Ads
+802,Lorenzo,Godoy,Masculino,2008-04-25,Bahia Blanca,Buenos Aires,2023-03-14,Instagram Ads
+803,Delfina,Gimenez,Femenino,1990-01-05,CABA,Buenos Aires,2025-01-18,Instagram Ads
+804,Tiziano,Romero,Masculino,1966-12-23,Mar del Plata,Buenos Aires,2024-01-12,Referidos
+805,Francesco,Ayala,Masculino,1976-02-14,Bahia Blanca,Buenos Aires,2025-03-03,Busqueda Organica
+806,Mateo,Aguero,Masculino,1999-01-21,Rosario,Santa Fe,2024-06-27,Busqueda Organica
+807,Lorenzo,Gonzalez,Masculino,1965-07-18,Rio Cuarto,Cordoba,2024-03-26,Instagram Ads
+808,Matias,Garcia,Masculino,1997-06-10,La Plata,Buenos Aires,2025-07-30,Busqueda Organica
+809,Agustina,Gonzalez,Femenino,1981-11-20,San Rafael,Mendoza,2023-03-30,Busqueda Organica
+810,Benjamin,Diaz,Masculino,1970-04-19,Cordoba Capital,Cordoba,2024-08-26,Busqueda Organica
+811,Paloma,Vera,Femenino,1987-08-04,Mar del Plata,Buenos Aires,2024-03-15,Google Ads
+812,Ezequiel,Garcia,Masculino,1998-11-12,Rio Cuarto,Cordoba,2023-10-11,Venta Directa
+813,Joaquin,Miranda,Masculino,1986-12-20,La Plata,Buenos Aires,2024-07-20,Busqueda Organica
+814,Milagros,Rojas,Femenino,1986-08-10,CABA,Buenos Aires,2025-05-18,Busqueda Organica
+815,Luz Milagros,Fernandez,Femenino,2007-05-24,La Plata,Buenos Aires,2024-06-14,Instagram Ads
+816,Juan Manuel,Gimenez,Masculino,1984-01-09,Venado Tuerto,Santa Fe,2023-10-30,Instagram Ads
+817,Bautista,Benitez,Masculino,1965-08-29,Rio Cuarto,Cordoba,2024-05-21,Referidos
+818,Juan Cruz,Vazquez,Masculino,2001-01-06,San Rafael,Mendoza,2024-05-26,Google Ads
+819,Benicio,Ramos,Masculino,1962-07-03,CABA,Buenos Aires,2024-01-05,Google Ads
+820,Lucas,Vargas,Masculino,1991-02-23,Maipu,Mendoza,2025-05-31,Venta Directa
+821,Jazmin,Sosa,Femenino,1986-01-13,Villa Maria,Cordoba,2024-07-13,Referidos
+822,Thiago,Peralta,Masculino,2005-06-12,Carlos Paz,Cordoba,2025-09-04,Busqueda Organica
+823,Lautaro,Ramos,Masculino,1980-08-02,CABA,Buenos Aires,2023-01-15,Referidos
+824,Joaquín,Vera,Masculino,1966-01-26,CABA,Buenos Aires,2025-08-02,Referidos
+825,Emilia,Alvarez,Femenino,2003-08-16,Rafaela,Santa Fe,2024-10-05,Busqueda Organica
+826,Delfina,Alvarez,Femenino,1985-01-12,Bahia Blanca,Buenos Aires,2024-12-19,Instagram Ads
+827,Santino,Gonzalez,Masculino,1981-06-19,La Plata,Buenos Aires,2023-10-12,Instagram Ads
+828,Lola,Coronel,Femenino,1967-06-11,CABA,Buenos Aires,2024-06-07,Venta Directa
+829,Juan Ignacio,Lopez,Masculino,1991-01-12,Villa Maria,Cordoba,2024-02-05,Instagram Ads
+830,Juan Bautista,Gutierrez,Masculino,1967-07-08,Mar del Plata,Buenos Aires,2024-12-16,Instagram Ads
+831,Benjamin,Sosa,Masculino,1966-10-27,Cordoba Capital,Cordoba,2023-09-08,Instagram Ads
+832,Maria Victoria,Caceres,Femenino,1986-09-14,Mendoza Capital,Mendoza,2024-04-09,Instagram Ads
+833,Benjamin,Ramirez,Masculino,1966-04-02,Godoy Cruz,Mendoza,2024-11-13,Referidos
+834,Juan Manuel,Castro,Masculino,1977-01-02,CABA,Buenos Aires,2023-01-13,Venta Directa
+835,Bruno,Lopez,Masculino,1986-05-25,CABA,Buenos Aires,2023-06-17,Referidos
+836,Delfina,Perez,Femenino,1978-10-02,Mar del Plata,Buenos Aires,2023-06-20,Referidos
+837,Simon,Rodriguez,Masculino,1990-01-24,Rafaela,Santa Fe,2025-01-20,Referidos
+838,Santiago,Garcia,Masculino,1965-09-20,Rafaela,Santa Fe,2025-04-06,Instagram Ads
+839,Alma,Leiva,Femenino,2003-01-08,CABA,Buenos Aires,2023-09-27,Instagram Ads
+840,Tomàs,Rios,Masculino,1991-08-24,Bahia Blanca,Buenos Aires,2024-04-11,Busqueda Organica
+841,Catalina,Sanchez,Femenino,1987-05-31,CABA,Buenos Aires,2024-05-26,Venta Directa
+842,Thiago Benjamin,Rios,Masculino,1982-11-29,Villa Maria,Cordoba,2023-06-11,Referidos
+843,Ciro,Flores,Masculino,2004-10-15,CABA,Buenos Aires,2023-08-22,Referidos
+844,Lautaro Nicolas,Fernandez,Masculino,1982-04-23,Mendoza Capital,Mendoza,2025-05-29,Instagram Ads
+845,Manuel,Ledesma,Masculino,1993-01-30,Cordoba Capital,Cordoba,2024-04-28,Referidos
+846,Julieta,Soto,Femenino,1982-03-16,La Plata,Buenos Aires,2023-07-03,Instagram Ads
+847,Juana,Ledesma,Femenino,1993-11-25,La Plata,Buenos Aires,2023-11-26,Google Ads
+848,Luz Maria,Vargas,Femenino,1982-08-30,Mar del Plata,Buenos Aires,2023-10-05,Google Ads
+849,Guadalupe,Maldonado,Femenino,1987-03-24,CABA,Buenos Aires,2024-05-29,Google Ads
+850,Ignacio,Soria,Masculino,1974-01-31,San Rafael,Mendoza,2023-08-17,Busqueda Organica
+851,Juan Pablo,Molina,Masculino,2006-11-17,Maipu,Mendoza,2023-03-12,Instagram Ads
+852,Maria Paz,Gonzalez,Femenino,1991-11-25,Mar del Plata,Buenos Aires,2023-12-02,Instagram Ads
+853,Angelina,Diaz,Femenino,1980-04-24,CABA,Buenos Aires,2024-01-13,Google Ads
+854,Micaela,Rodriguez,Femenino,1988-04-30,Villa Maria,Cordoba,2025-01-27,Google Ads
+855,Salvador,Fernandez,Masculino,1981-02-03,Carlos Paz,Cordoba,2024-01-13,Busqueda Organica
+856,Victoria,Dominguez,Femenino,1989-04-12,La Plata,Buenos Aires,2025-01-20,Google Ads
+857,Thiago Agustin,Rodriguez,Masculino,2001-03-05,Santa Fe Capital,Santa Fe,2023-01-07,Instagram Ads
+858,Lorenzo,Ruiz,Masculino,1994-12-17,La Plata,Buenos Aires,2024-07-08,Venta Directa
+859,Gael,Aguero,Masculino,1988-12-13,Mar del Plata,Buenos Aires,2023-01-02,Busqueda Organica
+860,Guillermina,Arias,Femenino,1984-12-14,Godoy Cruz,Mendoza,2023-04-17,Google Ads
+861,Tomas,Correa,Masculino,2000-11-23,Bahia Blanca,Buenos Aires,2024-05-18,Google Ads
+862,Lucas,Rodriguez,Masculino,1977-05-18,Mar del Plata,Buenos Aires,2023-04-06,Google Ads
+863,Franco,Sosa,Masculino,2004-07-07,Carlos Paz,Cordoba,2024-12-18,Google Ads
+864,Mia,Ortiz,Femenino,2004-05-19,Cordoba Capital,Cordoba,2024-08-17,Venta Directa
+865,Salvador,Ruiz,Masculino,1983-01-19,Venado Tuerto,Santa Fe,2023-03-18,Busqueda Organica
+866,Enzo,Flores,Masculino,1961-03-16,Bahia Blanca,Buenos Aires,2024-11-09,Busqueda Organica
+867,Santino,Diaz,Masculino,1995-10-16,Villa Maria,Cordoba,2023-09-25,Instagram Ads
+868,Agustina,Castillo,Femenino,1975-07-12,Mar del Plata,Buenos Aires,2023-11-22,Venta Directa
+869,Lola,Ruiz,Femenino,2006-09-24,La Plata,Buenos Aires,2023-03-18,Google Ads
+870,Mateo Benjamin,Gimenez,Masculino,1983-12-18,CABA,Buenos Aires,2023-06-09,Instagram Ads
+871,Alvaro,Suarez,Masculino,1980-08-04,Venado Tuerto,Santa Fe,2024-04-22,Busqueda Organica
+872,Francesca,Soto,Femenino,1968-05-20,Rosario,Santa Fe,2024-07-02,Google Ads
+873,Thiago Nicolas,Ojeda,Masculino,1984-03-10,Bahia Blanca,Buenos Aires,2023-11-12,Instagram Ads
+874,Julieta,Medina,Femenino,1974-07-25,CABA,Buenos Aires,2023-04-03,Google Ads
+875,Morena,Sosa,Femenino,1967-02-17,Rosario,Santa Fe,2023-08-09,Google Ads
+876,Ciro,Quiroga,Masculino,1982-03-10,Cordoba Capital,Cordoba,2024-12-29,Google Ads
+877,Isabella,Gonzalez,Femenino,1968-04-26,Bahia Blanca,Buenos Aires,2024-06-09,Google Ads
+878,Martina,Romero,Femenino,1967-12-06,Godoy Cruz,Mendoza,2025-04-19,Referidos
+879,Salvador,Lopez,Masculino,1977-01-31,Maipu,Mendoza,2025-05-25,Instagram Ads
+880,Facundo,Molina,Masculino,1983-01-04,CABA,Buenos Aires,2024-04-18,Busqueda Organica
+881,Maximo,Campos,Masculino,1976-04-06,CABA,Buenos Aires,2023-01-13,Referidos
+882,Joaquín,Morales,Masculino,1973-03-03,La Plata,Buenos Aires,2023-07-22,Instagram Ads
+883,Ana Paula,Benitez,Femenino,1962-06-22,CABA,Buenos Aires,2024-08-19,Instagram Ads
+884,Constanza,Cruz,Femenino,1991-01-30,Rosario,Santa Fe,2023-01-23,Instagram Ads
+885,Juan Pablo,Alvarez,Masculino,2008-06-11,Bahia Blanca,Buenos Aires,2025-04-08,Instagram Ads
+886,Mateo,Garcia,Masculino,2008-05-18,Mar del Plata,Buenos Aires,2023-05-06,Referidos
+887,Maia,Rodriguez,Femenino,1967-05-31,Rosario,Santa Fe,2023-06-22,Venta Directa
+888,Sofia Belen,Rojas,Femenino,1985-05-18,Venado Tuerto,Santa Fe,2024-05-23,Instagram Ads
+889,Julieta,Medina,Femenino,1978-05-04,Carlos Paz,Cordoba,2023-06-26,Instagram Ads
+890,Salvador,Aguirre,Masculino,2003-12-24,La Plata,Buenos Aires,2023-10-09,Referidos
+891,Julieta,Alvarez,Femenino,1987-03-14,La Plata,Buenos Aires,2023-02-05,Venta Directa
+892,Mateo Benjamin,Sosa,Masculino,1991-08-24,Mar del Plata,Buenos Aires,2024-05-25,Busqueda Organica
+893,Sofía,Correa,Femenino,1980-09-23,Cordoba Capital,Cordoba,2023-03-31,Venta Directa
+894,Morena Jazmin,Luna,Femenino,2006-03-23,Rio Cuarto,Cordoba,2024-03-05,Busqueda Organica
+895,Juan Ignacio,Gomez,Masculino,1981-04-08,CABA,Buenos Aires,2024-01-27,Instagram Ads
+896,Catalina,Torres,Femenino,1970-02-08,Bahia Blanca,Buenos Aires,2024-07-11,Busqueda Organica
+897,Pilar,Ramirez,Femenino,1969-11-13,Villa Maria,Cordoba,2024-02-02,Busqueda Organica
+898,Bruno,Flores,Masculino,1993-08-09,CABA,Buenos Aires,2023-11-23,Google Ads
+899,Lucas,Ledesma,Masculino,2004-05-25,Rosario,Santa Fe,2025-07-06,Google Ads
+900,Ezequiel,Lopez,Masculino,1971-11-04,Bahia Blanca,Buenos Aires,2024-06-26,Google Ads
+901,Simon,Fernandez,Masculino,1981-11-22,San Rafael,Mendoza,2023-04-13,Busqueda Organica
+902,Lautaro Ezequiel,Rios,Masculino,1984-12-01,Mar del Plata,Buenos Aires,2024-06-30,Instagram Ads
+903,Santino Ezequiel,Suarez,Masculino,1973-10-06,La Plata,Buenos Aires,2024-08-12,Referidos
+904,Violeta,Soto,Femenino,1994-11-18,Rio Cuarto,Cordoba,2023-06-30,Google Ads
+905,Mia Valentina,Ramirez,Femenino,1993-12-12,Mar del Plata,Buenos Aires,2025-07-24,Google Ads
+906,Guadalupe,Mansilla,Masculino,1993-09-28,Villa Maria,Cordoba,2025-08-28,Referidos
+907,Valentino,Ortiz,Masculino,1975-06-30,La Plata,Buenos Aires,2025-05-06,Google Ads
+908,Juana,Perez,Femenino,1997-01-26,La Plata,Buenos Aires,2024-05-17,Venta Directa
+909,Santiago,Vargas,Masculino,1998-12-24,CABA,Buenos Aires,2023-08-27,Referidos
+910,Jeremias,Vazquez,Masculino,1997-11-23,Cordoba Capital,Cordoba,2024-06-23,Instagram Ads
+911,Facundo,Silva,Masculino,1978-09-19,Mar del Plata,Buenos Aires,2025-07-28,Google Ads
+912,Genaro,Paz,Masculino,1985-06-14,Rio Cuarto,Cordoba,2023-12-15,Referidos
+913,Agustin,Navarro,Masculino,1990-07-10,Villa Maria,Cordoba,2023-03-02,Busqueda Organica
+914,Agustin,Olivera,Masculino,1967-06-16,La Plata,Buenos Aires,2025-03-03,Venta Directa
+915,Constanza,Ferreyra,Femenino,1977-05-01,Rosario,Santa Fe,2024-01-18,Instagram Ads
+916,Juana,Franco,Femenino,1991-02-03,Mendoza Capital,Mendoza,2023-12-11,Busqueda Organica
+917,Emilia,Guzman,Femenino,1966-05-28,Rio Cuarto,Cordoba,2023-06-11,Busqueda Organica
+918,Camila,Toledo,Femenino,1976-08-11,Venado Tuerto,Santa Fe,2024-10-26,Busqueda Organica
+919,Mateo,Ponce,Masculino,2007-05-20,Mar del Plata,Buenos Aires,2023-08-17,Instagram Ads
+920,Juan Cruz,Vega,Masculino,2003-07-19,Maipu,Mendoza,2023-11-11,Google Ads
+921,Camila,Rios,Femenino,1974-07-19,La Plata,Buenos Aires,2023-07-01,Instagram Ads
+922,Ian Benjamin,Cordoba,Masculino,1999-04-13,Bahia Blanca,Buenos Aires,2025-05-21,Busqueda Organica
+923,Juan Cruz,Garcia,Masculino,1997-02-24,San Rafael,Mendoza,2024-09-08,Google Ads
+924,Valentino,Chavez,Masculino,1980-05-26,CABA,Buenos Aires,2025-08-17,Google Ads
+925,Francisco,Perez,Masculino,1995-06-29,Rafaela,Santa Fe,2025-02-02,Busqueda Organica
+926,Mateo Agustin,Peralta,Masculino,1966-12-19,Mar del Plata,Buenos Aires,2023-11-24,Referidos
+927,Juan Ignacio,Cardozo,Masculino,1988-06-30,Rafaela,Santa Fe,2024-04-02,Referidos
+928,Morena Jazmin,Toledo,Femenino,2005-02-13,San Rafael,Mendoza,2023-09-13,Google Ads
+929,Juan Ignacio,Aguero,Masculino,1977-06-23,Rafaela,Santa Fe,2023-09-20,Instagram Ads
+930,Juan Ignacio,Sanchez,Masculino,1977-05-02,Rosario,Santa Fe,2024-01-31,Busqueda Organica
+931,Luz Milagros,Peralta,Femenino,1993-10-17,Santa Fe Capital,Santa Fe,2025-06-24,Busqueda Organica
+932,Sofia,Morales,Femenino,2003-03-18,Bahia Blanca,Buenos Aires,2023-12-26,Busqueda Organica
+933,Francesca,Acosta,Femenino,2003-08-09,Mendoza Capital,Mendoza,2025-04-28,Venta Directa
+934,Lucio,Vazquez,Masculino,1987-11-25,La Plata,Buenos Aires,2024-04-07,Google Ads
+935,Facundo,Garcia,Masculino,1985-08-08,Mar del Plata,Buenos Aires,2023-01-21,Busqueda Organica
+936,Lola,Suarez,Femenino,2000-02-02,Rosario,Santa Fe,2023-03-17,Google Ads
+937,Benjamin,Ramos,Masculino,1966-10-29,Carlos Paz,Cordoba,2023-06-14,Referidos
+938,Luca,Medina,Masculino,2005-09-06,Rosario,Santa Fe,2023-12-13,Busqueda Organica
+939,Valentina ,Roldan,Femenino,1996-11-08,Cordoba Capital,Cordoba,2024-03-17,Instagram Ads
+940,Benicio,Martin,Masculino,1974-11-26,Bahia Blanca,Buenos Aires,2023-06-10,Busqueda Organica
+941,Simon,Sanchez,Masculino,1979-10-14,Villa Maria,Cordoba,2023-07-30,Referidos
+942,Josefina,Silva,Femenino,1999-01-05,Villa Maria,Cordoba,2024-11-07,Referidos
+943,Sara,Caceres,Femenino,2006-12-07,La Plata,Buenos Aires,2023-04-09,Instagram Ads
+944,Maria Paz,Gonzalez,Femenino,2003-02-05,Bahia Blanca,Buenos Aires,2023-06-07,Google Ads
+945,Zoe,Medina,Femenino,1968-12-09,Rosario,Santa Fe,2024-03-13,Venta Directa
+946,Luna,Fernandez,Femenino,1991-07-21,Bahia Blanca,Buenos Aires,2023-07-24,Instagram Ads
+947,Benjamin,Campos,Masculino,1974-04-03,Santa Fe Capital,Santa Fe,2023-06-24,Google Ads
+948,Luisana,Bustos,Femenino,2004-09-19,Cordoba Capital,Cordoba,2024-04-29,Busqueda Organica
+949,Juana,Hernandez,Femenino,1979-02-18,Carlos Paz,Cordoba,2024-04-27,Google Ads
+950,Catalina,Sosa,Femenino,1966-02-04,CABA,Buenos Aires,2024-10-19,Referidos
+951,Guadalupe,Barrios,Femenino,1971-10-02,Rio Cuarto,Cordoba,2024-01-15,Google Ads
+952,Isabella,Morales,Femenino,2008-01-31,Santa Fe Capital,Santa Fe,2024-04-01,Google Ads
+953,Luz Milagros,Flores,Femenino,1966-09-10,Venado Tuerto,Santa Fe,2024-04-21,Google Ads
+954,Julian,Gonzalez,Masculino,1992-12-07,Godoy Cruz,Mendoza,2024-07-31,Instagram Ads
+955,Bautista,Luna,Masculino,1995-11-01,CABA,Buenos Aires,2023-03-29,Google Ads
+956,Milagros,Gonzalez,Femenino,2007-10-28,Bahia Blanca,Buenos Aires,2025-02-13,Referidos
+957,Juan Cruz,Gomez,Masculino,1989-03-23,Mendoza Capital,Mendoza,2025-05-10,Instagram Ads
+958,Valentina ,Suarez,Femenino,1976-01-25,Bahia Blanca,Buenos Aires,2024-08-09,Busqueda Organica
+959,Guadalupe,Ojeda,Femenino,1967-06-16,Rafaela,Santa Fe,2023-03-22,Busqueda Organica
+960,Santino,Torres,Masculino,1980-11-07,La Plata,Buenos Aires,2023-05-04,Instagram Ads
+961,Juan Ignacio,Ramos,Masculino,1969-07-19,Rio Cuarto,Cordoba,2023-08-05,Google Ads
+962,Tiziano,Peralta,Masculino,1965-02-21,Cordoba Capital,Cordoba,2024-03-09,Instagram Ads
+963,Morena,Gonzalez,Femenino,2004-09-20,Santa Fe Capital,Santa Fe,2025-04-22,Google Ads
+964,Valentino,Sosa,Masculino,1974-12-26,Villa Maria,Cordoba,2023-11-24,Instagram Ads
+965,Lautaro Benjamin,Fernandez,Masculino,1988-07-03,Cordoba Capital,Cordoba,2024-02-02,Google Ads
+966,Sofía,Benitez,Femenino,1975-04-09,Villa Maria,Cordoba,2025-05-27,Busqueda Organica
+967,Catalina,Gomez,Femenino,1968-11-13,Cordoba Capital,Cordoba,2025-03-16,Busqueda Organica
+968,Clara,Alvarez,Femenino,1989-09-15,Cordoba Capital,Cordoba,2024-02-29,Referidos
+969,Thiago Benjamin,Fernandez,Masculino,1979-05-03,CABA,Buenos Aires,2025-08-05,Referidos
+970,Tiziano,Martinez,Masculino,2001-05-20,Mar del Plata,Buenos Aires,2025-06-07,Google Ads
+971,Maria Victoria,Cabrera,Femenino,2007-06-22,Bahia Blanca,Buenos Aires,2023-09-28,Instagram Ads
+972,Martina,Farias,Femenino,1981-01-05,Venado Tuerto,Santa Fe,2023-02-08,Busqueda Organica
+973,Emma,Juarez,Femenino,1973-04-28,Venado Tuerto,Santa Fe,2023-05-28,Instagram Ads
+974,Lucia,Garcia,Femenino,1964-03-14,CABA,Buenos Aires,2024-02-10,Google Ads
+975,Federico,Arias,Masculino,1976-10-09,CABA,Buenos Aires,2025-02-02,Instagram Ads
+976,Jazmin,Gomez,Femenino,1994-06-26,Mar del Plata,Buenos Aires,2023-01-21,Google Ads
+977,Ana Paula,Rodriguez,Femenino,1961-04-22,Villa Maria,Cordoba,2023-10-15,Busqueda Organica
+978,Luciano Benjamin,Maidana,Masculino,1969-06-20,San Rafael,Mendoza,2023-05-18,Venta Directa
+979,Olivia,Mansilla,Femenino,1989-02-15,Villa Maria,Cordoba,2023-10-03,Instagram Ads
+980,Alma,Castillo,Femenino,1992-07-16,Cordoba Capital,Cordoba,2023-07-12,Referidos
+981,Mateo Ezequiel,Vazquez,Masculino,1961-08-15,Bahia Blanca,Buenos Aires,2025-01-28,Instagram Ads
+982,Clara,Gonzalez,Femenino,1975-03-03,Rosario,Santa Fe,2024-06-11,Instagram Ads
+983,Benjamin,Rodriguez,Masculino,1987-07-27,Villa Maria,Cordoba,2024-12-27,Busqueda Organica
+984,Pilar,Morales,Femenino,1994-08-01,La Plata,Buenos Aires,2025-03-10,Instagram Ads
+985,Ramiro,Flores,Masculino,1987-11-11,La Plata,Buenos Aires,2023-07-17,Google Ads
+986,Bautista,Rojas,Masculino,2002-05-29,La Plata,Buenos Aires,2023-02-03,Referidos
+987,Valentino,Rodriguez,Masculino,1965-11-12,Mar del Plata,Buenos Aires,2024-12-22,Instagram Ads
+988,Pilar,Diaz,Femenino,1971-01-22,Mar del Plata,Buenos Aires,2025-04-23,Venta Directa
+989,Guillermina,Alvarez,Femenino,2003-08-26,CABA,Buenos Aires,2024-11-28,Instagram Ads
+990,Ramiro,Ferreyra,Masculino,2004-04-02,Rafaela,Santa Fe,2024-05-15,Referidos
+991,Isabella,Quiroga,Femenino,1976-09-22,La Plata,Buenos Aires,2025-09-10,Referidos
+992,Isabella,Rodriguez,Femenino,1990-01-20,Mar del Plata,Buenos Aires,2023-06-17,Instagram Ads
+993,Santino,Cabrera,Masculino,1964-03-25,Mar del Plata,Buenos Aires,2023-01-29,Google Ads
+994,Francisco,Villalba,Masculino,1972-06-09,Santa Fe Capital,Santa Fe,2025-05-24,Instagram Ads
+995,Santino,Vega,Masculino,2008-03-22,La Plata,Buenos Aires,2024-10-24,Busqueda Organica
+996,Benjamin,Aguirre,Masculino,1984-01-30,Rafaela,Santa Fe,2024-10-29,Google Ads
+997,Valentin,Vargas,Masculino,1978-02-16,Cordoba Capital,Cordoba,2024-04-30,Google Ads
+998,Valentino,Fernandez,Masculino,1978-10-11,Rosario,Santa Fe,2023-08-18,Busqueda Organica
+999,Juliana,Gomez,Femenino,1962-06-26,Godoy Cruz,Mendoza,2024-03-09,Google Ads
+1000,Josefina,Flores,Femenino,1996-02-19,Bahia Blanca,Buenos Aires,2023-09-16,Instagram Ads
+1001,Isabella,Vera,Femenino,1999-09-23,Mar del Plata,Buenos Aires,2024-11-24,Google Ads
+1002,Mora,Aguirre,Femenino,1995-03-31,Mendoza Capital,Mendoza,2023-01-08,Google Ads
+1003,Alma,Gimenez,Femenino,1999-01-24,Mar del Plata,Buenos Aires,2023-11-02,Referidos
+1004,Valentino,Fernandez,Masculino,1967-06-28,Bahia Blanca,Buenos Aires,2023-03-07,Referidos
+1005,Mia Jazmin,Peralta,Femenino,1968-05-02,Mar del Plata,Buenos Aires,2025-06-01,Instagram Ads
+1006,Valentina,Gimenez,Femenino,1963-06-26,Mar del Plata,Buenos Aires,2023-07-12,Google Ads
+1007,Camilo,Gonzalez,Masculino,1963-08-13,Mendoza Capital,Mendoza,2025-04-04,Google Ads
+1008,Renata,Alvarez,Femenino,1970-09-13,Villa Maria,Cordoba,2024-11-28,Instagram Ads
+1009,Felipe,Campos,Masculino,1962-11-22,Bahia Blanca,Buenos Aires,2023-10-30,Venta Directa
+1010,Bianca,Avila,Femenino,2005-02-08,Bahia Blanca,Buenos Aires,2024-02-02,Busqueda Organica
+1011,Guadalupe,Sanchez,Masculino,1988-10-24,San Rafael,Mendoza,2023-12-18,Busqueda Organica
+1012,Tobias,Sanchez,Masculino,1965-10-14,Maipu,Mendoza,2025-07-17,Google Ads
+1013,Julia,Gomez,Femenino,2006-04-22,Mar del Plata,Buenos Aires,2025-05-15,Google Ads
+1014,Sol,Lopez,Masculino,1995-08-02,Rafaela,Santa Fe,2023-04-10,Venta Directa
+1015,Tomas Benjamin,Moyano,Masculino,1965-03-06,Mar del Plata,Buenos Aires,2025-01-12,Busqueda Organica
+1016,Octavio,Aguero,Masculino,1981-08-18,Mar del Plata,Buenos Aires,2024-11-01,Busqueda Organica
+1017,Thiago Benjamin,Castro,Masculino,1961-01-11,Mar del Plata,Buenos Aires,2023-08-17,Venta Directa
+1018,Guadalupe,Garcia,Femenino,1981-03-02,Carlos Paz,Cordoba,2025-03-18,Instagram Ads
+1019,Constanza,Martinez,Femenino,1985-07-19,Mar del Plata,Buenos Aires,2024-08-22,Google Ads
+1020,Clara,Aguirre,Femenino,1973-10-14,CABA,Buenos Aires,2024-04-26,Google Ads
+1021,Luca,Molina,Masculino,1977-03-02,Venado Tuerto,Santa Fe,2025-06-29,Busqueda Organica
+1022,Valentino,Soria,Masculino,1962-02-11,Carlos Paz,Cordoba,2024-06-26,Google Ads
+1023,Valentina,Sosa,Femenino,2007-09-05,Rosario,Santa Fe,2025-06-10,Busqueda Organica
+1024,Octavio,Duarte,Masculino,1960-08-02,La Plata,Buenos Aires,2023-12-17,Busqueda Organica
+1025,Luz Milagros,Torres,Femenino,1981-05-31,Rio Cuarto,Cordoba,2023-11-20,Google Ads
+1026,Santino,Pereyra,Masculino,1976-09-10,CABA,Buenos Aires,2024-05-14,Instagram Ads
+1027,Guadalupe,Soto,Masculino,1970-03-05,Mar del Plata,Buenos Aires,2024-10-11,Venta Directa
+1028,Agustín,Gomez,Masculino,1976-03-28,Venado Tuerto,Santa Fe,2023-10-08,Busqueda Organica
+1029,Francesco,Gutierrez,Masculino,2008-03-06,La Plata,Buenos Aires,2024-05-16,Instagram Ads
+1030,Francesco,Medina,Masculino,1966-04-07,Carlos Paz,Cordoba,2024-10-10,Busqueda Organica
+1031,Julia,Gimenez,Femenino,2003-11-07,Bahia Blanca,Buenos Aires,2024-05-03,Instagram Ads
+1032,Sebastian,Rodriguez,Masculino,1999-02-16,Rosario,Santa Fe,2024-06-30,Instagram Ads
+1033,Isabella,Dominguez,Femenino,1969-05-19,CABA,Buenos Aires,2025-07-02,Referidos
+1034,Joaquin,Perez,Masculino,1981-12-03,CABA,Buenos Aires,2024-11-23,Google Ads
+1035,Augusto,Ruiz,Masculino,1982-09-09,La Plata,Buenos Aires,2024-12-11,Instagram Ads
+1036,Julieta,Perez,Femenino,1965-07-27,Santa Fe Capital,Santa Fe,2023-04-16,Instagram Ads
+1037,Angelina,Fernandez,Femenino,2000-04-10,La Plata,Buenos Aires,2023-03-08,Referidos
+1038,Catalina,Gomez,Femenino,1991-01-30,Rafaela,Santa Fe,2024-04-11,Referidos
+1039,Renata,Ramirez,Femenino,1996-12-15,Bahia Blanca,Buenos Aires,2025-06-28,Instagram Ads
+1040,Ignacio,Vazquez,Masculino,1991-03-29,Godoy Cruz,Mendoza,2025-07-12,Referidos
+1041,Julieta,Perez,Femenino,1968-08-24,La Plata,Buenos Aires,2023-06-18,Google Ads
+1042,Santino,Cordoba,Masculino,1981-03-10,La Plata,Buenos Aires,2023-08-18,Venta Directa
+1043,Thiago Nicolas,Quiroga,Masculino,1963-03-26,Rio Cuarto,Cordoba,2025-01-21,Instagram Ads
+1044,Mateo,Mendez,Masculino,1970-07-31,CABA,Buenos Aires,2024-01-11,Busqueda Organica
+1045,Santino,Martinez,Masculino,1984-09-11,Venado Tuerto,Santa Fe,2025-06-16,Instagram Ads
+1046,Olivia,Rodriguez,Femenino,1980-10-27,Rosario,Santa Fe,2024-08-31,Venta Directa
+1047,Joaquin,Olivera,Masculino,1962-08-08,CABA,Buenos Aires,2023-02-19,Instagram Ads
+1048,Santino Ezequiel,Roldan,Masculino,1998-04-27,Bahia Blanca,Buenos Aires,2024-03-30,Referidos
+1049,Vicente,Martinez,Masculino,1991-12-06,Villa Maria,Cordoba,2024-04-30,Busqueda Organica
+1050,Santino,Arias,Masculino,1968-10-01,Santa Fe Capital,Santa Fe,2024-12-12,Instagram Ads
+1051,Benjamin,Rivero,Masculino,1975-08-13,Godoy Cruz,Mendoza,2024-03-06,Busqueda Organica
+1052,Juan Ignacio,Paz,Masculino,1985-10-26,Mar del Plata,Buenos Aires,2024-09-29,Busqueda Organica
+1053,Matias,Acuña,Masculino,1966-03-16,Venado Tuerto,Santa Fe,2025-04-30,Instagram Ads
+1054,Mateo Benjamin,Perez,Masculino,1965-08-03,Rafaela,Santa Fe,2023-04-27,Venta Directa
+1055,Martina,Rodriguez,Femenino,2004-06-12,La Plata,Buenos Aires,2024-09-15,Venta Directa
+1056,Lola,Fernandez,Femenino,1983-01-18,La Plata,Buenos Aires,2024-01-02,Google Ads
+1057,Catalina,Acuña,Femenino,1963-12-07,Mar del Plata,Buenos Aires,2023-06-14,Venta Directa
+1058,Delfina,Silva,Femenino,1987-05-14,Rio Cuarto,Cordoba,2024-12-05,Google Ads
+1059,Jazmin,Alvarez,Femenino,1989-07-09,La Plata,Buenos Aires,2023-01-03,Busqueda Organica
+1060,Valentino,Diaz,Masculino,1973-03-22,CABA,Buenos Aires,2025-05-05,Venta Directa
+1061,Emilia,Acosta,Femenino,1970-08-08,Santa Fe Capital,Santa Fe,2025-08-30,Instagram Ads
+1062,Benjamin,Rios,Masculino,1977-03-19,Mendoza Capital,Mendoza,2025-07-15,Instagram Ads
+1063,Tiziano,Aguirre,Masculino,1997-12-17,Maipu,Mendoza,2023-10-31,Busqueda Organica
+1064,Malena,Rodriguez,Femenino,1986-07-20,Cordoba Capital,Cordoba,2023-04-13,Google Ads
+1065,Juan Ignacio,Diaz,Masculino,1996-04-08,Rafaela,Santa Fe,2024-01-04,Instagram Ads
+1066,Victoria,Toledo,Femenino,1997-06-25,Bahia Blanca,Buenos Aires,2025-01-26,Google Ads
+1067,Lucio,Olivera,Masculino,1984-12-03,Cordoba Capital,Cordoba,2023-01-10,Instagram Ads
+1068,Lorenzo,Vargas,Masculino,1983-11-25,Rafaela,Santa Fe,2024-01-02,Venta Directa
+1069,Candela,Gimenez,Femenino,1986-12-01,CABA,Buenos Aires,2024-01-17,Busqueda Organica
+1070,Santiago,Gonzalez,Masculino,2001-02-13,CABA,Buenos Aires,2024-02-15,Referidos
+1071,Valentina,Escobar,Femenino,1979-08-09,Rafaela,Santa Fe,2025-05-05,Busqueda Organica
+1072,Isabella,Toledo,Femenino,1996-07-07,Venado Tuerto,Santa Fe,2024-10-26,Instagram Ads
+1073,Ignacio,Nuñez,Masculino,1976-04-29,La Plata,Buenos Aires,2024-12-13,Referidos
+1074,Lautaro Nicolas,Gomez,Masculino,2005-03-09,La Plata,Buenos Aires,2023-04-17,Instagram Ads
+1075,Victoria,Rojas,Femenino,1964-04-16,Bahia Blanca,Buenos Aires,2023-07-05,Referidos
+1076,Maria Paz,Duarte,Femenino,1999-08-30,Mar del Plata,Buenos Aires,2024-09-18,Google Ads
+1077,Gonzalo,Figueroa,Masculino,1984-08-18,Venado Tuerto,Santa Fe,2025-07-31,Referidos
+1078,Miguel Angel,Toledo,Masculino,1972-04-22,Bahia Blanca,Buenos Aires,2024-03-27,Google Ads
+1079,Valentino,Luna,Masculino,2007-12-17,Mar del Plata,Buenos Aires,2024-11-01,Instagram Ads
+1080,Ignacio,Luna,Masculino,2008-05-10,La Plata,Buenos Aires,2025-09-05,Busqueda Organica
+1081,Felicitas,Duarte,Femenino,1998-11-03,Cordoba Capital,Cordoba,2024-03-19,Busqueda Organica
+1082,Juan Ignacio,Duarte,Masculino,1993-12-25,Bahia Blanca,Buenos Aires,2023-12-21,Referidos
+1083,Guillermina,Lopez,Femenino,1963-01-26,La Plata,Buenos Aires,2025-05-09,Venta Directa
+1084,Santino,Martinez,Masculino,1975-05-18,Cordoba Capital,Cordoba,2024-10-20,Google Ads
+1085,Martina,Suarez,Femenino,1983-01-23,Carlos Paz,Cordoba,2025-06-09,Instagram Ads
+1086,Tobias,Diaz,Masculino,1969-05-14,Carlos Paz,Cordoba,2023-11-25,Google Ads
+1087,Josefina,Lopez,Femenino,1982-07-04,Mar del Plata,Buenos Aires,2023-02-21,Referidos
+1088,Bautista,Fernandez,Masculino,2008-06-10,Bahia Blanca,Buenos Aires,2024-02-17,Referidos
+1089,Tobias,Ramos,Masculino,1996-04-20,Bahia Blanca,Buenos Aires,2024-03-30,Busqueda Organica
+1090,Antonia,Campos,Femenino,1985-11-28,Cordoba Capital,Cordoba,2025-05-27,Instagram Ads
+1091,Felicitas,Dominguez,Femenino,2000-05-13,Mar del Plata,Buenos Aires,2023-05-02,Google Ads
+1092,Santino,Sanchez,Masculino,1969-10-09,CABA,Buenos Aires,2024-02-18,Instagram Ads
+1093,Antonio,Ojeda,Masculino,1990-03-20,Cordoba Capital,Cordoba,2025-04-25,Venta Directa
+1094,Matilda,Campos,Femenino,2004-08-30,Santa Fe Capital,Santa Fe,2024-11-01,Referidos
+1095,Julieta,Vega,Femenino,1998-09-24,Rafaela,Santa Fe,2024-01-08,Busqueda Organica
+1096,Juan Martin,Soria,Masculino,1984-10-07,Bahia Blanca,Buenos Aires,2023-12-06,Venta Directa
+1097,Valentina,Nuñez,Femenino,1972-06-02,Villa Maria,Cordoba,2025-01-03,Busqueda Organica
+1098,Lautaro,Ponce,Masculino,1980-07-12,CABA,Buenos Aires,2025-02-16,Instagram Ads
+1099,Juan Ignacio,Ojeda,Masculino,2008-04-04,CABA,Buenos Aires,2023-12-16,Referidos
+1100,Uma,Ruiz,Femenino,1999-02-07,Villa Maria,Cordoba,2024-12-19,Instagram Ads
+1101,Benjamin,Juarez,Masculino,2002-02-02,San Rafael,Mendoza,2024-05-19,Google Ads
+1102,Valentina,Ortiz,Femenino,1994-04-02,CABA,Buenos Aires,2023-09-18,Google Ads
+1103,Juan Ignacio,Villalba,Masculino,1976-09-06,Santa Fe Capital,Santa Fe,2023-05-04,Venta Directa
+1104,Juan Cruz,Sanchez,Masculino,2003-10-12,Bahia Blanca,Buenos Aires,2025-04-24,Referidos
+1105,Maite,Rodriguez,Femenino,2006-01-30,CABA,Buenos Aires,2025-02-14,Venta Directa
+1106,Lucas,Cruz,Masculino,1990-11-18,Rosario,Santa Fe,2025-03-01,Referidos
+1107,Martina,Diaz,Femenino,2007-08-28,La Plata,Buenos Aires,2024-05-25,Venta Directa
+1108,Bautista,Perez,Masculino,1967-11-03,Venado Tuerto,Santa Fe,2025-05-08,Instagram Ads
+1109,Helena,Gonzalez,Femenino,1990-04-23,Santa Fe Capital,Santa Fe,2024-12-09,Instagram Ads
+1110,Luca,Martin,Masculino,1988-08-29,Santa Fe Capital,Santa Fe,2023-04-17,Google Ads
+1111,Jazmin,Alvarez,Femenino,1997-08-23,Venado Tuerto,Santa Fe,2024-03-04,Busqueda Organica
+1112,Lautaro,Rivero,Masculino,1999-10-28,Mar del Plata,Buenos Aires,2024-02-12,Google Ads
+1113,Mia Valentina,Castillo,Femenino,1971-07-22,Bahia Blanca,Buenos Aires,2025-04-04,Instagram Ads
+1114,Ciro,Figueroa,Masculino,1962-10-05,Bahia Blanca,Buenos Aires,2024-09-08,Busqueda Organica
+1115,Juana,Sanchez,Femenino,1967-08-12,Mar del Plata,Buenos Aires,2024-12-29,Instagram Ads
+1116,Bautista,Lopez,Masculino,1986-01-14,Santa Fe Capital,Santa Fe,2023-08-03,Google Ads
+1117,Delfina,Rodriguez,Femenino,1966-10-28,Godoy Cruz,Mendoza,2025-08-01,Referidos
+1118,Juan Cruz,Velazquez,Masculino,1993-05-03,Rio Cuarto,Cordoba,2024-05-30,Busqueda Organica
+1119,Felicitas,Benitez,Femenino,2004-12-19,Rosario,Santa Fe,2025-02-18,Google Ads
+1120,Delfina,Paez,Femenino,1971-03-06,Bahia Blanca,Buenos Aires,2024-11-21,Google Ads
+1121,Isabella,Romero,Femenino,1973-06-01,Venado Tuerto,Santa Fe,2025-04-07,Google Ads
+1122,Guadalupe,Castro,Masculino,1997-03-29,Cordoba Capital,Cordoba,2024-01-26,Venta Directa
+1123,Santiago,Garcia,Masculino,1976-08-26,Rosario,Santa Fe,2023-07-24,Instagram Ads
+1124,Santino,Ruiz,Masculino,1997-11-21,Mar del Plata,Buenos Aires,2024-11-30,Referidos
+1125,Lautaro Ezequiel,Fernandez,Masculino,1985-01-15,Cordoba Capital,Cordoba,2024-12-08,Google Ads
+1126,Benjamin,Rodriguez,Masculino,2005-07-15,CABA,Buenos Aires,2024-01-03,Venta Directa
+1127,Lautaro Benjamin,Suarez,Masculino,1967-02-01,Rio Cuarto,Cordoba,2025-01-30,Referidos
+1128,Martina,Lopez,Femenino,1980-05-06,Santa Fe Capital,Santa Fe,2024-06-07,Busqueda Organica
+1129,Alma Jazmin,Herrera,Femenino,1968-05-06,Cordoba Capital,Cordoba,2025-08-06,Instagram Ads
+1130,Julieta,Ruiz,Femenino,1993-10-08,Bahia Blanca,Buenos Aires,2025-09-06,Instagram Ads
+1131,Mia Jazmin,Perez,Femenino,2004-03-01,Rosario,Santa Fe,2023-01-14,Busqueda Organica
+1132,Guillermina,Lopez,Femenino,1986-06-11,Santa Fe Capital,Santa Fe,2024-09-27,Instagram Ads
+1133,Ignacio,Acosta,Masculino,1978-05-28,Villa Maria,Cordoba,2025-02-12,Busqueda Organica
+1134,Ciro,Perez,Masculino,1978-10-06,Rio Cuarto,Cordoba,2023-10-29,Busqueda Organica
+1135,Maximo,Fernandez,Masculino,2007-11-18,CABA,Buenos Aires,2023-07-11,Instagram Ads
+1136,Dante,Rodriguez,Masculino,1983-11-18,Bahia Blanca,Buenos Aires,2023-02-11,Instagram Ads
+1137,Maia,Ramirez,Femenino,2000-08-13,Mar del Plata,Buenos Aires,2023-05-14,Busqueda Organica
+1138,Valentina,Rodriguez,Femenino,1986-10-30,Mendoza Capital,Mendoza,2023-12-05,Busqueda Organica
+1139,Sebastian,Flores,Masculino,1996-12-05,Rosario,Santa Fe,2023-06-07,Instagram Ads
+1140,Juan Martin,Maidana,Masculino,1999-06-17,Villa Maria,Cordoba,2024-05-17,Google Ads
+1141,Giuliana,Herrera,Femenino,1965-11-10,CABA,Buenos Aires,2025-03-13,Instagram Ads
+1142,Olivia,Roldan,Femenino,1962-11-07,La Plata,Buenos Aires,2025-09-06,Google Ads
+1143,Tomàs,Mendoza,Masculino,1999-05-18,La Plata,Buenos Aires,2024-03-01,Google Ads
+1144,Milagros,Rios,Femenino,1968-09-02,Mendoza Capital,Mendoza,2023-12-24,Instagram Ads
+1145,Santino Ezequiel,Acosta,Masculino,1971-11-11,Mar del Plata,Buenos Aires,2023-12-06,Google Ads
+1146,Uma ,Cordoba,Femenino,1969-01-27,Rio Cuarto,Cordoba,2025-08-31,Instagram Ads
+1147,Martina,Rodriguez,Femenino,2006-12-22,CABA,Buenos Aires,2023-04-28,Instagram Ads
+1148,Camila,Franco,Femenino,2003-03-03,Bahia Blanca,Buenos Aires,2023-09-04,Google Ads
+1149,Juan Ignacio,Luna,Masculino,1982-03-31,CABA,Buenos Aires,2024-11-29,Google Ads
+1150,Alma Mia,Avila,Femenino,1965-01-17,CABA,Buenos Aires,2024-01-31,Instagram Ads
+1151,Catalina,Castro,Femenino,1998-01-20,Rosario,Santa Fe,2025-07-22,Busqueda Organica
+1152,Julieta,Perez,Femenino,1991-08-31,Carlos Paz,Cordoba,2024-05-13,Instagram Ads
+1153,Morena Jazmin,Gonzalez,Femenino,2008-02-24,San Rafael,Mendoza,2023-11-25,Instagram Ads
+1154,Lautaro Benjamin,Pereyra,Masculino,1989-01-15,CABA,Buenos Aires,2023-06-21,Busqueda Organica
+1155,Santino,Fernandez,Masculino,1999-01-16,CABA,Buenos Aires,2023-08-04,Instagram Ads
+1156,Mateo Benjamin,Navarro,Masculino,1967-04-22,Carlos Paz,Cordoba,2025-05-05,Referidos
+1157,Augusto,Ortiz,Masculino,1967-05-12,Bahia Blanca,Buenos Aires,2024-10-24,Busqueda Organica
+1158,Federico,Aguero,Masculino,1983-11-20,Mendoza Capital,Mendoza,2024-04-15,Google Ads
+1159,Luana,Perez,Femenino,2005-01-16,CABA,Buenos Aires,2023-03-31,Instagram Ads
+1160,Simon,Cabrera,Masculino,1963-01-14,La Plata,Buenos Aires,2025-03-24,Instagram Ads
+1161,Valentino,Ruiz,Masculino,2002-07-23,San Rafael,Mendoza,2025-07-21,Busqueda Organica
+1162,Mia,Ledesma,Femenino,1963-02-15,Carlos Paz,Cordoba,2024-04-06,Instagram Ads
+1163,Olivia,Lucero,Femenino,2007-06-23,Venado Tuerto,Santa Fe,2023-11-20,Venta Directa
+1164,Victoria,Villalba,Femenino,1978-10-06,Rosario,Santa Fe,2024-07-01,Google Ads
+1165,Francesco,Gonzalez,Masculino,1981-02-09,Cordoba Capital,Cordoba,2024-12-18,Google Ads
+1166,Julieta,Mansilla,Femenino,2007-11-11,CABA,Buenos Aires,2023-10-24,Google Ads
+1167,Antonella,Valdez,Femenino,1975-12-31,Cordoba Capital,Cordoba,2023-10-16,Busqueda Organica
+1168,Sofia,Bravo,Femenino,1990-08-22,Bahia Blanca,Buenos Aires,2025-04-21,Instagram Ads
+1169,Genaro,Sanchez,Masculino,1988-11-05,Bahia Blanca,Buenos Aires,2023-06-10,Instagram Ads
+1170,Manuel,Gomez,Masculino,1990-07-18,La Plata,Buenos Aires,2025-02-03,Instagram Ads
+1171,Valentina,Paz,Femenino,1993-06-15,Santa Fe Capital,Santa Fe,2023-11-02,Google Ads
+1172,Luz Milagros,Aguero,Femenino,1964-04-24,CABA,Buenos Aires,2024-07-20,Instagram Ads
+1173,Facundo,Fernandez,Masculino,1981-08-29,Mendoza Capital,Mendoza,2023-02-12,Busqueda Organica
+1174,Amparo,Ruiz,Femenino,1996-03-01,Cordoba Capital,Cordoba,2023-11-09,Instagram Ads
+1175,Luana,Gonzalez,Femenino,1973-08-09,Rio Cuarto,Cordoba,2024-02-27,Google Ads
+1176,Octavio,Diaz,Masculino,1964-05-29,Rio Cuarto,Cordoba,2023-07-08,Venta Directa
+1177,Victoria,Medina,Femenino,1985-01-04,Rio Cuarto,Cordoba,2023-04-28,Referidos
+1178,Julian,Perez,Masculino,1992-01-29,Venado Tuerto,Santa Fe,2024-10-22,Google Ads
+1179,Tomàs,Godoy,Masculino,1968-11-30,Godoy Cruz,Mendoza,2024-11-18,Google Ads
+1180,Milagros,Martinez,Femenino,1993-09-30,Cordoba Capital,Cordoba,2023-07-22,Google Ads
+1181,Maria Victoria,Lopez,Femenino,1992-10-12,Mar del Plata,Buenos Aires,2024-01-01,Instagram Ads
+1182,Mateo Benjamin,Sosa,Masculino,1971-08-13,CABA,Buenos Aires,2023-10-19,Instagram Ads
+1183,Lautaro Ezequiel,Perez,Masculino,2007-05-13,Rio Cuarto,Cordoba,2023-11-22,Google Ads
+1184,Catalina,Gonzalez,Femenino,1963-11-13,Mar del Plata,Buenos Aires,2024-09-23,Busqueda Organica
+1185,Delfina,Silva,Femenino,1975-01-26,La Plata,Buenos Aires,2024-08-02,Busqueda Organica
+1186,Antonia,Moreno,Femenino,2006-08-09,Villa Maria,Cordoba,2025-09-08,Referidos
+1187,Mateo,Ferreyra,Masculino,1995-06-01,Cordoba Capital,Cordoba,2023-11-17,Instagram Ads
+1188,Benjamin,Vargas,Masculino,2006-11-29,Carlos Paz,Cordoba,2023-10-11,Google Ads
+1189,Benjamin,Bustos,Masculino,2004-07-16,Mar del Plata,Buenos Aires,2025-06-17,Referidos
+1190,Delfina,Figueroa,Femenino,1975-09-18,Bahia Blanca,Buenos Aires,2024-01-03,Referidos
+1191,Victoria,Cordoba,Femenino,1981-04-10,Rosario,Santa Fe,2023-06-29,Referidos
+1192,Agustín,Vega,Masculino,1979-03-24,Godoy Cruz,Mendoza,2025-05-29,Instagram Ads
+1193,Thiago,Torres,Masculino,1984-03-20,Mar del Plata,Buenos Aires,2025-01-21,Busqueda Organica
+1194,Pedro,Diaz,Masculino,1981-01-17,CABA,Buenos Aires,2025-07-02,Busqueda Organica
+1195,Salvador,Paz,Masculino,1987-07-07,Venado Tuerto,Santa Fe,2025-02-26,Busqueda Organica
+1196,Mateo Benjamin,Gonzalez,Masculino,2005-07-23,CABA,Buenos Aires,2024-07-18,Google Ads
+1197,Luz Maria,Mansilla,Femenino,1998-09-11,La Plata,Buenos Aires,2024-01-10,Google Ads
+1198,Tiziano,Cabrera,Masculino,1980-10-18,Rafaela,Santa Fe,2023-05-18,Instagram Ads
+1199,Matias,Suarez,Masculino,1983-05-16,Bahia Blanca,Buenos Aires,2024-01-08,Google Ads
+1200,Luciano Benjamin,Godoy,Masculino,1979-05-01,Rio Cuarto,Cordoba,2025-05-18,Busqueda Organica
