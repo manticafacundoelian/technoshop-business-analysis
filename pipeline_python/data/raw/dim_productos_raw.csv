@@ -1,0 +1,51 @@
+producto_id,nombre_producto,categoria,marca,gama
+1,iPhone 15 Pro,Telefonia,Apple,Alta
+2,Samsung Galaxy S24,Telefonia,Samsung,Alta
+3,Motorola Edge 40,Telefonia,Motorola,Media
+4,Xiaomi Redmi Note 13,Telefonia,Xiaomi,Media
+5,MacBook Air M2,Computacion,Apple,Alta
+6,Notebook Dell Inspiron,Computacion,Dell,Media
+7,Notebook Lenovo IdeaPad,Computacion,Lenovo,Media
+8,"Monitor Gamer 24""",Computacion,ASUS,Media
+9,Auriculares Sony WH-1000XM5,Audio,Sony,Alta
+10,Auriculares In-Ear JBL,Audio,JBL,Baja
+11,Parlante Bluetooth Portable,Audio,JBL,Baja
+12,Barra de Sonido Home,Audio,Samsung,Media
+13,"Smart TV Samsung 65"" QLED",TV y Video,Samsung,Alta
+14,"Smart TV LG 55"" 4K",TV y Video,LG,Media
+15,Chromecast Google TV,TV y Video,Google,Baja
+16,Funda Silicona Transparente,Accesorios,Generico,Baja
+17,Cargador Carga Rapida 25W,Accesorios,Samsung,Baja
+18,Memoria MicroSD 128GB,Accesorios,SanDisk,Baja
+19,Disco Externo 1TB,Accesorios,WD,Media
+20,Cable HDMI 2.0 1.8m,Accesorios,Generico,Baja
+21,Funda Antigolpes Premium v21,Accesorios,Generico,Baja
+22,Cable Tipo C Reforzado v22,Accesorios,Belkin,Baja
+23,Cargador Pared 20W Fast v23,Accesorios,Anker,Baja
+24,Protector Vidrio Templado v24,Accesorios,Generico,Baja
+25,Mouse Inalambrico Office v25,Accesorios,Logitech,Media
+26,Teclado Bluetooth Slim v26,Accesorios,Logitech,Media
+27,Soporte Ergonomico Notebook v27,Accesorios,Generico,Baja
+28,Hub USB-C 5 en 1 v28,Accesorios,Anker,Media
+29,Pad Mouse con Apoya Muneca v29,Accesorios,Kingston,Baja
+30,Limpiador Pantallas Kit v30,Accesorios,Generico,Baja
+31,Organizador de Cables Clip v31,Accesorios,Generico,Baja
+32,Pendrive 64GB Metal v32,Accesorios,SanDisk,Baja
+33,Aro de Luz Led para Selfie v33,Accesorios,Generico,Baja
+34,Adaptador Dongle Type-C v34,Accesorios,Apple,Media
+35,Funda Notebook Neoprene v35,Accesorios,Case Logic,Media
+36,Funda Antigolpes Premium v36,Accesorios,Generico,Baja
+37,Cable Tipo C Reforzado v37,Accesorios,Belkin,Baja
+38,Cargador Pared 20W Fast v38,Accesorios,Anker,Baja
+39,Protector Vidrio Templado v39,Accesorios,Generico,Baja
+40,Mouse Inalambrico Office v40,Accesorios,Logitech,Media
+41,Teclado Bluetooth Slim v41,Accesorios,Logitech,Media
+42,Soporte Ergonomico Notebook v42,Accesorios,Generico,Baja
+43,Hub USB-C 5 en 1 v43,Accesorios,Anker,Media
+44,Pad Mouse con Apoya Muneca v44,Accesorios,Kingston,Baja
+45,Limpiador Pantallas Kit v45,Accesorios,Generico,Baja
+46,Organizador de Cables Clip v46,Accesorios,Generico,Baja
+47,Pendrive 64GB Metal v47,Accesorios,SanDisk,Baja
+48,Aro de Luz Led para Selfie v48,Accesorios,Generico,Baja
+49,Adaptador Dongle Type-C v49,Accesorios,Apple,Media
+50,Funda Notebook Neoprene v50,Accesorios,Case Logic,Media
