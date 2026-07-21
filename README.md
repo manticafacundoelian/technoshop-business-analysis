@@ -7,13 +7,11 @@
 
 ---
 
-## 📈 Resumen de la Crisis e Impacto Financiero
+## 📈 Crisis e Impacto Financiero
 
 El volumen de pedidos se mantiene estable (**+3.07%**), pero el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.11%** debido a *shocks* de costos de proveedores (**+45.08%** YoY) y costos logísticos del *canal online* que canibalizan el margen de productos masivos.
 
----
-
-## 📊 Análisis detallado (Reporte Power BI):
+### Análisis detallado (Reporte Power BI):
 
 <details>
 <summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para ver)</b></summary>
@@ -58,7 +56,7 @@ El volumen de pedidos se mantiene estable (**+3.07%**), pero el negocio experime
 
 ---
 
-## 🎯 Plan de Recomendaciones Estratégicas 
+## 🎯 Recomendaciones Estratégicas 
 
 * **Prioridad alta (Corto plazo):** Reestructurar contratos con proveedores de *Computación* y *TV/Video* (costos actuales del **88%** vuelven inviable la categoría) e implementar un monto mínimo de compra *online* para diluir el impacto del envío fijo en *Accesorios*.
 * **Prioridad media (Mediano plazo):** Lanzar planes de fidelización enfocados en la base de **Clientes Retenidos**, ya que operan como el motor principal del negocio (aportando el **68.77%** del *revenue* y registrando la mayor frecuencia de compra y **Ticket Promedio**). Dentro de esta estrategia, la acción inmediata es blindar a los **97** *Clientes de Alto Valor* que concentran el **73%** de la facturación. Una vez asegurada esta retención, se recomienda reactivar la captación de clientes nuevos para revertir su tendencia a la baja interanual que amenaza la salud del negocio a largo plazo. Asimismo, se sugiere automatizar estrategias de *cross-selling* hacia categorías eficientes como *Audio* (**28.20%** de margen).
@@ -68,21 +66,45 @@ El volumen de pedidos se mantiene estable (**+3.07%**), pero el negocio experime
 
 ## ⚙️ Ingeniería de Datos y Arquitectura
 
-En esta sección se detalla el procesamiento técnico que hace posible la veracidad del análisis de negocio expuesto arriba.
-
 <details>
-<summary><b>🐍 1. *Pipeline* modular de limpieza y preparación (Python y Pandas)</b></summary>
+<summary><b>🐍 1. Pipeline modular de limpieza y preparación (Python y Pandas)</b></summary>
+<br>
 
-Para garantizar la calidad de los datos y la consistencia del análisis antes de ser consumidos por el modelo de BI, desarrollé un *pipeline* automatizado, modular y eficiente:
+Para garantizar la calidad de los datos y la consistencia del análisis antes de ser consumidos por el modelo de BI, desarrollé un *pipeline* automatizado, modular y escalable.
 
-![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)
+<br>
 
-* **`inspect.py`:** Módulo encargado de la auditoría inicial de los datos estructurados, detección de valores nulos, duplicados e inconsistencias en los tipos de variables.
-* **`clean.py`:** Contiene las funciones de transformación de datos, normalización de texto y manejo de variables de negocio críticas para reflejar los *shocks* de mercado.
-* **`main.py`:** El orquestador principal que ejecuta de principio a fin el flujo de ingesta y procesamiento.
-* *Nota de arquitectura:* El *dataset* fue generado sintéticamente utilizando la librería *Faker* para simular un ecosistema *retail* omnicanal real.
+![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)  
 
-*Código fuente disponible en la carpeta:* `/python_pipeline`
+
+
+### Consideraciones: 
+  1. **Escalabilidad:** El diseño modular, más el hecho de que cada script se organiza en funciones auxiliares que luego son llamadas por funciones globales asegura la escalabilidad.
+  2. **Logs estandarizados:** Reporta cada error o inconsistencia en la terminal indicando el origen exacto del fallo.
+  3. **Impacto y severidad:** La función `build_metrics` evalúa el porcentaje de registros afectados sobre el total del dataset y asigna dinámicamente un nivel de severidad de negocio para la toma de decisiones automatizada sobre la ingesta.
+
+### Detalle de los módulos Principales del Pipeline:
+
+* <details>
+  <summary><b>🔍 <code>inspect.py</code> (Auditoría de Datos)</b></summary>  
+ 
+  Encargado de la inspección exploratoria preliminar. Detecta, reporta y cuantifica:  
+
+  * Espacios en blanco accidentales (al principio y al final) y registros inválidos (solo espacios en blanco).
+  * Valores nulos.
+  * Inconsistencias de case en categóricos, distinguiendo entre "Online" y "online".
+  * Duplicados exactos (en todas las columnas), de claves primarias y duplicados de negocio (por subset) distinguiendo entre datos crudos y normalizados.
+  * Inconsistencias de reglas de negocio, como que el costo no sea mayor al precio o la fecha de nacimiento no sea posterior a la fecha de registro.
+  * Problemas de integridad referencial, es decir que cada clave foránea (`FK`) exista en su tabla de dimensión (`PK`).
+  </details>
+
+* <details>
+  <summary><b>🧼 <code>clean.py</code> (Sanitización Estricta)</b></summary>
+  <br>
+  Implementa funciones auxiliares atómicas para aplicar reglas de negocio críticas sobre las entidades limpias (<code>/clean/</code>). Puedes expandir este bloque para agregar los detalles de este módulo.
+  </details>
+
+*Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python)
 </details>
 
 <details>
@@ -105,18 +127,6 @@ El reporte implementa un enfoque de **Esquema en Estrella** (*Star Schema*) ópt
 ![Vista de Modelo](./powerbi/model_view.png)
 </details>
 
-
-
----
-El proyecto abarca todo el ciclo de vida del dato, pero con el fin de priorizar el valor de negocio, este documento presenta en primera instancia el **Análisis detallado en Power BI y las Recomendaciones Estratégicas**, para pasar luego a los fundamentos técnicos del proyecto (Pipeline ETL en Python y Modelado SQL).
-
-**Entorno de Desarrollo y Base de Datos:**
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=flat-square&logo=mysql&logoColor=white) ![DB Browser](https://img.shields.io/badge/DB_Browser-41292C?style=flat-square&logo=keepassxc&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05033?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-
-## Contexto de Negocio y Objetivo
-La empresa presenta una dinámica particular: el volumen de pedidos se mantiene relativamente estable, pero la rentabilidad cae con fuerza entre 2024 y 2025. A través de un enfoque basado en datos, este reporte desarmará los síntomas financieros macro para encontrar las causas raíz operativas y de comportamiento de clientes para poder hacer recomendaciones estratégicas para la toma de decisiones. 
-
----
 
 
 
