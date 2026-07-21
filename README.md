@@ -88,8 +88,7 @@ Para garantizar la calidad de los datos y la consistencia del análisis antes de
 * <details>
   <summary><b>🔍 <code>inspect.py</code> (Auditoría de Datos)</b></summary>  
  
-  Encargado de la inspección exploratoria preliminar. Detecta, reporta y cuantifica:  
-
+  Encargado de la inspección exploratoria preliminar. Detecta, reporta y cuantifica:
   * Espacios en blanco accidentales (al principio y al final) y registros inválidos (solo espacios en blanco).
   * Valores nulos.
   * Inconsistencias de case en categóricos, distinguiendo entre "Online" y "online".
