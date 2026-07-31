@@ -58,8 +58,6 @@ El volumen de pedidos se mantiene estable (**+3.07%**), pero el negocio experime
 ![Dashboard Retención Clientes](./powerbi/customer_retention.gif)
 </details>
 
----
-
 ## 🎯 Recomendaciones Estratégicas 
 
 * **Prioridad alta (Corto plazo):** Reestructurar contratos con proveedores de *Computación* y *TV/Video* (costos actuales del **88%** vuelven inviable la categoría) e implementar un monto mínimo de compra *online* para diluir el impacto del envío fijo en *Accesorios*.
