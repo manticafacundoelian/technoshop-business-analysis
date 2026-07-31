@@ -197,7 +197,7 @@ Implementa la etapa de limpieza mediante funciones modulares y orquestadores esp
 </details>
 
 <details>
-<summary><b>🛢️ 2. Consultas y modelado analítico (SQL)</b></summary><br>
+<summary><b>🛢️ Consultas y modelado analítico (SQL)</b></summary><br>
 
 Scripts diseñados para responder eficientemente a las preguntas de negocio mediante consultas estructuradas en base de datos:
 * Uso de **CTEs** (*Common Table Expressions*) para segmentar y calcular las tasas de retención y pérdida de clientes por año.
@@ -207,7 +207,7 @@ Scripts diseñados para responder eficientemente a las preguntas de negocio medi
 </details>
 
 <details>
-<summary><b>📐 3. Modelo de datos (Power BI)</b></summary><br>
+<summary><b>📐 Modelo de datos (Power BI)</b></summary><br>
 
 El reporte implementa un enfoque de **Esquema en Estrella** (*Star Schema*) óptimo para el rendimiento analítico en DAX:
 * **Tabla de hechos:** `fact_pedidos`
