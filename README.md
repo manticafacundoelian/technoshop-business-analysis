@@ -229,9 +229,6 @@ Responsable de la etapa final (Load). Exporta el set de datos transformado y val
 *Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python)
 </details>
 
-*Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python)
-</details>
-
 <details>
 <summary><b>🛢️ Consultas y modelado analítico (SQL)</b></summary><br>
 
