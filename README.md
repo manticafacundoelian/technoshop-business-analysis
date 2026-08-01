@@ -1,68 +1,77 @@
 # Technoshop | Análisis de Negocio End-to-End
 
-**Introducción:** Este proyecto abarca el ciclo completo de un proceso de analítica de datos. Siguiendo el flujo técnico habitual, comprende el desarrollo de un **pipeline ETL modular en Python**, la construcción de **consultas analíticas en SQL (SQLite)** y la elaboración de un **dashboard interactivo en Power BI**, a partir del cual se obtienen conclusiones y recomendaciones estratégicas.
+**Introducción:**  
+Este proyecto abarca el ciclo completo de un proceso de analítica de datos. Siguiendo el flujo técnico habitual, comprende el desarrollo de un **pipeline ETL modular en Python**, la construcción de **consultas analíticas en SQL** y la elaboración de un **dashboard interactivo en Power BI**, a partir del cual se obtienen conclusiones y recomendaciones estratégicas.  
+Con fines de comunicación, este README invierte deliberadamente ese orden para priorizar lo más relevante para el lector: primero presenta los hallazgos y el impacto de negocio con sus correspondientes recomendaciones, y luego describe la arquitectura técnica que permitió obtenerlos.
 
-Con fines de comunicación, este README invierte deliberadamente ese orden para priorizar lo más relevante para el lector: primero presenta los hallazgos y el impacto de negocio, y luego describe la arquitectura técnica que permitió obtenerlos.
-
-**Objetivo:** Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
-
-**Stack Técnico Principal:**
-![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
+**Stack Técnico Principal:** ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
 
 ---
 
-## 📈 Crisis e Impacto Financiero
+## Objetivo 
+Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
 
-El volumen de pedidos se mantiene estable (**+3.07%**), pero el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.11%** debido a *shocks* de costos de proveedores (**+45.08%** YoY) y costos logísticos del *canal online* que canibalizan el margen de productos masivos.
+## 📈 Problema de Negocio
 
-### Análisis detallado (Reporte Power BI):
+Si bien el volumen de pedidos se mantiene estable, el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.11%**.  
+
+## 📊 Preguntas de Negocio y Hallazgos (Reporte Power BI)
 
 <details>
-<summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para ver)</b></summary><br>
+<summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para expandir)</b></summary><br>
 
-* Al cierre del año fiscal 2025, la fuerza operativa se mantiene saludable, registrando un incremento del **+3.07%** en pedidos entregados (**1,434** vs. **1,478** órdenes).  
-* La **Ganancia Neta** se derrumbó un **-57.11%** (de $169,390 a $72,654) y el **Margen Neto Real** se redujo a la mitad (de **31.90%** a **16.90%**).  
-* Se observa un traslado de la operación del *canal físico* al *online* con una caída del **Ticket Promedio** de **21.47%**.
+Al cierre del año fiscal 2025, el volumen operativo general se mantiene estable con un incremento del **+3.07%** en pedidos entregados (**1,478 vs. 1,434** del periodo anterior). Sin embargo, la **Ganancia Neta** global se derrumbó un **-57.11%** (de $169,390 a $72,654) y el **Margen Neto Real** se redujo a la mitad, cerrando en un **16.90%**. 
+
+Este resultado responde a dinámicas opuestas por canal: el **Canal Físico sufrió una contracción del -71.67% en su Ganancia Neta** explicada por la pérdida de escala, al desplomarse sus pedidos (**422 vs. 641**) y su Ticket Promedio un **-32.47%** ($275). En contraste, la demanda migró masivamente hacia el **Canal Online**, el cual actuó como motor de volumen expandiendo sus órdenes (**1,056 vs. 793**) y registrando un **Revenue Neto de $313,802** con un Ticket Promedio superior ($297).
 
 ![Dashboard Ejecutivo](./powerbi/executive_overview.gif)
 </details>
 
 <details>
-<summary><b>2. Diagnóstico de Rentabilidad — ¿Por qué cayó la rentabilidad? (Clic para ver)</b></summary><br>
+<summary><b>2. Diagnóstico de Rentabilidad — ¿Por qué cayó la rentabilidad? (Clic para expandir)</b></summary><br>
+  
+La rentabilidad global fue fuertemente erosionada en dos frentes:  
 
-* La participación del **Costo de Mercadería** saltó del **66.07%** al **78.84%** (**+12.77** p.p.), aplastando el margen de ganancia para 2025.  
-* En 2025 la tendencia de precios se invirtió: los costos de proveedores explotaron un **+45.08%** (YoY) y el *retail* solo pudo ajustar precios un **+17.39%** para no destruir la demanda.  
-* El crecimiento del *canal online* triplicó su facturación (**$313K**), pero disparó el costo de envíos global del negocio del **2.03%** al **4.25%**, canibalizando la utilidad neta.
+* **Crisis de Margen de Compra (Efecto Tijera):** El **% Costo de Mercadería** general saltó del **66.07% al 78.84% (+12.77 p.p.)**. Este impacto afectó por igual a la estructura de ambos canales (ambos en ~78.9%), debido a que los costos de proveedores explotaron un **+45.08% (YoY)** y el *retail* solo pudo indexar precios un **+17.39%** para proteger la demanda.
+* **Fuga Logística Digital:** El **% Costo Logístico** consolidado del negocio aumentó del **1.98% al 4.13% (+2.15 p.p.)**. Al analizar de forma aislada el **Canal Online**, este indicador específico escala hasta el **5.66%**, lo que significa que el canal que sostuvo el volumen del negocio fue también el que absorbió la mayor penalización en por costos de envío, canibalizando su propio margen neto (15.29%).
 
 ![Dashboard Diagnostico de Rentabilidad](./powerbi/profitability_diagnosis.gif)
 </details>
 
 <details>
-<summary><b>3. Performance de Productos — ¿Dónde conviene intervenir? (Clic para ver)</b></summary><br>
+<summary><b>3. Performance de Productos — ¿Dónde conviene intervenir? (Clic para expandir)</b></summary><br>
 
-* El **Costo de la Mercadería** de categorías de alto *ticket* (*Computación*, *Telefonía* y *TV/Video*) empujó sus márgenes netos por debajo de la media (incluso a margen negativo), convirtiéndose en los principales causantes de la crisis.
-* La categoría *Accesorios* escaló al primer lugar en contribución de ganancias en 2025 (**$22,092**) gracias a un colchón de margen original más alto y un incremento en unidades vendidas. 
-* Los productos masivos pero baratos (como *Organizador de Cables* o *Limpiador de Pantallas*) operan con ganancia neta negativa en el *canal online*, debido a que el envío fijo devora el margen.
+* **Crisis en Categorías Core:** Las categorías de alto ticket (*Computación*, *Telefonía* y *TV/Video*) sufrieron un colapso en su rentabilidad, cerrando todas **por debajo de la media global (16.90%)**. Si bien en la vista consolidada defienden márgenes positivos bajos, la presión inflacionaria de los proveedores reduce severamente su colchón de ganancia, destacando *TV/Video* con apenas un **8.29% de margen neto** dentro del canal digital.
+* **Mitigación y Dispersión en Accesorios:** La categoría *Accesorios* es el principal pulmón financiero del negocio en el entorno digital, aportando **$12,915 en Ganancia Neta** con un sólido **27.64% de margen** y **1,300 unidades vendidas**. Sin embargo, el reporte revela una **alta variación interna**: mientras algunos artículos sostienen el negocio, la categoría concentra la mayor cantidad de productos con margen negativo debido a la brecha de precios entre sus componentes.
+* **Efecto Envío Fijo (Canal Online):** Al analizar de forma aislada la operación digital, el tablero enciende las alarmas al registrar **5 Productos No Rentables**. El gráfico de dispersión (*Mix de Catálogo*) muestra de forma explícita cómo múltiples artículos masivos de bajo precio cruzan la barrera del 0% hacia terreno negativo. Al auditar el *Top 5 con Menor Ganancia*, se identifica la fuga de valor liderada por el *Organizador de Cables* **($85)**, *Limpiador de Pantallas* **($50)** y *Chromecast Google TV* **($22)**, confirmando que la estructura de fletes fijos devora la totalidad del margen de los productos económicos.
 
 ![Dashboard Performance de Producto](./powerbi/product_performance.gif)
 </details>
 
 <details>
-<summary><b>4. Retención de Clientes — ¿Qué hacer con la base de clientes? (Clic para ver)</b></summary><br>
+<summary><b>4. Retención de Clientes — ¿Qué hacer con la base de clientes? (Clic para expandir)</b></summary><br>
 
-* El negocio experimenta una contracción de **Clientes Activos** (de **530** a **472**) y la **Tasa de Pérdida** (*churn*) trepó al **50.94%**, superando por primera vez a la **Tasa de Retención**.  
-* Para 2025 el porcentaje de **Clientes Retenidos** aumenta su proporción en la base (del **45.28%** al **68.77%**) y aportan el **68.77%** del *revenue*. Los **Clientes Nuevos** caen todos los años.  
-* *Computación* y *TV/Video* son las categorías que más clientes pierden (**84.62%** y **80.60%** respectivamente), representando el mayor *revenue* potencial perdido.
-* Los clientes con más frecuencia de compra son también los de mayor **Ticket Promedio**, y estos aumentaron para 2025.
+* **Contracción de la base:** Los **Clientes Activos** disminuyeron de **530 a 472**, impulsados por una **Tasa de Churn (Pérdida)** que trepó al **50.94%**, superando por primera vez a la Tasa de Retención.
+* **Dependencia de la retención:** Durante 2025, los **Clientes Retenidos** aumentaron su peso en la base (del **45.28% al 55.08%**), aportando el **68.77%** del *revenue* total. En contraste, la adquisición de **Clientes Nuevos** muestra una caída consecutiva año a año.
+* **Fuga de Revenue por Categoría:** *Computación* y *TV/Video* registran la mayor pérdida de clientes (**84.62% y 80.60%** respectivamente), consolidándose como las categorías con mayor impacto en el costo de oportunidad del negocio.
+* **Correlación de Valor:** Los clientes con mayor frecuencia de compra registran también el **Ticket Promedio** más alto, métrica que mostró un incremento saludable durante 2025.
 
 ![Dashboard Retención Clientes](./powerbi/customer_retention.gif)
 </details>
 
 ## 🎯 Recomendaciones Estratégicas 
 
-* **Prioridad alta (Corto plazo):** Reestructurar contratos con proveedores de *Computación* y *TV/Video* (costos actuales del **88%** vuelven inviable la categoría) e implementar un monto mínimo de compra *online* para diluir el impacto del envío fijo en *Accesorios*.
-* **Prioridad media (Mediano plazo):** Lanzar planes de fidelización enfocados en la base de **Clientes Retenidos**, ya que operan como el motor principal del negocio (aportando el **68.77%** del *revenue* y registrando la mayor frecuencia de compra y **Ticket Promedio**). Dentro de esta estrategia, la acción inmediata es blindar a los **97** *Clientes de Alto Valor* que concentran el **73%** de la facturación. Una vez asegurada esta retención, se recomienda reactivar la captación de clientes nuevos para revertir su tendencia a la baja interanual que amenaza la salud del negocio a largo plazo. Asimismo, se sugiere automatizar estrategias de *cross-selling* hacia categorías eficientes como *Audio* (**28.20%** de margen).
-* **Prioridad baja (Largo plazo):** Evaluar la reconversión de tiendas físicas ineficientes en centros de despacho logísticos, dado que el *canal físico* redujo su ganancia neta a un tercio y el *online* concentra el grueso del *revenue* (**$313K**).
+* **Prioridad Alta (Corto Plazo):** 
+  * Reestructurar contratos con proveedores de *Computación* y *TV/Video* (los costos actuales del **88%** vuelven inviable la operación de estas categorías).
+  * Implementar un **monto mínimo de compra** en el *canal online* para diluir el impacto del envío fijo en productos de ticket bajo (*Accesorios*).
+* **Prioridad Media (Mediano Plazo):** 
+  * Lanzar planes de fidelización enfocados en la base de **Clientes Retenidos**, ya que operan como el motor principal del negocio (aportan el **68.77%** del *revenue*).
+  * **Acción inmediata:** Blindar a los **97 Clientes de Alto Valor** que concentran el **73% de la facturación**. 
+  * Reactivar de forma controlada la captación de clientes nuevos para revertir la tendencia a la baja interanual.
+  * Automatizar estrategias de *cross-selling* desde productos de bajo margen hacia categorías eficientes como *Audio* (**28.20% de margen**).
+* **Prioridad Baja (Largo Plazo):** 
+  * Evaluar la reconversión de tiendas físicas ineficientes en centros de despacho logísticos, dado que el *canal físico* redujo su ganancia neta a un tercio y el *online* ya concentra el grueso del revenue (**$313K**).
+
 
 ---
 
@@ -190,6 +199,35 @@ Implementa la etapa de limpieza mediante funciones modulares y orquestadores esp
 </ul>
 
 </details>
+<details>
+<summary><b>├──⚙️ <code>transform.py</code> — Transformación y Consolidación de Hechos</b></summary>
+
+<br>
+
+Aplica la lógica de negocio final y consolida el dataset antes de la carga, ejecutando la transición hacia un modelo dimensional optimizado.
+
+<br>
+
+<b>Acciones implementadas</b>
+
+<ul>
+  <li><b>Desnormalización Transaccional:</b> Combina mediante un proceso de cruzado (<code>Merge</code>) las tablas limpias de <code>fact_pedidos</code> y <code>fact_detalle_pedidos</code>, generando la entidad unificada <code>fact_pedidos_final</code> a nivel de línea transaccional.</li>
+  <li><b>Preparación Dimensional:</b> Estructura de forma definitiva los archivos maestros de clientes y productos que alimentarán de forma óptima el posterior modelo en estrella de Power BI.</li>
+</ul>
+
+</details>
+
+<details>
+<summary><b>├──🚀 <code>load.py</code> — Carga de Datos en Destinos</b></summary>
+
+<br>
+
+Responsable de la etapa final (Load). Exporta el set de datos transformado y validado hacia la carpeta de almacenamiento final (<code>data/processed/</code>) y orquesta la actualización de los destinos analíticos.
+
+</details>
+
+*Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python)
+</details>
 
 *Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python)
 </details>
@@ -213,6 +251,8 @@ El reporte implementa un enfoque de **Esquema en Estrella** (*Star Schema*) ópt
 
 ![Vista de Modelo](./powerbi/model_view.png)
 </details>
+
+
 
 
 
