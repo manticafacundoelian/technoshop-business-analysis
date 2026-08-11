@@ -7,7 +7,8 @@ Con fines de comunicación, este README invierte deliberadamente ese orden para 
 ### Objetivo: 
 Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
 
-### Stack Técnico Principal: ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
+### Stack Técnico Principal:  
+![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
 
 ---
 
@@ -231,64 +232,13 @@ Responsable de la etapa final (Load). Exporta el set de datos transformado y val
 <details>
 <summary><b>🛢️ Investigación analítica y modelado (SQL)</b></summary><br>
 
-### Capa analítica — View `fact_pedidos_analitica`
+Se construyó una View analítica (fact_pedidos_analitica) sobre la tabla de hechos para centralizar la lógica de negocio y las principales métricas de rentabilidad.
 
-Antes de desarrollar las consultas de análisis se construyó una **View analítica** sobre `fact_pedidos_final`, destinada a centralizar la lógica de negocio.
+A partir de esta capa se desarrolló una investigación SQL progresiva para diagnosticar la caída de rentabilidad, analizando:
 
-La View:
+Evolución del negocio → Costos → Pricing → Mix → Canal → Producto
 
-- Filtra y clasifica la información según el **estado del pedido**, diferenciando pedidos entregados de cancelados y devueltos.
-- Calcula métricas de línea reutilizables como **Revenue Bruto, Descuentos, Revenue Neto, Costo de Mercadería, Costo de Envío y Ganancia Neta Real**.
-- Centraliza las reglas de cálculo para mantener consistencia entre las distintas consultas.
-- Reduce la repetición de lógica en las consultas posteriores y facilita la construcción de análisis más complejos.
-
-De esta forma, la View funciona como una **capa semántica intermedia entre los datos transaccionales y las consultas analíticas**, permitiendo que los scripts posteriores se concentren en responder preguntas de negocio en lugar de repetir reglas de transformación.
-
-
-### Investigación de rentabilidad  
-
-Con los datos limpios después de pasar por el *pipeline*, el análisis se estructuró como una investigación progresiva, donde cada consulta responde una pregunta de negocio y habilita la siguiente:
-
-**1. Diagnóstico ejecutivo — ¿Qué pasó con el negocio?**
-
-Análisis anual de pedidos, Revenue Neto, Ganancia Neta Real, Margen Neto y Ticket Promedio, incorporando variaciones interanuales mediante `LAG()`.
-
-**Hallazgo:** en 2025 los pedidos entregados crecieron un **+3,07%**, mientras el Revenue Neto cayó **-19,07%**, la Ganancia Neta Real **-57,13%** y el Margen Neto pasó de **31,90% a 16,90%**.
-
-
-**2. Descomposición de rentabilidad — ¿Qué componentes deterioraron el resultado?**
-
-Desagregación de Revenue Neto, Costo de Mercadería, Costos de Envío, Pérdidas por pedidos no exitosos y Ganancia Neta Real, analizando tanto sus valores absolutos como su participación sobre el revenue.
-
-**Hallazgo:** el Costo de Mercadería pasó de representar el **66,07% al 78,85% del Revenue Neto**, mientras el costo logístico sobre revenue aumentó del **1,98% al 4,13%**.
-
-
-**3. Pricing — ¿Los precios acompañaron la evolución de los costos?**
-
-Comparación interanual del precio y costo promedio por producto, evitando que el volumen de ventas distorsione la evaluación de la estrategia de pricing.
-
-Se utilizaron agregaciones por producto y funciones de ventana para medir variaciones interanuales.
-
-**Hallazgo:** entre 2024 y 2025 el precio promedio por producto aumentó **+17,39%**, mientras el costo promedio aumentó **+45,10%**, reduciendo el spread promedio precio–costo en **35%**.
-
-
-**4. Mix de ventas — ¿Cambió la composición de los productos vendidos?**
-
-Análisis de participación de unidades y Revenue por categoría, comparando 2024 vs. 2025 y complementando el análisis con Revenue por unidad y Margen Neto.
-
-**Hallazgo:** la participación de Accesorios pasó de **73,76% a 79,89% de las unidades**, mientras Computación y Telefonía perdieron participación. El cambio de mix explica la reducción del valor promedio ponderado por unidad, pero no explica por sí solo la caída del margen, ya que todas las categorías deterioraron su rentabilidad.
-
-
-**5. Canal y logística — ¿El crecimiento Online agravó la presión sobre el margen?**
-
-Comparación de Revenue, participación del canal, costos logísticos y margen entre los canales Físico y Online.
-
-**Hallazgo:** Online pasó de representar **50,86% a 73,01% del Revenue**, mientras el costo de envío sobre revenue aumentó de **3,90% a 5,66%**. Sin embargo, el margen también cayó en el canal Físico, por lo que la logística constituye un factor adicional y no la causa estructural principal.
-
-
-**6. Productos prioritarios — ¿Dónde conviene intervenir?**
-
-Comparación interanual del Revenue, Ganancia Neta y Margen por producto para identificar los principales deterioros de rentabilidad y priorizar acciones comerciales.
+El análisis permitió identificar como principales señales de deterioro el aumento del peso del costo de mercadería, la contracción del spread precio–costo y el cambio en el mix de ventas. También se comprobó que el crecimiento del canal Online y el aumento del costo logístico contribuyen al deterioro, pero no explican por sí solos la caída estructural del margen.
 
 
 ### Técnicas SQL aplicadas
@@ -301,9 +251,9 @@ Comparación interanual del Revenue, Ganancia Neta y Margen por producto para id
 - **Segmentación temporal, por categoría, producto y canal.**
 - **Validación cruzada de métricas** entre SQL y Power BI para garantizar consistencia del modelo analítico.
 
-*Scripts disponibles en la carpeta:* [`/sql_queries`](./sql_queries)
+*La investigación completa y los scripts SQL se encuentran en* [`/sql_queries`](./sql_queries)
 
-*Scripts disponibles en la carpeta:* `/sql_queries`
+
 </details>
 
 <details>
