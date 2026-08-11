@@ -1,8 +1,9 @@
 # Technoshop | Análisis de Negocio End-to-End
 
 ### Introducción:  
-Este proyecto abarca el ciclo completo de un proceso de analítica de datos. Siguiendo el flujo técnico habitual, comprende el desarrollo de un **pipeline ETL modular en Python**, la construcción de **consultas analíticas en SQL** y la elaboración de un **dashboard interactivo en Power BI**, a partir del cual se obtienen conclusiones y recomendaciones estratégicas.  
-Con fines de comunicación, este README invierte deliberadamente ese orden para priorizar lo más relevante para el lector: primero presenta los hallazgos y el impacto de negocio con sus correspondientes recomendaciones, y luego describe la arquitectura técnica que permitió obtenerlos.
+Este proyecto abarca el ciclo completo de un proceso de analítica de datos: desde la construcción de un **pipeline ETL modular en Python**, pasando por la **investigación analítica en SQL**, hasta la elaboración de un **dashboard interactivo en Power BI**, a partir del cual se obtienen conclusiones y recomendaciones estratégicas.  
+
+Para priorizar la perspectiva de negocio, este README presenta primero los hallazgos, el impacto y las recomendaciones, y posteriormente la arquitectura técnica que permitió obtenerlos.
 
 ### Objetivo: 
 Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
@@ -14,10 +15,9 @@ Identificar las causas raíz de la caída de rentabilidad de una empresa de reta
 
 ## Problema de Negocio
 
-Si bien el volumen de pedidos se mantiene estable, el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.13%**.  
+Si bien el volumen de pedidos se mantiene relativamente estable, el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.13%**.  
 
-## Preguntas de Negocio y Hallazgos (Reporte Power BI)
-
+## Storytelling de Negocio — Hallazgos del Análisis en Power BI
 <details>
 <summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para expandir)</b></summary><br>
 
@@ -92,7 +92,7 @@ El proceso incorpora auditoría de calidad, reglas de negocio, integridad refere
 </details>
 
 <details>
-<summary><b>🛢️ Investigación analítica y modelado (SQL)</b></summary><br>
+<summary><b>🛢️ Investigación analítica (SQL)</b></summary><br>
 
 Se construyó una View analítica (fact_pedidos_analitica) sobre la tabla de hechos para centralizar la lógica de negocio y las principales métricas de rentabilidad.
 
