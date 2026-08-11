@@ -226,7 +226,7 @@ Responsable de la etapa final (Load). Exporta el set de datos transformado y val
 
 </details>
 
-*Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python)
+*Código fuente disponible en la carpeta:* [`/pipeline_python`](./pipeline_python/README.md)
 </details>
 
 <details>
@@ -251,7 +251,7 @@ El análisis permitió identificar como principales señales de deterioro el aum
 - **Segmentación temporal, por categoría, producto y canal.**
 - **Validación cruzada de métricas** entre SQL y Power BI para garantizar consistencia del modelo analítico.
 
-*La investigación completa y los scripts SQL se encuentran en* [`/sql_queries`](./sql_queries)
+*La investigación completa y los scripts SQL se encuentran en* [`/sql_queries`](./sql_queries/README.md)
 
 
 </details>
