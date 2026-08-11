@@ -1,28 +1,28 @@
 # Technoshop | Análisis de Negocio End-to-End
 
-**Introducción:**  
+### Introducción:  
 Este proyecto abarca el ciclo completo de un proceso de analítica de datos. Siguiendo el flujo técnico habitual, comprende el desarrollo de un **pipeline ETL modular en Python**, la construcción de **consultas analíticas en SQL** y la elaboración de un **dashboard interactivo en Power BI**, a partir del cual se obtienen conclusiones y recomendaciones estratégicas.  
 Con fines de comunicación, este README invierte deliberadamente ese orden para priorizar lo más relevante para el lector: primero presenta los hallazgos y el impacto de negocio con sus correspondientes recomendaciones, y luego describe la arquitectura técnica que permitió obtenerlos.
 
-**Stack Técnico Principal:** ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
+### Objetivo: 
+Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
+
+### Stack Técnico Principal: ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
 
 ---
 
-## Objetivo 
-Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
+## Problema de Negocio
 
-## 📈 Problema de Negocio
+Si bien el volumen de pedidos se mantiene estable, el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.13%**.  
 
-Si bien el volumen de pedidos se mantiene estable, el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.11%**.  
-
-## 📊 Preguntas de Negocio y Hallazgos (Reporte Power BI)
+## Preguntas de Negocio y Hallazgos (Reporte Power BI)
 
 <details>
 <summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para expandir)</b></summary><br>
 
-Al cierre del año fiscal 2025, el volumen operativo general se mantiene estable con un incremento del **+3.07%** en pedidos entregados (**1,478 vs. 1,434** del periodo anterior). Sin embargo, la **Ganancia Neta** global se derrumbó un **-57.11%** (de $169,390 a $72,654) y el **Margen Neto Real** se redujo a la mitad, cerrando en un **16.90%**. 
+Al cierre del año fiscal 2025, el volumen operativo general se mantiene estable con un incremento del **+3.07%** en pedidos entregados (**1,478 vs. 1,434** del periodo anterior). Sin embargo, la **Ganancia Neta** global se derrumbó un **-57.13%** (de $169,402 a $72,627) y el **Margen Neto Real** se redujo a la mitad, cerrando en un **16.90%**. 
 
-Este resultado responde a dinámicas opuestas por canal: el **Canal Físico sufrió una contracción del -71.67% en su Ganancia Neta** explicada por la pérdida de escala, al desplomarse sus pedidos (**422 vs. 641**) y su Ticket Promedio un **-32.47%** ($275). En contraste, la demanda migró masivamente hacia el **Canal Online**, el cual actuó como motor de volumen expandiendo sus órdenes (**1,056 vs. 793**) y registrando un **Revenue Neto de $313,802** con un Ticket Promedio superior ($297).
+Este resultado responde a dinámicas opuestas por canal: el **Canal Físico sufrió una contracción del -71.69% en su Ganancia Neta** explicada por la pérdida de escala, al desplomarse sus pedidos (**422 vs. 641**) y su Ticket Promedio un **-32.49%** ($275). En contraste, la demanda migró masivamente hacia el **Canal Online**, el cual actuó como motor de volumen expandiendo sus órdenes (**1,056 vs. 793**) y registrando un **Revenue Neto de $313,791** con un Ticket Promedio superior ($297).
 
 ![Dashboard Ejecutivo](./powerbi/executive_overview.gif)
 </details>
@@ -32,8 +32,8 @@ Este resultado responde a dinámicas opuestas por canal: el **Canal Físico sufr
   
 La rentabilidad global fue fuertemente erosionada en dos frentes:  
 
-* **Crisis de Margen de Compra (Efecto Tijera):** El **% Costo de Mercadería** general saltó del **66.07% al 78.84% (+12.77 p.p.)**. Este impacto afectó por igual a la estructura de ambos canales (ambos en ~78.9%), debido a que los costos de proveedores explotaron un **+45.08% (YoY)** y el *retail* solo pudo indexar precios un **+17.39%** para proteger la demanda.
-* **Fuga Logística Digital:** El **% Costo Logístico** consolidado del negocio aumentó del **1.98% al 4.13% (+2.15 p.p.)**. Al analizar de forma aislada el **Canal Online**, este indicador específico escala hasta el **5.66%**, lo que significa que el canal que sostuvo el volumen del negocio fue también el que absorbió la mayor penalización en por costos de envío, canibalizando su propio margen neto (15.29%).
+* **Deterioro de la relación precio–costo:** El **% Costo de Mercadería** general saltó del **66.07% al 78.85% (+12.78 p.p.)**. Este impacto afectó por igual a la estructura de ambos canales (ambos en ~78.9%), debido a que los costos de proveedores explotaron un **+45.08% (YoY)** y el *retail* solo pudo indexar precios un **+17.39%** para proteger la demanda.
+* **Fuga Logística Digital:** El **% Costo Logístico** consolidado del negocio aumentó del **1.98% al 4.13% (+2.15 p.p.)**. Al analizar de forma aislada el **Canal Online**, este indicador específico escala hasta el **5.66%**, lo que significa que el canal que sostuvo el volumen del negocio fue también el que absorbió la mayor penalización en por costos de envío, reduciendo su propio margen neto (15.29%).
 
 ![Dashboard Diagnostico de Rentabilidad](./powerbi/profitability_diagnosis.gif)
 </details>
@@ -59,7 +59,7 @@ La rentabilidad global fue fuertemente erosionada en dos frentes:
 ![Dashboard Retención Clientes](./powerbi/customer_retention.gif)
 </details>
 
-## 🎯 Recomendaciones Estratégicas 
+## Recomendaciones Estratégicas 
 
 * **Prioridad Alta (Corto Plazo):** 
   * Reestructurar contratos con proveedores de *Computación* y *TV/Video* (los costos actuales del **88%** vuelven inviable la operación de estas categorías).
@@ -72,7 +72,6 @@ La rentabilidad global fue fuertemente erosionada en dos frentes:
 * **Prioridad Baja (Largo Plazo):** 
   * Evaluar la reconversión de tiendas físicas ineficientes en centros de despacho logísticos, dado que el *canal físico* redujo su ganancia neta a un tercio y el *online* ya concentra el grueso del revenue (**$313K**).
 
-
 ---
 
 ## ⚙️ Ingeniería de Datos y Arquitectura
@@ -81,7 +80,7 @@ La rentabilidad global fue fuertemente erosionada en dos frentes:
 <summary><b>🐍 Pipeline ETL modular (Python + Pandas)</b></summary>
 <br>
 
-Para garantizar la calidad de los datos y la consistencia del análisis antes de ser consumidos por el modelo de BI, desarrollé un *pipeline* automatizado, modular y escalable.  
+Garantiza la calidad de los datos y la consistencia del análisis antes de ser utilizados en SQL o BI.
 
 #### Características del pipeline
 
@@ -230,11 +229,79 @@ Responsable de la etapa final (Load). Exporta el set de datos transformado y val
 </details>
 
 <details>
-<summary><b>🛢️ Consultas y modelado analítico (SQL)</b></summary><br>
+<summary><b>🛢️ Investigación analítica y modelado (SQL)</b></summary><br>
 
-Scripts diseñados para responder eficientemente a las preguntas de negocio mediante consultas estructuradas en base de datos:
-* Uso de **CTEs** (*Common Table Expressions*) para segmentar y calcular las tasas de retención y pérdida de clientes por año.
-* Implementación de agregaciones y uniones complejas (`JOINs`) para consolidar el comportamiento omnicanal cruzando datos de tiendas físicas y plataformas *online*.
+### Capa analítica — View `fact_pedidos_analitica`
+
+Antes de desarrollar las consultas de análisis se construyó una **View analítica** sobre `fact_pedidos_final`, destinada a centralizar la lógica de negocio.
+
+La View:
+
+- Filtra y clasifica la información según el **estado del pedido**, diferenciando pedidos entregados de cancelados y devueltos.
+- Calcula métricas de línea reutilizables como **Revenue Bruto, Descuentos, Revenue Neto, Costo de Mercadería, Costo de Envío y Ganancia Neta Real**.
+- Centraliza las reglas de cálculo para mantener consistencia entre las distintas consultas.
+- Reduce la repetición de lógica en las consultas posteriores y facilita la construcción de análisis más complejos.
+
+De esta forma, la View funciona como una **capa semántica intermedia entre los datos transaccionales y las consultas analíticas**, permitiendo que los scripts posteriores se concentren en responder preguntas de negocio en lugar de repetir reglas de transformación.
+
+
+### Investigación de rentabilidad  
+
+Con los datos limpios después de pasar por el *pipeline*, el análisis se estructuró como una investigación progresiva, donde cada consulta responde una pregunta de negocio y habilita la siguiente:
+
+**1. Diagnóstico ejecutivo — ¿Qué pasó con el negocio?**
+
+Análisis anual de pedidos, Revenue Neto, Ganancia Neta Real, Margen Neto y Ticket Promedio, incorporando variaciones interanuales mediante `LAG()`.
+
+**Hallazgo:** en 2025 los pedidos entregados crecieron un **+3,07%**, mientras el Revenue Neto cayó **-19,07%**, la Ganancia Neta Real **-57,13%** y el Margen Neto pasó de **31,90% a 16,90%**.
+
+
+**2. Descomposición de rentabilidad — ¿Qué componentes deterioraron el resultado?**
+
+Desagregación de Revenue Neto, Costo de Mercadería, Costos de Envío, Pérdidas por pedidos no exitosos y Ganancia Neta Real, analizando tanto sus valores absolutos como su participación sobre el revenue.
+
+**Hallazgo:** el Costo de Mercadería pasó de representar el **66,07% al 78,85% del Revenue Neto**, mientras el costo logístico sobre revenue aumentó del **1,98% al 4,13%**.
+
+
+**3. Pricing — ¿Los precios acompañaron la evolución de los costos?**
+
+Comparación interanual del precio y costo promedio por producto, evitando que el volumen de ventas distorsione la evaluación de la estrategia de pricing.
+
+Se utilizaron agregaciones por producto y funciones de ventana para medir variaciones interanuales.
+
+**Hallazgo:** entre 2024 y 2025 el precio promedio por producto aumentó **+17,39%**, mientras el costo promedio aumentó **+45,10%**, reduciendo el spread promedio precio–costo en **35%**.
+
+
+**4. Mix de ventas — ¿Cambió la composición de los productos vendidos?**
+
+Análisis de participación de unidades y Revenue por categoría, comparando 2024 vs. 2025 y complementando el análisis con Revenue por unidad y Margen Neto.
+
+**Hallazgo:** la participación de Accesorios pasó de **73,76% a 79,89% de las unidades**, mientras Computación y Telefonía perdieron participación. El cambio de mix explica la reducción del valor promedio ponderado por unidad, pero no explica por sí solo la caída del margen, ya que todas las categorías deterioraron su rentabilidad.
+
+
+**5. Canal y logística — ¿El crecimiento Online agravó la presión sobre el margen?**
+
+Comparación de Revenue, participación del canal, costos logísticos y margen entre los canales Físico y Online.
+
+**Hallazgo:** Online pasó de representar **50,86% a 73,01% del Revenue**, mientras el costo de envío sobre revenue aumentó de **3,90% a 5,66%**. Sin embargo, el margen también cayó en el canal Físico, por lo que la logística constituye un factor adicional y no la causa estructural principal.
+
+
+**6. Productos prioritarios — ¿Dónde conviene intervenir?**
+
+Comparación interanual del Revenue, Ganancia Neta y Margen por producto para identificar los principales deterioros de rentabilidad y priorizar acciones comerciales.
+
+
+### Técnicas SQL aplicadas
+
+- **CTEs (`WITH`)** para estructurar consultas complejas por etapas.
+- **Window Functions** (`LAG`, `ROW_NUMBER`) para variaciones interanuales y rankings.
+- **JOINs** entre tablas de hechos y dimensiones.
+- **Agregaciones y métricas derivadas** para Revenue, costos, margen, mix y rentabilidad.
+- **Análisis de participación** sobre unidades y Revenue.
+- **Segmentación temporal, por categoría, producto y canal.**
+- **Validación cruzada de métricas** entre SQL y Power BI para garantizar consistencia del modelo analítico.
+
+*Scripts disponibles en la carpeta:* [`/sql_queries`](./sql_queries)
 
 *Scripts disponibles en la carpeta:* `/sql_queries`
 </details>
@@ -248,8 +315,3 @@ El reporte implementa un enfoque de **Esquema en Estrella** (*Star Schema*) ópt
 
 ![Vista de Modelo](./powerbi/model_view.png)
 </details>
-
-
-
-
-
