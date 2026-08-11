@@ -60,6 +60,8 @@ La rentabilidad global fue fuertemente erosionada en dos frentes:
 ![Dashboard Retención Clientes](./powerbi/customer_retention.gif)
 </details>
 
+*Ver investigación y consultas SQL:* [`/powerbi`](./powerbi/README.md)
+
 ## Recomendaciones Estratégicas 
 
 * **Prioridad Alta (Corto Plazo):** 
