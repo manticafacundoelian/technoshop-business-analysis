@@ -43,7 +43,7 @@ Carga defensiva de los archivos CSV de origen desde la ruta `data/raw/`.
   - **Lectura segura (`_read_csv_safe`):** Captura fallos de infraestructura (archivos no encontrados o corruptos) evitando interrupciones abruptas de ejecución.
   - **Auditoría de volumen inicial:** Registra en logs la cantidad exacta de filas extraídas por cada entidad antes de cualquier procesamiento.
  
-*Ver script de extracción:* [`/extract.py`](./extract.py)
+*Ver script de extracción:* [`/extract.py`](./src/extract.py)
 
 ---
 
@@ -76,7 +76,8 @@ Realiza una auditoría integral de los datos antes de iniciar la limpieza. Los h
 #### Integridad referencial
 - Verificación de que las claves foráneas (`FK`) existan en sus correspondientes dimensiones (`PK`).
 
-*Ver script de auditoría de calidad:* [`/inspect.py`](./inspect.py)
+*Ver script de auditoría de calidad:* [`/inspect.py`](./src/inspect.py)
+
 ---
 
 ### 🧼 `clean.py` — Limpieza y Normalización de Datos 
@@ -119,7 +120,8 @@ Implementa la limpieza mediante funciones modulares y orquestadores específicos
 - Eliminación de líneas de detalle sin pedido padre válido.
 - Eliminación de líneas asociadas a productos inexistentes.
 
-*Ver script de limpieza y normalización:* [`/clean.py`](./clean.py)
+*Ver script de limpieza y normalización:* [`/clean.py`](./src/clean.py)
+
 ---
 
 ### ⚙️ `transform.py` — Transformación y Consolidación de Datos 
@@ -139,7 +141,8 @@ Aplica la lógica de negocio final, prorratea costos operativos y consolida los 
 - **Hecho analítico:** Ordenamiento cronológico por `fecha_pedido` y selección estricta de columnas para generar `fact_pedidos_final` con granularidad de línea transaccional, donde cada registro representa un producto dentro de un pedido.
 - **Preparación de dimensiones:** Estructuración y paso directo de los datasets maestros de clientes y productos limpios.
 
-*Ver script de transformación y consolidación de datos:* [`/transform.py`](./transform.py)
+*Ver script de transformación y consolidación de datos:* [`/transform.py`](./src/transform.py)
+
 ---
 
 ### 💾 `load.py` — Carga y Generación de Datasets Procesados
@@ -156,7 +159,8 @@ Módulo encargado de exportar los DataFrames desde la memoria hacia las carpetas
   - Funciones independientes para la persistencia de datasets Clean/Staging y Processed.
   - Control preventivo que valida el estado de cada DataFrame y evita generar o sobrescribir archivos si el dataset llega vacío o como `None`.
  
-*Ver script de carga de datasets procesados:* [`/load.py`](./load.py)
+*Ver script de carga de datasets procesados:* [`/load.py`](./src/load.py)
+
 ---
 
 ## 🛠️ `main.py` — Orquestador Central
