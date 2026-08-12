@@ -38,10 +38,12 @@ En conjunto, los resultados muestran que **el crecimiento del volumen Online no 
 <details>
 <summary><b>2. Diagnóstico de Rentabilidad — ¿Por qué cayó la rentabilidad? (Clic para expandir)</b></summary><br>
   
-La rentabilidad global fue fuertemente erosionada en dos frentes:  
+La rentabilidad global fue fuertemente erosionada por un deterioro estructural de la relación precio–costo, acompañado por un incremento del costo logístico del canal digital.
 
-* **Deterioro de la relación precio–costo:** El **% Costo de Mercadería** general saltó del **66.07% al 78.85% (+12.78 p.p.)**. Este impacto afectó por igual a la estructura de ambos canales (ambos en torno al 78%), debido a que los costos de proveedores explotaron un **+45.08% (YoY)** y el *retail* solo pudo indexar precios un **+17.39%** para proteger la demanda. Este deterioro constituye el principal factor identificado detrás de la contracción del margen.
-* **Fuga Logística Digital:** El **% Costo Logístico** consolidado del negocio aumentó del **1.98% al 4.13% (+2.15 p.p.)**. Al analizar de forma aislada el **Canal Online**, este indicador específico escala hasta el **5.66%**, lo que significa que el canal que sostuvo el volumen del negocio fue también el que absorbió la mayor penalización por costos de envío, reduciendo su propio margen neto (15.28%) y colaborando a la pérdida de margen general.
+* **Deterioro de la relación precio–costo:** El **% Costo de Mercadería** sobre el Revenue Neto aumentó del **66,07% al 78,85% (+12,78 p.p.)** entre 2024 y 2025. El deterioro se replica prácticamente por igual en ambos canales: **Físico (66,61% → 78,74%)** y **Online (65,54% → 78,89%)**. La investigación precio–costo muestra el origen del problema: mientras el **precio unitario promedio aumentó un +17,39%**, el **costo unitario promedio creció un +45,08%**, comprimiendo significativamente el spread entre precio y costo. Este deterioro constituye el **principal factor identificado detrás de la contracción del margen**.
+
+* **Presión logística sobre el canal Online:** El **% Costo Logístico** consolidado aumentó del **1,98% al 4,13%**. El impacto se concentra en el canal Online, donde pasó del **3,90% al 5,66%**. Si bien el canal absorbió el crecimiento de la demanda y elevó su Revenue Neto un **+16,18%**, su Ganancia Neta cayó un **-41,70%** y su Margen Neto se redujo del **30,46% al 15,28%**. La logística, por tanto, actúa como un **factor adicional de erosión del margen**, pero no explica por sí sola el deterioro estructural observado en ambos canales.
+
 
 ![Dashboard Diagnostico de Rentabilidad](./powerbi/profitability_diagnosis.gif)
 </details>
