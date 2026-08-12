@@ -152,10 +152,10 @@ El análisis permitió identificar como principales señales de deterioro:
 
 El reporte implementa un **Esquema en Estrella (Star Schema)**, utilizando la tabla transaccional generada por el pipeline como tabla de hechos y conectándola con las dimensiones correspondientes.
 
-- **⭐ Tabla de hechos:** `fact_pedidos_final`
-- **👤 Dimensión:** `dim_clientes`
-- **📦 Dimensión:** `dim_productos`
-- **📅 Dimensión:** `dim_calendario`
+- **Tabla de hechos:** `fact_pedidos_final`
+- **Dimensión:** `dim_clientes`
+- **Dimensión:** `dim_productos`
+- **Dimensión:** `dim_calendario`
 
 La tabla de hechos mantiene una **granularidad de línea de producto**, mientras que las dimensiones aportan el contexto necesario para el análisis por cliente, producto y período.
 
