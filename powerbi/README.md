@@ -1,6 +1,6 @@
-# Power BI — Modelo Analítico y Dashboard
+# TechnoShop | Modelado Analítico y Capa Semántica - PowerBI 
 
-Este directorio contiene el modelo analítico y el reporte desarrollado en **Power BI** para la explotación de los datos procesados por el pipeline ETL y enriquecidos mediante la capa analítica SQL.
+Este directorio contiene el modelo analítico y el reporte desarrollado en **Power BI** para la explotación de los datos procesados por el pipeline ETL, complementados con la lógica analítica desarrollada durante la investigación SQL.
 
 El reporte implementa un **Esquema en Estrella (Star Schema)** y una capa semántica basada en **medidas DAX**, orientada al análisis de ventas, rentabilidad, productos, canales y comportamiento de clientes.
 
@@ -14,9 +14,7 @@ El modelo utiliza una estructura dimensional compuesta por una tabla de hechos y
 
 ![Modelo de Datos](./model_view.png)
 
-### ⭐ Tabla de hechos
-
-**`fact_pedidos_final`**
+### `fact_pedidos_final`**
 
 La tabla de hechos presenta una **granularidad a nivel de línea de producto**:
 
@@ -41,7 +39,7 @@ Entre los principales atributos utilizados se encuentran:
 
 Las métricas económicas derivadas no se almacenan necesariamente como columnas físicas en esta tabla, sino que se calculan posteriormente mediante la capa semántica de Power BI.
 
-### 👤 `dim_clientes`
+### `dim_clientes`
 
 Contiene los atributos descriptivos necesarios para analizar el comportamiento de los clientes.
 
@@ -53,7 +51,7 @@ Permite segmentar el análisis por variables como:
 - Características demográficas disponibles.
 - Otras dimensiones descriptivas.
 
-### 📦 `dim_productos`
+### `dim_productos`
 
 Contiene la información descriptiva del catálogo.
 
