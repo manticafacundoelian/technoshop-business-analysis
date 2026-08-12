@@ -1,4 +1,4 @@
-# TechnoShop | Modelado Analítico y Capa Semántica - PowerBI 
+# TechnoShop | Modelado Analítico y Dashboard - PowerBI 
 
 Este directorio contiene el modelo analítico y el reporte desarrollado en **Power BI** para la explotación de los datos procesados por el pipeline ETL, complementados con la lógica analítica desarrollada durante la investigación SQL.
 
