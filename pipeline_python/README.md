@@ -6,7 +6,7 @@ Pipeline ETL modular desarrollado en **Python + Pandas** para transformar los da
 
 ---
 
-## 🏗️ Arquitectura del pipeline
+## Arquitectura del pipeline
 
 El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging → Processed*). A continuación se detalla la organización de carpetas, la responsabilidad de cada módulo y el flujo de ejecución:
 
@@ -14,7 +14,7 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging 
 
 ---
 
-## ✨ Características principales
+## Características principales
 
 - **Arquitectura modular y escalabilidad:** Cada etapa del proceso se encuentra desacoplada en módulos independientes y organizada mediante funciones auxiliares y orquestadores por entidad, facilitando su mantenimiento y expansión.
 - **Auditoría de calidad:** Detección de anomalías técnicas, reglas de negocio e integridad referencial antes de la limpieza.
@@ -26,18 +26,18 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging 
 
 ---
 
-## 📦 Detalle de Módulos
+## Detalle de Módulos
 
 ### 📥 `extract.py` — Ingesta de Datos 
 
 Carga defensiva de los archivos CSV de origen desde la ruta `data/raw/`.
 
-- **📥 Entradas (Disco - `data/raw/`):**
+- **Entradas (Disco - `data/raw/`):**
   - `fact_pedidos_raw.csv`
   - `fact_detalle_pedidos_raw.csv`
   - `dim_clientes_raw.csv`
   - `dim_productos_raw.csv`
-- **📤 Salidas (Memoria):**
+- **Salidas (Memoria):**
   - DataFrames en bruto: `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
 - **⚙️ Detalle técnico:**
   - **Lectura segura (`_read_csv_safe`):** Captura fallos de infraestructura (archivos no encontrados o corruptos) evitando interrupciones abruptas de ejecución.
@@ -51,11 +51,11 @@ Carga defensiva de los archivos CSV de origen desde la ruta `data/raw/`.
 
 Realiza una auditoría integral de los datos antes de iniciar la limpieza. Los hallazgos se registran en terminal y se consolidan en un reporte estructurado en formato JSON.
 
-- **📥 Entradas (Memoria):**
+- **Entradas (Memoria):**
   - DataFrames raw (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
-- **📤 Salidas (Consola / JSON):**
+- **Salidas (Consola / JSON):**
   - Diccionario estructurado `quality_report` (impreso en consola en formato JSON).
-- **⚙️ Detalle técnico:**
+- **Detalle técnico:**
 
 #### Calidad técnica
 - Detección de espacios en blanco y registros compuestos únicamente por espacios.
@@ -84,11 +84,11 @@ Realiza una auditoría integral de los datos antes de iniciar la limpieza. Los h
 
 Implementa la limpieza mediante funciones modulares y orquestadores específicos para cada entidad. Las anomalías son corregidas, imputadas, neutralizadas o descartadas según su naturaleza, manteniendo trazabilidad de las acciones realizadas.
 
-- **📥 Entradas (Memoria):**
+- **Entradas (Memoria):**
   - DataFrames raw (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
-- **📤 Salidas (Memoria):**
+- **Salidas (Memoria):**
   - DataFrames limpios: `pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean`.
-- **⚙️ Detalle técnico:**
+- **Detalle técnico:**
 
 #### Calidad técnica
 - Eliminación de espacios en los bordes de textos.
@@ -128,11 +128,11 @@ Implementa la limpieza mediante funciones modulares y orquestadores específicos
 
 Aplica la lógica de negocio final, prorratea costos operativos y consolida los datasets finales para el modelo analítico.
 
-- **📥 Entradas (Memoria):**
+- **Entradas (Memoria):**
   - DataFrames limpios (`pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean`).
-- **📤 Salidas (Memoria):**
+- **Salidas (Memoria):**
   - Modelo dimensional final: `fact_pedidos_final`, `clientes_clean` (como `dim_clientes`), `productos_clean` (como `dim_productos`).
-- **⚙️ Detalle técnico:**
+- **Detalle técnico:**
 
 #### Principales transformaciones
 - **Prorrateo del costo de envío:** Cálculo automatizado de `items_por_pedido` para prorratear equitativamente el costo de envío por cada línea transaccional (`costo_envio_linea`).
@@ -149,13 +149,13 @@ Aplica la lógica de negocio final, prorratea costos operativos y consolida los 
 
 Módulo encargado de exportar los DataFrames desde la memoria hacia las carpetas correspondientes en disco.
 
-- **📥 Entradas (Memoria):**
+- **Entradas (Memoria):**
   - DataFrames de la capa Clean/Staging.
   - DataFrames del modelo analítico final.
-- **📤 Salidas (Disco):**
+- **Salidas (Disco):**
   - **Capa Staging (`data/clean/`):** `fact_pedidos_clean.csv`, `fact_detalle_pedidos_clean.csv`, `dim_clientes_clean.csv`, `dim_productos_clean.csv`.
   - **Capa Procesada (`data/processed/`):** `fact_pedidos_final.csv`, `dim_clientes.csv`, `dim_productos.csv`.
-- **⚙️ Detalle técnico:**
+- **Detalle técnico:**
   - Funciones independientes para la persistencia de datasets Clean/Staging y Processed.
   - Control preventivo que valida el estado de cada DataFrame y evita generar o sobrescribir archivos si el dataset llega vacío o como `None`.
  
