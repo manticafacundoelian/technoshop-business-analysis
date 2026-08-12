@@ -69,7 +69,7 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 ![Dashboard Retención Clientes](./powerbi/customer_retention.gif)
 </details>
 
-*Ver modelado y análisis en Power BI:* [`/powerbi`](./powerbi/README.md)
+*Descargar reporte en Power BI:* [`/technoshop_business_analysis.pbix`](./powerbi/technoshop_business_analysis.pbix)
 
 ## Recomendaciones Estratégicas 
 
@@ -169,5 +169,6 @@ Sobre este modelo se construye la **capa semántica mediante medidas DAX**, dond
 
 Esta separación permite mantener las tablas transaccionales y dimensionales como base estructural del modelo, mientras que la lógica de cálculo de los indicadores se concentra en la capa semántica de Power BI.
 
-![Vista de Modelo](./powerbi/model_view.png)
+*Ver modelado analítico, capa semántica, y dashboard completos:* [`/powerbi`](./powerbi/README.md)
+
 </details>
