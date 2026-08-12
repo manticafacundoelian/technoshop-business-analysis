@@ -2,6 +2,10 @@
 
 Esta carpeta contiene las consultas SQL utilizadas para investigar la evolución de la rentabilidad de TechnoShop y determinar los principales factores asociados a su deterioro.
 
+### Stack técnico: ![SQL](https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=sqlite&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) 
+
+---
+
 ## Flujo de investigación
 
 La investigación sigue una secuencia progresiva, donde cada etapa profundiza el diagnóstico de la anterior:
