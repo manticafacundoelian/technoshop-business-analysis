@@ -1,4 +1,4 @@
-# Pipeline ETL — TechnoShop
+# TechnoShop | Pipeline ETL 
 
 Pipeline ETL modular desarrollado en **Python + Pandas** para transformar los datos CSV de origen en datasets limpios, consistentes y listos para su explotación analítica en SQL y Power BI.
 
