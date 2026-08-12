@@ -39,7 +39,7 @@ Carga defensiva de los archivos CSV de origen desde la ruta `data/raw/`.
   - `dim_productos_raw.csv`
 - **Salidas (Memoria):**
   - DataFrames en bruto: `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
-- **⚙️ Detalle técnico:**
+- **Detalle técnico:**
   - **Lectura segura (`_read_csv_safe`):** Captura fallos de infraestructura (archivos no encontrados o corruptos) evitando interrupciones abruptas de ejecución.
   - **Auditoría de volumen inicial:** Registra en logs la cantidad exacta de filas extraídas por cada entidad antes de cualquier procesamiento.
  
