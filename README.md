@@ -106,7 +106,7 @@ El proceso incorpora:
 
 ![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)
 
-*Ver documentación y estructura del pipeline:* [`/pipeline_python`](./pipeline_python/README.md)
+*Ver documentación y estructura completa del pipeline:* [`/pipeline_python`](./pipeline_python/README.md)
 </details>
 
 <details>
@@ -143,8 +143,6 @@ El análisis permitió identificar como principales señales de deterioro:
 - **Validación cruzada de métricas** entre SQL y Power BI para garantizar consistencia del modelo analítico.
 
 *Ver investigación y consultas SQL:* [`/sql_queries`](./sql_queries/README.md)
-
-
 </details>
 
 <details>
