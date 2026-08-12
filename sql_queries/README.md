@@ -1,4 +1,4 @@
-# Investigación analítica — SQL
+# TechnoShop | Investigación analítica — SQL
 
 Esta carpeta contiene las consultas SQL utilizadas para investigar la evolución de la rentabilidad de TechnoShop y determinar los principales factores asociados a su deterioro.
 
