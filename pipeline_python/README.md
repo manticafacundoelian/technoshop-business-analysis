@@ -21,7 +21,8 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging 
 - **Trazabilidad:** Los hallazgos y las acciones aplicadas durante el proceso se registran continuamente mediante logs.
 - **Reporte estructurado:** Generación de un reporte consolidado de calidad en formato JSON.
 - **Reglas de negocio:** Tratamiento específico de anomalías según la naturaleza de cada entidad.
-- **Preparación analítica:** Generación de datasets procesados y estructurados para su posterior análisis dimensional.
+- **Estructuración de datos:** Integración de las tablas de pedidos y detalle de pedidos para generar una tabla transaccional consolidada a nivel de línea de producto.
+- **Preparación analítica:** Generación de datasets procesados y estructurados para su posterior carga en la base de datos y explotación analítica.
 
 ---
 
