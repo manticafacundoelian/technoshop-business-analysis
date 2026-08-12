@@ -21,9 +21,16 @@ Si bien el volumen de pedidos se mantiene relativamente estable, el negocio expe
 <details>
 <summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para expandir)</b></summary><br>
 
-Al cierre del año fiscal 2025, el volumen operativo general se mantiene relativamente estable con un incremento del **+3.07%** en pedidos entregados (**1,478 vs. 1,434** del periodo anterior). Sin embargo, la **Ganancia Neta** global se derrumbó un **-57.13%** (de $169,402 a $72,627) y el **Margen Neto** se redujo a la mitad, cerrando en un **16.90%**. 
+Al cierre del año fiscal 2025, el volumen operativo general se mantiene relativamente estable, con un incremento del **+3,07%** en los pedidos entregados (**1.478 vs. 1.434** del período anterior). Sin embargo, la **Ganancia Neta** global se derrumbó un **-57,13%**, pasando de **$169.402 a $72.627**, mientras que el **Margen Neto** se redujo casi a la mitad, cerrando en **16,90%**.
 
-Este resultado se produce en un contexto de dinámicas opuestas por canal: el **Canal Físico sufrió una contracción del -71.69% en su Ganancia Neta**, acompañada por una fuerte pérdida de escala: sus **pedidos cayeron de 641 a 422**  y su Ticket Promedio un **-32.49%**, hasta $275. En contraste, la demanda migró masivamente hacia el **Canal Online**, que actuó como motor de volumen al expandir sus órdenes de 793 a 1,056 y registrar un **Revenue Neto de $313,791** con un Ticket Promedio superior ($297). Sin embargo, el cambio de volumen no resulta suficiente para explicar la caída de la rentabilidad.
+Este deterioro presenta **dinámicas opuestas entre canales**:
+
+* El **Canal Físico** sufrió una contracción del **-71,69% en su Ganancia Neta** (**$87.136 vs. $24.667**), acompañada por una fuerte pérdida de escala: sus **pedidos cayeron de 641 a 422 (-34,32%)** y su **Ticket Promedio se redujo un -32,49%**, hasta **$275**.
+
+* En contraste, la demanda migró masivamente hacia el **Canal Online**, que actuó como motor de volumen al expandir sus órdenes de **793 a 1.056 (+33,42%)**. Sin embargo, este crecimiento no se tradujo en mayor rentabilidad: su **Ganancia Neta también cayó un -41,70%**, pasando de **$82.265 a $47.959**, aun con un Ticket Promedio superior (**$297**).
+
+En conjunto, los resultados muestran que **el crecimiento del volumen Online no fue suficiente para compensar la destrucción de rentabilidad en ambos canales**. Esto indica que el deterioro del negocio no responde únicamente a una contracción de la demanda, sino a una **pérdida de rentabilidad por operación**, cuya causa debe analizarse en la estructura de costos y márgenes.
+
 
 ![Dashboard Ejecutivo](./powerbi/executive_overview.gif)
 </details>
