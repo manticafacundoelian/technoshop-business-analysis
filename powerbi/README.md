@@ -1,8 +1,6 @@
-# TechnoShop | Modelado Analítico y Capa Semántica — Power BI
+# TechnoShop | Modelo Semántico y Reporte — Power BI
 
-Este directorio contiene el modelo analítico y el reporte interactivo desarrollado en **Power BI** para la explotación de los datos procesados por el pipeline ETL, complementados con la lógica analítica desarrollada durante la investigación SQL.
-
-El reporte implementa un modelo **dimensional basado en un Esquema en Estrella (Star Schema)** y una capa semántica construida mediante **medidas DAX**, orientada al análisis de ventas, rentabilidad, productos, canales y comportamiento de clientes.
+Este directorio contiene el modelo semántico y el reporte interactivo desarrollado en Power BI sobre los datos procesados por el pipeline ETL.
 
 ### Stack técnico: ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black) ![DAX](https://img.shields.io/badge/DAX-Yellow?style=flat-square&logo=powerbi&logoColor=black)
 
@@ -14,27 +12,25 @@ El reporte implementa un modelo **dimensional basado en un Esquema en Estrella (
 
 ## Modelo de Datos
 
-El reporte implementa un **modelo dimensional basado en un Esquema en Estrella (Star Schema)**, compuesto por una tabla de hechos `fact_pedidos_final` y las dimensiones maestras `dim_clientes`, `dim_productos` y `dim_calendario`.
+El reporte implementa un **modelo dimensional basado en un Esquema en Estrella (Star Schema)**, compuesto por una tabla de hechos `fact_pedidos_final` y las dimensiones maestras `dim_clientes`, `dim_productos` y `dim_calendario`.  
+
 ![Modelo de Datos](./model_view.png)
 
 ## Granularidad
-La tabla de hechos presenta una **granularidad a nivel de línea transaccional (ítem de pedido)**:
+
+La tabla de hechos conserva una **granularidad a nivel de línea transaccional (ítem de pedido)**:
 
 > **1 fila = 1 producto dentro de un pedido.**
-
-Esta granularidad permite analizar las transacciones desde múltiples niveles de agregación. 
-
-Las métricas económicas derivadas no se almacenan necesariamente como columnas físicas en esta tabla; los principales indicadores de negocio se calculan dinámicamente mediante medidas DAX en la capa semántica de Power BI.
 
 ---
 
 ## Capa Semántica — Medidas DAX
 
-Sobre el modelo dimensional se construyó una capa semántica mediante **medidas DAX**, que  permiten centralizar la lógica de cálculo de los principales indicadores favoreciendo la mantenibilidad, reutilización de la lógica y cálculo dinámico según el contexto de filtro.
+Sobre el modelo dimensional se construyó una capa semántica mediante **medidas DAX**. Estas medidas centralizan la lógica de cálculo de los principales indicadores, favoreciendo su mantenibilidad y reutilización, y permitiendo cálculos dinámicos según el contexto de filtro.
 
 Entre las principales métricas implementadas se encuentran:
 
-### `_medidas_financieras`
+#### `_medidas_financieras`
 - Revenue Bruto
 - Descuentos Otorgados
 - % Descuento Otorgado
@@ -47,7 +43,7 @@ Entre las principales métricas implementadas se encuentran:
 - Promedio Costo
 - Promedio Precio
 
-### `_medidas_operativas`
+#### `_medidas_operativas`
 - Pedidos Totales
 - Pedidos Entregados
 - Unidades Entregadas
@@ -61,7 +57,7 @@ Entre las principales métricas implementadas se encuentran:
 - Pedidos Devueltos
 - % Devoluciones
 
-### `_medidas_clientes`
+#### `_medidas_clientes`
 - % Clientes Activos
 - % Clientes Perdidos
 - % Clientes por Rango Dinámico
@@ -89,14 +85,14 @@ Entre las principales métricas implementadas se encuentran:
 - Ticket Promedio por Frecuencia
 - Ultima Compra Cliente
 
-### `_medidas_productos`
+#### `_medidas_productos`
 - Total SKU
 - Ganancia Neta por Unidad
 - Productos Rentables
 - Productos No Rentables
 - Concentracion Top 5
 
-### `_medidas_yoy`
+#### `_medidas_yoy`
 - % Variacion Pedidos YoY
 - % Variacion Ticket Promedio YoY
 - % Variacion Ganancia Neta YoY
@@ -107,7 +103,7 @@ Entre las principales métricas implementadas se encuentran:
 
 ## Estructura del Dashboard
 
-El reporte interactivamente se organiza en **cuatro vistas analíticas**:
+El reporte interactivo se organiza en cuatro vistas analíticas:
 
 ### 1. Vista Ejecutiva - ¿Qué pasó con el negocio?
 Presenta una visión macro de la evolución del negocio, facturación y el estado de los principales KPIs de rendimiento.
@@ -125,7 +121,7 @@ Permite analizar el desempeño económico por categorías y SKUs, identificando 
 ![Dashboard Performance de Producto](./product_performance.gif)
 
 ### 4. Retención de Clientes - ¿Qué hacer con la base de clientes?
-Analiza la salud de la base de clientes, cohortes de recompra, tasa de churn, reactivación y valor de vida del cliente (LTV).
+Analiza la salud de la base de clientes, cohortes de recompra, tasa de churn, reactivación.
 
 ![Dashboard Retención de Clientes](./customer_retention.gif)
 
@@ -133,9 +129,9 @@ Analiza la salud de la base de clientes, cohortes de recompra, tasa de churn, re
 
 ## Validación de Datos
 
-Las principales medidas DAX del modelo fueron contrastadas con las consultas equivalentes desarrolladas durante la etapa de investigación SQL, verificando la consistencia de los resultados entre la capa analítica y la capa de visualización.
+Las principales medidas DAX del modelo fueron contrastadas con las consultas equivalentes desarrolladas durante la investigación SQL, verificando la consistencia de los resultados entre SQL y Power BI.
 
-Esta validación permitió comprobar la consistencia de los resultados considerando la granularidad transaccional, los filtros aplicados y la lógica de cálculo utilizada en cada capa.
+
 
 
 
