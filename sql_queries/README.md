@@ -28,7 +28,7 @@ La investigación sigue una secuencia progresiva, donde cada etapa profundiza el
 
 ## Capa analítica — View `fact_pedidos_analitica`
 
-Antes de desarrollar las consultas de análisis sobre los datos procesados del pipeline se construyó una **View analítica** sobre `fact_pedidos_final`, destinada a centralizar la lógica de negocio y métricas de rentabilidad, convirtiendo los datos estructurados en una representación orientada al análisis de negocio y permitiendo que los scripts posteriores se concentren en responder preguntas de negocio en lugar de repetir reglas de cálculo.
+Antes de desarrollar las consultas de investigación se construyó una **View analítica** sobre `fact_pedidos_final`. Su objetivo es centralizar la lógica de negocio y métricas de rentabilidad utilizadas por los análisis posteriores.
 
 La View:
 
@@ -104,4 +104,4 @@ Comparación interanual del Revenue, Ganancia Neta y Margen por producto para id
 - **Agregaciones y métricas derivadas** para Revenue, costos, margen, mix y rentabilidad.
 - **Análisis de participación** sobre unidades y Revenue.
 - **Segmentación temporal, por categoría, producto y canal.**
-- **Validación cruzada de métricas** entre SQL y Power BI para garantizar consistencia del modelo analítico.
+
