@@ -1,6 +1,6 @@
 # TechnoShop | Pipeline ETL 
 
-Pipeline ETL modular desarrollado en **Python + Pandas** para transformar los datos CSV de origen en datasets limpios, consistentes y listos para su explotación analítica en SQL y Power BI.
+Pipeline ETL modular desarrollado en **Python + Pandas** para transformar los datos CSV de origen en datasets limpios, consistentes y listos para su análisis en SQL y Power BI.
 
 ### Stack técnico: ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white)
 
@@ -22,7 +22,6 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging 
 - **Reporte estructurado:** Generación de un reporte consolidado de calidad en formato JSON.
 - **Reglas de negocio:** Tratamiento específico de anomalías según la naturaleza de cada entidad.
 - **Estructuración de datos:** Integración de las tablas de pedidos y detalle de pedidos para generar una tabla transaccional consolidada a nivel de línea de producto.
-- **Preparación analítica:** Generación de datasets procesados y estructurados para su posterior carga en la base de datos y explotación analítica.
 
 ---
 
@@ -30,7 +29,7 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging 
 
 ### 📥 `extract.py` — Ingesta de Datos 
 
-Carga defensiva de los archivos CSV de origen desde la ruta `data/raw/`.
+Carga a prueba de errores de los archivos CSV de origen desde la ruta `data/raw/`.
 
 - **Entradas (Disco - `data/raw/`):**
   - `fact_pedidos_raw.csv`
@@ -40,8 +39,7 @@ Carga defensiva de los archivos CSV de origen desde la ruta `data/raw/`.
 - **Salidas (Memoria):**
   - DataFrames en bruto: `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
 - **Detalle técnico:**
-  - **Lectura segura (`_read_csv_safe`):** Captura fallos de infraestructura (archivos no encontrados o corruptos) evitando interrupciones abruptas de ejecución.
-  - **Auditoría de volumen inicial:** Registra en logs la cantidad exacta de filas extraídas por cada entidad antes de cualquier procesamiento.
+  Captura fallos de infraestructura (archivos no encontrados o corruptos) evitando interrupciones abruptas de ejecución y registra en logs la cantidad exacta de filas extraídas por cada entidad.
  
 *Ver script de extracción:* [`/src/extract.py`](./src/extract.py)
 
@@ -56,6 +54,8 @@ Realiza una auditoría integral de los datos antes de iniciar la limpieza. Los h
 - **Salidas (Consola / JSON):**
   - Diccionario estructurado `quality_report` (impreso en consola en formato JSON).
 - **Detalle técnico:**
+
+Los datos se auditan en tres capas:
 
 #### Calidad técnica
 - Detección de espacios en blanco y registros compuestos únicamente por espacios.
@@ -126,19 +126,19 @@ Implementa la limpieza mediante funciones modulares y orquestadores específicos
 
 ### ⚙️ `transform.py` — Transformación y Consolidación de Datos 
 
-Aplica la lógica de negocio final, prorratea costos operativos y consolida los datasets finales para el modelo analítico.
+Aplica la lógica de negocio final, prorratea costos operativos y consolida los datasets finales.
 
 - **Entradas (Memoria):**
   - DataFrames limpios (`pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean`).
 - **Salidas (Memoria):**
-  - Modelo dimensional final: `fact_pedidos_final`, `clientes_clean` (como `dim_clientes`), `productos_clean` (como `dim_productos`).
+  - Modelo dimensional final: `fact_pedidos_final`, `dim_clientes`, `dim_productos`.
 - **Detalle técnico:**
 
 #### Principales transformaciones
 - **Prorrateo del costo de envío:** Cálculo automatizado de `items_por_pedido` para prorratear equitativamente el costo de envío por cada línea transaccional (`costo_envio_linea`).
 - **Consolidación transaccional:** Fusión (`Inner Join`) entre `fact_detalle_pedidos_clean` y la cabecera `fact_pedidos_clean` sobre `pedido_id`.
 - **Control de integridad de merge:** Logging de advertencia si alguna línea de detalle pierde su cabecera de pedido durante la integración.
-- **Hecho analítico:** Ordenamiento cronológico por `fecha_pedido` y selección estricta de columnas para generar `fact_pedidos_final` con granularidad de línea transaccional, donde cada registro representa un producto dentro de un pedido.
+- **tabla de hechos transaccional:** Selección de columnas para generar `fact_pedidos_final` con granularidad de línea transaccional, donde cada registro representa un producto dentro de un pedido.
 - **Preparación de dimensiones:** Estructuración y paso directo de los datasets maestros de clientes y productos limpios.
 
 *Ver script de transformación y consolidación de datos:* [`/src/transform.py`](./src/transform.py)
