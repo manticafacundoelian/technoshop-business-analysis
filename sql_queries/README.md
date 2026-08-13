@@ -28,7 +28,7 @@ La investigación sigue una secuencia progresiva, donde cada etapa profundiza el
 
 ## Capa analítica — View `fact_pedidos_analitica`
 
-Antes de desarrollar las consultas de análisis se construyó una **View analítica** sobre `fact_pedidos_final`, destinada a centralizar la lógica de negocio.
+Antes de desarrollar las consultas de análisis sobre los datos procesados del pipeline se construyó una **View analítica** sobre `fact_pedidos_final`, destinada a centralizar la lógica de negocio y métricas de rentabilidad, convirtiendo los datos estructurados en una representación orientada al análisis de negocio y permitiendo que los scripts posteriores se concentren en responder preguntas de negocio en lugar de repetir reglas de cálculo.
 
 La View:
 
@@ -37,7 +37,6 @@ La View:
 - Centraliza las reglas de cálculo para mantener consistencia entre las distintas consultas.
 - Reduce la repetición de lógica en las consultas posteriores y facilita la construcción de análisis más complejos.
 
-De esta forma, la View funciona como una **capa analítica intermedia entre los datos transaccionales y las consultas de investigación**, permitiendo que los scripts posteriores se concentren en responder preguntas de negocio en lugar de repetir reglas de cálculo.
 
 *Consulta SQL:* [`00_view_fact_pedidos_analitica.sql`](./00_view_fact_pedidos_analitica.sql)
 
