@@ -91,13 +91,13 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 <details>
 <summary><b>🐍 Pipeline ETL modular (Python + Pandas)</b></summary><br>
 
-Pipeline ETL desarrollado con **Python + Pandas** para transformar los archivos CSV de origen en datasets limpios, consistentes y estructurados, preparados para su posterior análisis en SQL y Power BI.
+Pipeline ETL desarrollado con **Python + Pandas** para transformar los archivos CSV de origen en datasets limpios, consistentes y estructurados, listos para su posterior análisis en SQL y Power BI.
 
-El pipeline integra las tablas de **pedidos** y **detalle de pedidos** para generar una tabla transaccional consolidada con **granularidad a nivel de línea de producto**, acompañada por las dimensiones de **clientes** y **productos**. Esta etapa define la estructura y granularidad de los datos que serán utilizados posteriormente en las capas analíticas.
+El pipeline integra las tablas de **pedidos** y **detalle de pedidos** para generar una tabla transaccional consolidada con **granularidad a nivel de línea de producto**, acompañada por las dimensiones de **clientes** y **productos**. Esta etapa define la estructura y granularidad de los datos que serán utilizados posteriormente para el análisis en SQL y el modelado semántico en Power BI.
 
 El proceso incorpora:
 
-- **Auditoría de calidad:** controles técnicos, reglas de negocio e integridad referencial.
+- **Auditoría de calidad:** controles técnicos, reglas de negocio e integridad referencial con reporte final en JSON.
 - **Limpieza y normalización:** tratamiento de valores inválidos, nulos, duplicados y formatos inconsistentes.
 - **Transformación:** integración de entidades y aplicación de reglas de negocio, incluyendo el prorrateo de costos de envío.
 - **Estructuración:** generación de datasets transaccionales y dimensionales preparados para su explotación analítica.
@@ -112,16 +112,11 @@ El proceso incorpora:
 <details>
 <summary><b>🛢️ Investigación analítica (SQL)</b></summary><br>
 
-Sobre la tabla transaccional generada por el pipeline se construyó la **View analítica `fact_pedidos_analitica`**, utilizada para centralizar la lógica de negocio y generar métricas derivadas a nivel de línea, entre ellas:
+Contiene las consultas SQL utilizadas para investigar la evolución de la rentabilidad de TechnoShop y determinar los principales factores asociados a su deterioro.
 
-- `revenue_bruto_linea`
-- `revenue_neto_linea`
-- `costo_mercaderia_linea`
-- `ganancia_neta_linea`
+Toma los datasets finales generados por el pipeline y construye una **View analítica `fact_pedidos_analitica`**, que centraliza la lógica de negocio y las métricas derivadas a nivel de línea utilizadas durante la investigación.  
 
-Al tratarse de una **View**, esta capa permite enriquecer analíticamente los datos sin modificar físicamente las tablas procesadas por el pipeline.
-
-A partir de esta capa se desarrolló una investigación SQL progresiva para diagnosticar las causas de la caída de rentabilidad:
+El proceso incorpora un flujo de investigación SQL progresivo:
 
 **Evolución del negocio → Costos → Pricing → Mix → Canal → Producto**
 
@@ -132,7 +127,7 @@ El análisis permitió identificar como principales señales de deterioro:
 - cambios en el **mix de ventas**;
 - incremento del **costo logístico**, particularmente en el canal Online.
 
-### Técnicas SQL aplicadas
+#### Técnicas SQL aplicadas
 
 - **CTEs (`WITH`)** para estructurar consultas complejas por etapas.
 - **Window Functions** (`LAG`, `ROW_NUMBER`) para variaciones interanuales y rankings.
@@ -140,24 +135,24 @@ El análisis permitió identificar como principales señales de deterioro:
 - **Agregaciones y métricas derivadas** para Revenue, costos, margen, mix y rentabilidad.
 - **Análisis de participación** sobre unidades y Revenue.
 - **Segmentación temporal, por categoría, producto y canal.**
-- **Validación cruzada de métricas** entre SQL y Power BI para garantizar consistencia del modelo analítico.
+- **Validación cruzada de métricas** entre SQL y Power BI para verificar la consistencia de los resultados.
 
 *Ver investigación y consultas SQL:* [`/sql_queries`](./sql_queries/README.md)
 </details>
 
 <details>
-<summary><b>📐 Modelado Analítico y Capa Semántica (Power BI)</b></summary><br>
+<summary><b>📐 Modelo y Reporte (Power BI)</b></summary><br>
 
-El reporte implementa un **Esquema en Estrella (Star Schema)**, utilizando la tabla transaccional generada por el pipeline como tabla de hechos y conectándola con las dimensiones correspondientes.
+Contiene el **modelo semántico y el reporte interactivo** desarrollado en Power BI sobre los datos procesados por el pipeline ETL.
+
+El reporte utiliza un **Esquema en Estrella (Star Schema)**, compuesto por una tabla de hechos y dimensiones de clientes, productos y calendario.
 
 - **Tabla de hechos:** `fact_pedidos_final`
-- **Dimensión:** `dim_clientes`
-- **Dimensión:** `dim_productos`
-- **Dimensión:** `dim_calendario`
+- **Dimensiones:** `dim_clientes`, `dim_productos`, `dim_calendario`
 
-La tabla de hechos mantiene una **granularidad de línea de producto**, mientras que las dimensiones aportan el contexto necesario para el análisis por cliente, producto y período.
+La tabla de hechos presenta una **granularidad a nivel de línea de producto**, permitiendo analizar las transacciones desde distintas dimensiones.
 
-Sobre este modelo se construye la **capa semántica mediante medidas DAX**, donde se implementan los principales KPIs y métricas de negocio:
+Sobre este modelo se implementaron **medidas DAX** para centralizar los principales KPIs y métricas de negocio:
 
 - **Revenue Neto**
 - **Ganancia Neta**
@@ -167,8 +162,8 @@ Sobre este modelo se construye la **capa semántica mediante medidas DAX**, dond
 - **Retención y Churn**
 - **Métricas de crecimiento y variación interanual**
 
-Esta separación permite mantener las tablas transaccionales y dimensionales como base estructural del modelo, mientras que la lógica de cálculo de los indicadores se concentra en la capa semántica de Power BI.
+El modelo semántico y las medidas DAX sirven como base para el análisis interactivo de **ventas, rentabilidad, productos y clientes**.
 
-*Ver modelado analítico, capa semántica, y dashboard completos:* [`/powerbi`](./powerbi/README.md)
+*Ver modelo, medidas y dashboard completos:* [`/powerbi`](./powerbi/README.md)
 
 </details>
