@@ -32,7 +32,7 @@ Este deterioro presenta **dinámicas opuestas entre canales**:
 En conjunto, los resultados muestran que **el crecimiento del volumen Online no fue suficiente para compensar la destrucción de rentabilidad en ambos canales**. Esto indica que el deterioro del negocio no responde únicamente a una contracción de la demanda, sino a una **pérdida de rentabilidad por operación**, cuya causa debe analizarse en la estructura de costos y márgenes.
 
 
-![Dashboard Ejecutivo](./powerbi/executive_overview.gif)
+![Vista Ejecutiva](./powerbi/vista_ejecutiva.gif)
 </details>
 
 <details>
@@ -45,7 +45,7 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 * **Presión logística sobre el canal Online:** El **% Costo Logístico** consolidado aumentó del **1,98% al 4,13%**. El impacto se concentra en el canal Online, donde pasó del **3,90% al 5,66%**. Si bien el canal absorbió el crecimiento de la demanda y elevó su Revenue Neto un **+16,18%**, su Ganancia Neta cayó un **-41,70%** y su Margen Neto se redujo del **30,46% al 15,28%**. La logística, por tanto, actúa como un **factor adicional de erosión del margen**, pero no explica por sí sola el deterioro estructural observado en ambos canales.
 
 
-![Dashboard Diagnostico de Rentabilidad](./powerbi/profitability_diagnosis.gif)
+![Diagnostico de Rentabilidad](./powerbi/diagnostico_rentabilidad.gif)
 </details>
 
 <details>
@@ -57,7 +57,7 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 
 * **Efecto del costo logístico en productos de bajo valor (Canal Online):** La operación digital registra **5 Productos No Rentables**. El análisis del *Mix de Catálogo* muestra que varios productos de bajo precio terminan cruzando la barrera del **0% de margen**, debido al impacto que representa el costo de envío sobre operaciones de bajo valor. Al auditar el *Top 5 con Menor Ganancia*, la fuga de valor está liderada por el *Organizador de Cables* (**-$92**), el *Limpiador de Pantallas* (**-$64**) y el *Chromecast Google TV* (**-$22**). El hallazgo evidencia que, bajo la estructura actual de costos, **el envío fijo puede convertir productos de bajo ticket en operaciones deficitarias**, aun cuando la categoría a la que pertenecen mantenga un margen consolidado positivo.
 
-![Dashboard Performance de Producto](./powerbi/product_performance.gif)
+![Dashboard Performance de Producto](./powerbi/performance_productos.gif)
 </details>
 
 <details>
@@ -68,7 +68,7 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 * **Fuga de Revenue por Categoría:** *Computación* y *TV/Video* registran la mayor pérdida de clientes (**84.62% y 80.60%** respectivamente), consolidándose como las categorías con mayor impacto en el costo de oportunidad del negocio.
 * **Relación entre frecuencia y valor:** Los clientes con mayor frecuencia de compra registran también el **Ticket Promedio** más alto, métrica que mostró un incremento saludable durante 2025.
 
-![Dashboard Retención Clientes](./powerbi/customer_retention.gif)
+![Dashboard Retención Clientes](./powerbi/retencion_clientes.gif)
 </details>
 
 *Descargar reporte en Power BI:* [`/technoshop_business_analysis.pbix`](./powerbi/technoshop_business_analysis.pbix)
