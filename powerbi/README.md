@@ -118,7 +118,7 @@ Profundiza en el desglose de costos, márgenes netos y la identificación de fac
 ### 3. Performance de Productos - ¿Dónde conviene intervenir?
 Permite analizar el desempeño económico por categorías y SKUs, identificando productos estrella y aquellos con margen negativo que requieren intervención.
 
-![Dashboard Performance de Producto](./performance_producto.gif)
+![Dashboard Performance de Producto](./performance_productos.gif)
 
 ### 4. Retención de Clientes - ¿Qué hacer con la base de clientes?
 Analiza la salud de la base de clientes, cohortes de recompra, tasa de churn, reactivación.
