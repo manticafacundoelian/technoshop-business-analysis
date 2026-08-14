@@ -108,22 +108,22 @@ El reporte interactivo se organiza en cuatro vistas analíticas:
 ### 1. Vista Ejecutiva - ¿Qué pasó con el negocio?
 Presenta una visión macro de la evolución del negocio, facturación y el estado de los principales KPIs de rendimiento.
 
-![Dashboard Ejecutivo](./executive_overview.gif)
+![Dashboard Ejecutivo](./vista_ejecutiva.gif)
 
 ### 2. Diagnóstico de Rentabilidad - ¿Por qué cayó la rentabilidad?
 Profundiza en el desglose de costos, márgenes netos y la identificación de factores clave asociados al deterioro de la rentabilidad.
 
-![Dashboard Diagnóstico de Rentabilidad](./profitability_diagnosis.gif)
+![Dashboard Diagnóstico de Rentabilidad](./diagnostico_rentabilidad.gif)
 
 ### 3. Performance de Productos - ¿Dónde conviene intervenir?
 Permite analizar el desempeño económico por categorías y SKUs, identificando productos estrella y aquellos con margen negativo que requieren intervención.
 
-![Dashboard Performance de Producto](./product_performance.gif)
+![Dashboard Performance de Producto](./performance_producto.gif)
 
 ### 4. Retención de Clientes - ¿Qué hacer con la base de clientes?
 Analiza la salud de la base de clientes, cohortes de recompra, tasa de churn, reactivación.
 
-![Dashboard Retención de Clientes](./customer_retention.gif)
+![Dashboard Retención de Clientes](./retencion_clientes.gif)
 
 ---
 
