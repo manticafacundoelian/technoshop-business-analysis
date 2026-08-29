@@ -73,98 +73,77 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 
 *Descargar reporte en Power BI:* [`/technoshop_business_analysis.pbix`](./powerbi/technoshop_business_analysis.pbix)
 
-## Recomendaciones Estratégicas 
+## 🎯 Recomendaciones Estratégicas Basadas en Evidencia
 
-* **Prioridad Alta (Corto Plazo):** 
-  * Reestructurar contratos con proveedores de *Computación* y *TV/Video* ya que los costos actuales cercanos al **88%** comprometen severamente la rentabilidad de estas categorías.
-  * Implementar un **monto mínimo de compra** en el *canal online* para diluir el impacto del envío fijo en productos de ticket bajo (*Accesorios*).
-* **Prioridad Media (Mediano Plazo):** 
-  * Lanzar planes de fidelización enfocados en la base de **Clientes Retenidos**, ya que operan como el motor principal del negocio (aportan el **68.77%** del *revenue*).
-  * **Acción inmediata:** Blindar a los **97 Clientes de Alto Valor** que concentran el **73% de la facturación**. 
-  * Reactivar de forma controlada la captación de clientes nuevos para revertir la tendencia a la baja interanual.
-  * Automatizar estrategias de *cross-selling* desde productos de bajo margen hacia categorías eficientes como *Audio* (**28.20% de margen**).
-* **Prioridad Baja (Largo Plazo):** 
-  * Evaluar la reconversión de tiendas físicas ineficientes en centros de despacho logísticos, dado que el *canal físico* redujo su ganancia neta a menos de un tercio y el *online* ya concentra el grueso del revenue (**$313K**).
+Para revertir la destrucción de margen y blindar la base operativa del negocio, se propone un plan de acción estructurado por horizontes de impacto:
+
+### 🔴 Prioridad Alta (Corto Plazo): Optimización de Margen y Contención de Fugas
+*   **Renegociación Estructural de Sourcing:** Reestructurar de forma urgente los acuerdos comerciales con proveedores clave de *Computación* y *TV/Video*. El **Costo de Mercadería actual (CMV) cercano al 88%** asfixia el spread precio-costo y vuelve inviable la operación comercial de estas categorías core.
+*   **Umbral Mínimo de Pedidos (Online Minimum Order Value):** Implementar una política de **monto mínimo de compra** para el canal digital. Esta medida mitiga de inmediato el impacto del costo logístico fijo sobre productos de bajo ticket unitario (*Accesorios*), evitando que operaciones de bajo valor crucen la barrera de rentabilidad.
+
+### 🟡 Prioridad Media (Mediano Plazo): Blindaje de Cartera y Fidelización de Clientes
+*   **Programa de Retención de Clientes VIP (Acción Inmediata):** Diseñar una estrategia de retención prioritaria y personalizada para **blindar a los 97 Clientes de Alto Valor**, un segmento hipercrítico que concentra el **73% de la facturación global** del negocio.
+*   **Fidelización del Motor del Negocio:** Lanzar planes de lealtad específicos dirigidos a la base de **Clientes Retenidos**, dado que este segmento sostiene la estabilidad de la empresa al aportar el **68.77% del revenue total**.
+*   **Algoritmos de Cross-Selling Automatizados:** Implementar motores de recomendación en el checkout online para traccionar ventas cruzadas desde artículos de bajo margen hacia categorías altamente eficientes y saludables, como *Audio* (**28.20% de margen consolidado**).
+*   **Adquisición Controlada:** Reactivar paulatinamente los canales de captación de *Clientes Nuevos* bajo métricas estrictas de Costo de Adquisición (CAC), revirtiendo la tendencia a la baja interanual sin presionar el margen operativo.
+
+### 🔵 Prioridad Baja (Largo Plazo): Reingeniería del Modelo de Omnicanalidad
+*   **Reconversión Logística del Canal Físico:** Evaluar la transformación estratégica de puntos de venta físicos ineficientes para reconvertirlos en centros de distribución urbana (*Dark Stores* o hubs de despacho local). El canal físico redujo su ganancia neta a menos de un tercio, mientras que el ecosistema Online ya consolida el grueso del volumen de negocio con un **Revenue de $313K**.
 
 ---
 
-## ⚙️ Ingeniería de Datos y Arquitectura
+## ⚙️ Ingeniería de Datos y Arquitectura del Sistema
+
+### Flujo de Datos End-to-End (Data Pipeline)
+
+```text
+[ CSVs Locales ] ──( Python / Pandas ETL )──> [ Datasets Clean & Processed ]
+                                                       │
+         ┌─────────────────────────────────────────────┴─────────────────────────────────────────────┐
+         ▼                                                                                           ▼
+ [ MySQL Database ] ──> ( Advanced SQL / CTEs ) ──> [ View: fact_pedidos_analitica ]       [ Star Schema Model ]
+                                                                                                     │
+                                                                                                     ▼
+                                                                                           [ Power BI Dashboards ]
+```
 
 <details>
-<summary><b>🐍 Pipeline ETL modular (Python + Pandas)</b></summary><br>
+<summary><b>🐍 1. Pipeline ETL Modular (Python + Pandas)</b></summary><br>
 
-Pipeline ETL desarrollado con **Python + Pandas** para transformar los archivos CSV de origen en datasets limpios, consistentes y estructurados, listos para su posterior análisis en SQL y Power BI.
+Desarrollé un pipeline de datos robusto y desacoplado utilizando **Python y Pandas** para transformar fuentes transaccionales crudas en estructuras óptimas para almacenamiento y análisis dimensional.
 
-El pipeline integra las tablas de **pedidos** y **detalle de pedidos** para generar una tabla transaccional consolidada con **granularidad a nivel de línea de producto**, acompañada por las dimensiones de **clientes** y **productos**. Esta etapa define la estructura y granularidad de los datos que serán utilizados posteriormente para el análisis en SQL y el modelado semántico en Power BI.
-
-El proceso incorpora:
-
-- **Auditoría de calidad:** controles técnicos, reglas de negocio e integridad referencial con reporte final en JSON.
-- **Limpieza y normalización:** tratamiento de valores inválidos, nulos, duplicados y formatos inconsistentes.
-- **Transformación:** integración de entidades y aplicación de reglas de negocio, incluyendo el prorrateo de costos de envío.
-- **Estructuración:** generación de datasets transaccionales y dimensionales preparados para su explotación analítica.
-- **Trazabilidad:** registro de hallazgos y acciones mediante logs.
-- **Persistencia:** generación de datasets Clean y Processed para las etapas posteriores.
+*   **Granularidad Fina:** Integré y normalicé las entidades de pedidos (`orders`) y líneas de pedido (`order_items`) para establecer una base transaccional unificada a nivel de ítem.
+*   **Data Quality Assurance (`inspect.py`):** Programé un módulo de auditoría automatizado que valida tipos de datos, nulos e integridad referencial, exportando reportes de diagnóstico en **JSON**.
+*   **Lógica de Negocio Inyectada (`clean.py` & `transform.py`):** Implementé algoritmos para la imputación dimensional de precios faltantes y el **prorrateo matemático del costo de envío** por ítem.
+*   **Persistencia Decoupled:** El pipeline segrega los datos en dos capas de almacenamiento local: **Clean** (datos saneados) y **Processed** (datos listos para producción).
 
 ![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)
 
-*Ver documentación y estructura completa del pipeline:* [`/pipeline_python`](./pipeline_python/README.md)
+📂 *Ver documentación, arquitectura modular y código fuente del pipeline:* [`/pipeline_python`](./pipeline_python/README.md)
 </details>
 
 <details>
-<summary><b>🛢️ Investigación analítica (SQL)</b></summary><br>
+<summary><b>🛢️ 2. Investigación Analítica Avanzada (SQL)</b></summary><br>
 
-Contiene las consultas SQL utilizadas para investigar la evolución de la rentabilidad de TechnoShop y determinar los principales factores asociados a su deterioro.
+Diseñé el repositorio de bases de datos analíticas consumiendo los datasets procesados para realizar un diagnóstico financiero profundo y progresivo sobre la salud del negocio.
 
-Toma los datasets finales generados por el pipeline y construye una **View analítica `fact_pedidos_analitica`**, que centraliza la lógica de negocio y las métricas derivadas a nivel de línea utilizadas durante la investigación.  
+*   **Modelado de Vistas:** Construí la vista enriquecida **`fact_pedidos_analitica`** en MySQL, centralizando fórmulas financieras y métricas derivadas complejas directamente en el motor de BD.
+*   **Análisis Multidimensional:** Ejecuté un framework de análisis secuencial: *Evolución general ➔ Costos ➔ Pricing ➔ Mix de Productos ➔ Performance por Canal.*
+*   **Técnicas Avanzadas Aplicadas:**
+    *   **CTEs (`WITH`):** Estructuración de scripts legibles y optimizados por capas lógicas.
+    *   **Window Functions (`LAG`, `ROW_NUMBER`):** Cálculo exacto de variaciones interanuales (YoY) y rankings de SKUs rentables.
+    *   **Data Validation:** Ejecución de pruebas de validación cruzada (Cross-Validation) para garantizar consistencia métrica al 100% entre MySQL y Power BI.
 
-El proceso incorpora un flujo de investigación SQL progresivo:
-
-**Evolución del negocio → Costos → Pricing → Mix → Canal → Producto**
-
-El análisis permitió identificar como principales señales de deterioro:
-
-- aumento del peso del **costo de mercadería**;
-- contracción del **spread precio–costo**;
-- cambios en el **mix de ventas**;
-- incremento del **costo logístico**, particularmente en el canal Online.
-
-#### Técnicas SQL aplicadas
-
-- **CTEs (`WITH`)** para estructurar consultas complejas por etapas.
-- **Window Functions** (`LAG`, `ROW_NUMBER`) para variaciones interanuales y rankings.
-- **JOINs** entre tablas de hechos y dimensiones.
-- **Agregaciones y métricas derivadas** para Revenue, costos, margen, mix y rentabilidad.
-- **Análisis de participación** sobre unidades y Revenue.
-- **Segmentación temporal, por categoría, producto y canal.**
-- **Validación cruzada de métricas** entre SQL y Power BI para verificar la consistencia de los resultados.
-
-*Ver investigación y consultas SQL:* [`/sql_queries`](./sql_queries/README.md)
+📂 *Ver scripts de bases de datos y consultas de diagnóstico:* [`/sql_queries`](./sql_queries/README.md)
 </details>
 
 <details>
-<summary><b>📐 Modelo y Reporte (Power BI)</b></summary><br>
+<summary><b>📐 3. Modelado Semántico y Dashboard (Power BI)</b></summary><br>
 
-Contiene el **modelo semántico y el reporte interactivo** desarrollado en Power BI sobre los datos procesados por el pipeline ETL.
+Construí el modelo analítico de cara al usuario final aplicando las mejores prácticas de modelado dimensional y diseño UX/UI financiero.
 
-El reporte utiliza un **Esquema en Estrella (Star Schema)**, compuesto por una tabla de hechos y dimensiones de clientes, productos y calendario.
-
-- **Tabla de hechos:** `fact_pedidos_final`
-- **Dimensiones:** `dim_clientes`, `dim_productos`, `dim_calendario`
-
-La tabla de hechos presenta una **granularidad a nivel de línea de producto**, permitiendo analizar las transacciones desde distintas dimensiones.
-
-Sobre este modelo se implementaron **medidas DAX** para centralizar los principales KPIs y métricas de negocio:
-
-- **Revenue Neto**
-- **Ganancia Neta**
-- **Costo de Mercadería**
-- **Margen Neto**
-- **Ticket Promedio**
-- **Retención y Churn**
-- **Métricas de crecimiento y variación interanual**
-
-El modelo semántico y las medidas DAX sirven como base para el análisis interactivo de **ventas, rentabilidad, productos y clientes**.
+*   **Esquema en Estrella (Star Schema):** Diseñé un modelo altamente optimizado compuesto por la tabla de hechos `fact_pedidos_final` conectada directamente a tres tablas de dimensiones: `dim_clientes`, `dim_productos` y `dim_calendario`.
+*   **Arquitectura DAX Avanzada:** Desarrollé un repositorio de medidas calculadas para centralizar la inteligencia de negocio (Revenue Neto, Margen, Ticket Promedio, Tasas de Churn y Retención).
 
 *Ver modelo, medidas y dashboard completos:* [`/powerbi`](./powerbi/README.md)
 
