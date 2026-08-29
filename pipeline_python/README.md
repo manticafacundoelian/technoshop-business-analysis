@@ -1,14 +1,15 @@
-# TechnoShop | Pipeline ETL 
+# 🐍 TechnoShop | Pipeline ETL Modular en Python
 
-Pipeline ETL modular desarrollado en **Python + Pandas** para transformar los datos CSV de origen en datasets limpios, consistentes y listos para su análisis en SQL y Power BI.
+Pipeline de ingeniería de datos desarrollado con **Python, Pandas y NumPy** bajo una arquitectura modular para transformar datos transaccionales crudos en conjuntos de datos limpios, consistentes y optimizados para su explotación analítica en SQL y Power BI.
 
-### Stack técnico: ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white)
+### Stack Técnico Principal:   
+![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white)
 
 ---
 
-## Arquitectura del pipeline
+## 🏗️ Arquitectura del Pipeline
 
-El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging → Processed*). A continuación se detalla la organización de carpetas, la responsabilidad de cada módulo y el flujo de ejecución:
+El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean → Processed*). A continuación se detalla la organización de carpetas, la responsabilidad de cada módulo y el flujo de ejecución:
 
 ![Estructura del Pipeline](./pipeline_estructure.png)
 
@@ -16,12 +17,11 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean/Staging 
 
 ## Características principales
 
-- **Arquitectura modular y escalabilidad:** Cada etapa del proceso se encuentra desacoplada en módulos independientes y organizada mediante funciones auxiliares y orquestadores por entidad, facilitando su mantenimiento y expansión.
-- **Auditoría de calidad:** Detección de anomalías técnicas, reglas de negocio e integridad referencial antes de la limpieza.
-- **Trazabilidad:** Los hallazgos y las acciones aplicadas durante el proceso se registran continuamente mediante logs.
-- **Reporte estructurado:** Generación de un reporte consolidado de calidad en formato JSON.
-- **Reglas de negocio:** Tratamiento específico de anomalías según la naturaleza de cada entidad.
-- **Estructuración de datos:** Integración de las tablas de pedidos y detalle de pedidos para generar una tabla transaccional consolidada a nivel de línea de producto.
+*   **Estructura Decoupled:** Módulos independientes orquestados por entidad mediante funciones auxiliares dedicadas.
+*   **Data Quality Gating:** Auditoría preventiva exhaustiva de anomalías técnicas e integridad referencial antes de la fase de limpieza.
+*   **Trazabilidad Centralizada:** Registro continuo y estructurado de hallazgos mediante un sistema dinámico de logs.
+*   **Data Profiling Automatizado:** Consolidación de métricas de calidad en un reporte estructurado nativo en formato **JSON**.
+*   **Inyección de Lógica Financiera:** Consolidación transaccional fina unificando pedidos y líneas con prorrateo logístico a nivel de ítem.
 
 ---
 
@@ -179,3 +179,159 @@ pip install pandas numpy
 
 # 2. Ejecutar el orquestador principal
 python main.py
+
+```
+
+
+---
+
+# 🐍 TechnoShop | Pipeline ETL Modular en Python
+
+Pipeline de ingeniería de datos desarrollado con **Python, Pandas y NumPy** bajo una arquitectura modular para transformar datos transaccionales crudos en conjuntos de datos limpios, consistentes y optimizados para su explotación analítica en SQL y Power BI.
+
+### 🛠️ Stack Técnico Principal
+![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white)
+
+---
+
+## 🏗️ Arquitectura del Pipeline
+
+El sistema implementa un diseño multicapa desacoplado basado en buenas prácticas de ingeniería de software (**Raw → Clean/Staging → Processed**). La segregación de responsabilidades garantiza la mantenibilidad y escalabilidad del código.
+
+![Estructura del Pipeline](./pipeline_estructure.png)
+
+---
+
+## 🚀 Características Principales
+
+*   **Estructura Decoupled:** Módulos independientes orquestados por entidad mediante funciones auxiliares dedicadas.
+*   **Data Quality Gating:** Auditoría preventiva exhaustiva de anomalías técnicas e integridad referencial antes de la fase de limpieza.
+*   **Trazabilidad Centralizada:** Registro continuo y estructurado de hallazgos mediante un sistema dinámico de logs.
+*   **Data Profiling Automatizado:** Consolidación de métricas de calidad en un reporte estructurado nativo en formato **JSON**.
+*   **Inyección de Lógica Financiera:** Consolidación transaccional fina unificando pedidos y líneas con prorrateo logístico a nivel de ítem.
+
+---
+
+## 🛠️ Detalle de Módulos Técnicos
+
+### 📥 1. `extract.py` — Ingesta de Datos Resiliente
+Carga tolerante a fallos de los archivos transaccionales de origen desde la capa de almacenamiento en disco.
+
+*   **Entradas (`data/raw/`):** `fact_pedidos_raw.csv`, `fact_detalle_pedidos_raw.csv`, `dim_clientes_raw.csv`, `dim_productos_raw.csv`.
+*   **Salidas (In-Memory DataFrames):** `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
+*   **Enfoque de Ingeniería:** Captura excepciones de infraestructura (archivos ausentes o corruptos) evitando interrupciones abruptas del sistema, mientras documenta de forma estricta en logs el volumen exacto de registros inyectados.
+
+📄 *Ver script de extracción:* [`/src/extract.py`](./src/extract.py)
+
+---
+
+### 🔍 2. `inspect.py` — Data Quality Gating & Auditoría
+Módulo encargado del escaneo integral de los datasets antes de la transformación. Centraliza los hallazgos en la salida estándar y genera una firma de calidad reproducible en **JSON**.
+
+*   **Entradas:** DataFrames en memoria (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
+*   **Salidas:** Reporte consolidado estructurado (`quality_report.json`).
+
+El framework de auditoría evalúa tres capas críticas:
+
+#### A. Calidad Técnica Estructural
+*   Detección exhaustiva de strings vacíos, espacios en blanco y registros nulos (`NaN`).
+*   Validación de consistencia en dominios de variables categóricas.
+*   Identificación de colisiones y duplicados de Claves Primarias (`PK`) y duplicados exactos de registros.
+*   Validación automatizada de formatos cronológicos inválidos o no parseables.
+
+#### B. Reglas de Negocio Lógicas
+*   Auditoría de anomalías comerciales (costos unitarios superiores al precio de venta).
+*   Validación de consistencia en secuencias lógicas de fechas y estados de órdenes.
+*   Control de rangos y valores fuera de los límites de negocio permitidos.
+
+#### C. Integridad Referencial
+*   Validación cruzada de Claves Foráneas (`FK`) contra Claves Primarias (`PK`) de las dimensiones para prevenir registros huérfanos.
+
+💡 *Ejemplo de estructura de salida del reporte de auditoría:*
+```json
+{
+  "timestamp": "2026-08-28T21:41:00",
+  "entity": "fact_pedidos",
+  "metrics": {
+    "total_records": 1500,
+    "null_values": { "customer_id": 0, "order_date": 3 },
+    "duplicate_pks": 0,
+    "business_rule_violations": { "cost_greater_than_price": 12 }
+  }
+}
+```
+
+📄 *Ver script de auditoría de calidad:* [`/src/inspect.py`](./src/inspect.py)
+
+### 🧼 3. `clean.py` — Sanitización y Normalización de Datos
+Módulo encargado de la corrección, imputación y neutralización de anomalías mediante orquestadores y funciones modulares específicas por entidad, garantizando la trazabilidad estricta en logs.
+
+*   **Entradas:** `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw` (In-Memory).
+*   **Salidas:** `pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean` (Layer Staging).
+
+El proceso de limpieza implementa técnicas robustas en cuatro dimensiones:
+
+#### A. Refactorización Técnica y Formatos
+*   **Normalización Estructural:** Eliminación de *leading/trailing spaces* y conversión de strings vacíos a nulos reales (`NaN`).
+*   **Seguridad Cronológica:** Conversión asertiva a tipos `datetime` inyectando `NaT` ante datos futuros o fechas inválidas.
+*   **Deduplicación:** Eliminación algorítmica de duplicados exactos y colisiones en llaves de negocio.
+
+#### B. Estrategias Avanzadas de Imputación de Nulos
+*   **Gating de Identificadores:** Descarte inmediato de registros huérfanos sin Clave Primaria (`PK`) válida.
+*   **Failsafe de Dimensiones:** Implementación de registros de contingencia de negocio (Inyección de un *Default Client* con ID `-1`).
+*   **Modelado Heurístico Monetario:** Reconstrucción de precios unitarios mediante spread de lista/descuento e imputación predictiva de precios y costos utilizando **medianas históricas anidadas por Producto/Año y Categoría/Año**.
+
+#### C. Control Avanzado de Integridad Referencial
+*   **Limpieza en Cascada:** Eliminación de líneas de detalle huérfanas sin pedido padre o asociadas a productos inexistentes en el maestro.
+*   **Reasignación de Negocio:** Derivación de pedidos con clientes inválidos hacia el ID de contingencia `-1`.
+
+📄 *Ver script de limpieza:* [`/src/clean.py`](./src/clean.py)
+
+---
+
+### ⚙️ 4. `transform.py` — Consolidación Dimensional y Lógica de Negocio
+Aplica el procesamiento analítico final, resuelve cálculos operativos distribuidos y consolida las estructuras de destino.
+
+*   **Entradas:** DataFrames en capa Clean/Staging en memoria.
+*   **Salidas:** Tablas finales optimizadas para el Data Warehouse (`fact_pedidos_final`, `dim_clientes`, `dim_productos`).
+
+*   **Prorrateo Logístico Distribuido:** Cálculo dinámico de la densidad de ítems por orden para prorratear de manera equitativa el costo de envío fijo a nivel de línea transaccional (`costo_envio_linea`).
+*   **Consolidación de Hechos (Fact Denormalization):** Ejecución de un `Inner Join` controlado entre detalles y cabeceras mediante `pedido_id` para establecer una **granularidad atómica a nivel de ítem**.
+*   **Failsafe de Integración:** Sistema de logging preventivo que emite alertas críticas si alguna línea transaccional pierde su cabecera de pedido durante el merge.
+
+📄 *Ver script de transformación:* [`/src/transform.py`](./src/transform.py)
+
+---
+
+### 💾 5. `load.py` — Persistencia y Generación de Capas
+Módulo responsable de escribir y materializar los DataFrames desde la memoria hacia estructuras físicas en disco de manera desacoplada.
+
+*   **Entradas:** DataFrames procesados e intermedios.
+*   **Salidas (Persistencia física):**
+    *   **Capa Staging (`data/clean/`):** Almacenamiento seguro de estructuras intermedias sanitizadas.
+    *   **Capa Procesada (`data/processed/`):** Almacenamiento optimizado de tablas listas para explotación analítica.
+*   **Mecanismo de Control:** Implementación de guardas lógicas (*guard clauses*) que bloquean la escritura o sobrescritura de archivos si un dataset llega vacío o como `None`.
+
+📄 *Ver script de carga:* [`/src/load.py`](./src/load.py)
+
+---
+
+## 🎛️ 6. `main.py` — Orquestador Central del Pipeline
+
+Punto de entrada (*Entry Point*) principal del sistema. Controla y secuencia el flujo lógico completo de la arquitectura (**Extract ➔ Inspect ➔ Clean ➔ Save Clean ➔ Transform ➔ Save Processed**), centralizando el flujo de logs en tiempo real y exponiendo el reporte JSON de calidad.
+
+📄 *Ver orquestador principal:* [`/main.py`](./main.py)
+
+### 🚀 Guía de Despliegue y Ejecución
+
+Para inicializar y ejecutar el pipeline completo desde la raíz del módulo:
+
+```bash
+# 1. Instalar el stack de dependencias requeridas
+pip install pandas numpy
+
+# 2. Ejecutar el pipeline de datos
+python main.py
+```
+
+
