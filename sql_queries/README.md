@@ -32,7 +32,7 @@ El proceso analítico se diseñó bajo una metodología iterativa y progresiva. 
 
 ---
 
-## Capa analítica — View `fact_pedidos_analitica`
+## 📐 Capa analítica — View `fact_pedidos_analitica`
 
 Como paso previo a la fase de investigación, se construyó una **Vista Analítica** sobre la tabla optimizada `fact_pedidos_final`. Este componente actúa como una capa de transformación lógica reutilizable encargada de centralizar las reglas financieras del negocio.
 
