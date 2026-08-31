@@ -17,149 +17,131 @@ El proceso sigue una arquitectura multicapa desacoplada (*Raw → Clean → Proc
 
 ## Características principales
 
-*   **Estructura Decoupled:** Módulos independientes orquestados por entidad mediante funciones auxiliares dedicadas.
-*   **Data Quality Gating:** Auditoría preventiva exhaustiva de anomalías técnicas e integridad referencial antes de la fase de limpieza.
-*   **Trazabilidad Centralizada:** Registro continuo y estructurado de hallazgos mediante un sistema dinámico de logs.
-*   **Data Profiling Automatizado:** Consolidación de métricas de calidad en un reporte estructurado nativo en formato **JSON**.
-*   **Inyección de Lógica Financiera:** Consolidación transaccional fina unificando pedidos y líneas con prorrateo logístico a nivel de ítem.
+* **Estructura Decoupled:** Módulos independientes orquestados por entidad mediante funciones auxiliares dedicadas.
+* **Data Quality Gating:** Auditoría preventiva exhaustiva de anomalías técnicas, reglas de negocio e integridad referencial antes de la fase de limpieza.
+* **Sanitización Heurística Extensiva:** Procesamiento modular que abarca normalización de texto, deduplicación e imputaciones lógicas orientadas a la minimización de pérdida de información, integrando mecanismos de contingencia para blindar la integridad referencial.
+* **Trazabilidad Centralizada:** Registro continuo y estructurado de hallazgos mediante un sistema dinámico de logs.
+* **Data Profiling Automatizado:** Consolidación de métricas de calidad en un reporte estructurado nativo en formato **JSON**.
+* **Inyección de Lógica Financiera:** Consolidación transaccional fina unificando pedidos y líneas con prorrateo logístico a nivel de ítem.
 
 ---
 
 ## Detalle de Módulos
 
-### 📥 `extract.py` — Ingesta de Datos 
+### 📥 1. `extract.py` — Ingesta de Datos Resiliente
+Carga tolerante a fallos de los archivos transaccionales de origen desde la capa de almacenamiento en disco.
 
-Carga a prueba de errores de los archivos CSV de origen desde la ruta `data/raw/`.
+*   **Entradas (`data/raw/`):** `fact_pedidos_raw.csv`, `fact_detalle_pedidos_raw.csv`, `dim_clientes_raw.csv`, `dim_productos_raw.csv`.
+*   **Salidas (In-Memory DataFrames):** `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
+*   **Enfoque de Ingeniería:** Captura excepciones de infraestructura (archivos ausentes o corruptos) evitando interrupciones abruptas del sistema, mientras documenta de forma estricta en logs el volumen exacto de registros inyectados.
 
-- **Entradas (Disco - `data/raw/`):**
-  - `fact_pedidos_raw.csv`
-  - `fact_detalle_pedidos_raw.csv`
-  - `dim_clientes_raw.csv`
-  - `dim_productos_raw.csv`
-- **Salidas (Memoria):**
-  - DataFrames en bruto: `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
-- **Detalle técnico:**
-  Captura fallos de infraestructura (archivos no encontrados o corruptos) evitando interrupciones abruptas de ejecución y registra en logs la cantidad exacta de filas extraídas por cada entidad.
- 
-*Ver script de extracción:* [`/src/extract.py`](./src/extract.py)
+📄 *Ver script de extracción:* [`/src/extract.py`](./src/extract.py)
 
 ---
 
-### 🔍 `inspect.py` — Auditoría de Calidad de Datos 
+### 🔍 2. `inspect.py` — Data Quality Gating & Auditoría
+Módulo encargado del escaneo integral no destructivo de los *datasets* crudos previo a las fases de transformación y limpieza. Centraliza las alertas en tiempo de ejecución (*logs*) y consolida una matriz jerárquica de diagnóstico en un reporte **JSON** reproducible.
 
-Realiza una auditoría integral de los datos antes de iniciar la limpieza. Los hallazgos se registran en terminal y se consolidan en un reporte estructurado en formato JSON.
+*   **Entradas:** DataFrames en memoria (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
+*   **Salidas:** Diccionario de diagnóstico consolidado (`quality_report.json`).
 
-- **Entradas (Memoria):**
-  - DataFrames raw (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
-- **Salidas (Consola / JSON):**
-  - Diccionario estructurado `quality_report` (impreso en consola en formato JSON).
-- **Detalle técnico:**
+El framework de auditoría evalúa la salud de los datos a través de tres capas de control:
 
-Los datos se auditan en tres capas:
+#### A. Calidad Técnica Estructural
+*   **Espacios Anómalos por Regex:** Discriminación de espacios en bordes (*leading/trailing*) respecto a cadenas compuestas exclusivamente por espacios sin contenido (*whitespace-only*).
+*   **Deduplicación Jerárquica:** Auditoría cuantitativa de colisiones en tres niveles: filas idénticas (100%), Claves Primarias (`PK`) duplicadas y Claves de Negocio (*Business Keys*).
+*   **Consistencia Categórica (Case Sensitivity):** Detección de variaciones de mayúsculas y minúsculas que generan duplicidades lógicas (ej. `'Online'` vs `'online'`).
+*   **Auditoría de Fechas:** Identificación de cadenas no parseables a `datetime` (`NaT`) y detección de registros anacrónicos proyectados en el futuro (`> Timestamp.now()`).
 
-#### Calidad técnica
-- Detección de espacios en blanco y registros compuestos únicamente por espacios.
-- Identificación de valores nulos.
-- Control de consistencia en variables categóricas.
-- Detección de duplicados exactos.
-- Detección de duplicados de claves primarias (`PK`).
-- Identificación de duplicados definidos por reglas de negocio.
-- Validación de fechas inválidas o no parseables.
+#### B. Reglas de Negocio Lógicas
+*   **Validación Financiera y Descuentos:** Verificación de precios o costos inviables (`<= 0`), alerta de margen de ganancia negativo (`precio_unitario < costo_unitario`) y **auditoría de la ecuación de descuento** (`precio_lista * (1 - descuento) != precio_unitario`).
+*   **Auditoría Logística de Pedidos:** Detección de cobros indebidos en pedidos cancelados o retiros en sucursal, y alerta de envíos a domicilio entregados con costo `$0`.
+*   **Integridad Demográfica de Clientes:** Detección de edades imposibles (`< 0` o `> 100`), identificación de clientes menores de edad (`< 18`) y anacronismos donde la fecha de registro precede a la fecha de nacimiento.
+*   **Dominio de Catálogo:** Verificación del atributo `gama` frente al conjunto restringido de valores permitidos (`alta`, `media`, `baja`).
 
-#### Reglas de negocio
-- Costos superiores al precio de venta.
-- Fechas cronológicamente inconsistentes.
-- Estados inválidos.
-- Valores fuera de los dominios permitidos.
-- Validaciones específicas según la entidad.
+#### C. Integridad Referencial
+*   **Validación Cruzada de Claves Foráneas (`FK`):** Búsqueda eficiente en memoria mediante conjuntos (`set`) para auditar la existencia de:
+    *   Pedidos vinculados a `cliente_id` inexistentes.
+    *   Líneas de detalle asociadas a `producto_id` inexistentes.
+    *   Líneas transaccionales huérfanas sin un `pedido_id` padre válido.
 
-#### Integridad referencial
-- Verificación de que las claves foráneas (`FK`) existan en sus correspondientes dimensiones (`PK`).
-
-*Ver script de auditoría de calidad:* [`/src/inspect.py`](./src/inspect.py)
+📄 *Ver script de auditoría de calidad:* [`/src/inspect.py`](./src/inspect.py)
 
 ---
 
-### 🧼 `clean.py` — Limpieza y Normalización de Datos 
+### 🧼 3. `clean.py` — Sanitización, Normalización e Imputación de Datos
+Módulo encargado de la corrección, imputación y neutralización de anomalías transaccionales mediante orquestadores específicos por entidad. Garantiza la calidad de datos, trazabilidad estricta vía *logs* descriptivos y minimización del descarte de registros mediante heurísticas avanzadas.
 
-Implementa la limpieza mediante funciones modulares y orquestadores específicos para cada entidad. Las anomalías son corregidas, imputadas, neutralizadas o descartadas según su naturaleza, manteniendo trazabilidad de las acciones realizadas.
+*   **Entradas:** `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw` (DataFrames en memoria).
+*   **Salidas:** `pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean` (Staging Layer).
+*   **Orden de Orquestación:** Procesamiento dependiente que prioriza dimensiones (`Productos` → `Clientes`) antes de evaluar tablas de hechos (`Pedidos` → `Detalle`) para habilitar cruzamientos de integridad y contexto temporal.
 
-- **Entradas (Memoria):**
-  - DataFrames raw (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
-- **Salidas (Memoria):**
-  - DataFrames limpios: `pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean`.
-- **Detalle técnico:**
+#### A. Refactorización Técnica y Formatos
+*   **Estandarización y Casing Semántico:** Eliminación de espacios marginales (*leading/trailing spaces*), conversión de cadenas vacías/espacios a nulos explícitos (`NA`) y formateo según el rol de la columna (`UPPERCASE` para identificadores `_id` y `Title Case` para texto descriptivo).
+*   **Seguridad Cronológica:** Parseo asertivo a tipos `datetime` inyectando `NaT` ante registros corruptos o fechas anómalas en el futuro respecto a la fecha de ejecución (`now`).
+*   **Deduplicación Jerárquica en 3 Capas:** Depuración algorítmica secuencial de: (1) Filas 100% idénticas, (2) Colisiones por Clave Primaria (`PK`), y (3) Registro duplicado por Claves de Negocio (*Business Keys*).
 
-#### Calidad técnica
-- Eliminación de espacios en los bordes de textos.
-- Conversión de cadenas vacías a valores nulos reales (`NA`).
-- Normalización de formatos de texto.
-- Eliminación de duplicados exactos y duplicados de claves.
-- Conversión segura de fechas a `datetime`.
-- Neutralización de fechas inválidas o futuras mediante `NaT`.
+#### B. Estrategias Avanzadas de Imputación y Resiliencia
+*   **Gating de Identificadores Críticos:** Descarte preventivo de registros transaccionales o dimensionales que carecen de Claves Primarias (`PK`) esenciales (`producto_id`, `cliente_id`, `pedido_id`, `detalle_id`).
+*   **Saneamiento Categórico y Reconstrucción Sintética:** Imputación estandarizada de categóricos faltantes con la etiqueta `'Sin Dato'` y reconstrucción automatizada de nombres de productos ausentes combinando `marca` e `ID`.
+*   **Compleción Lógica Operativa:** Asignación de valores por defecto en variables transaccionales (`cantidad = 1`, `descuento_aplicado = 0.0`).
+*   **Modelado Heurístico Monetario e Inflacionario:** 
+    *   **Reparación Directa:** Recálculo del `precio_unitario` a partir del `precio_lista` y `descuento_aplicado`.
+    *   **Imputación Jerárquica por Mediana Temporal:** Relleno de precios y costos faltantes o invalidados (`<= 0`) mediante medianas históricas anidadas por **`[Producto / Año Fiscal]`**, utilizando como respaldo (*fallback*) la combinación **`[Categoría / Año Fiscal]`**.
+    *   **Control de Pérdida Extrema:** Descarte definitivo y controlado únicamente de aquellas líneas cuyo valor monetario no pudo recuperarse tras agotar toda la cadena de *fallbacks*.
 
-#### Tratamiento de valores nulos
-- Descarte de registros sin claves primarias o identificadores esenciales.
-- Imputación de variables categóricas con `Sin Dato`.
-- Reconstrucción de nombres de productos faltantes.
-- Incorporación de un cliente de contingencia con ID `-1`.
-- Compleción de cantidades y descuentos faltantes.
-- Reconstrucción de precios unitarios a partir de precio de lista y descuento.
-- Imputación de precios y costos mediante medianas históricas por producto y año, utilizando como respaldo la categoría y año.
-- Descarte de líneas cuyos valores monetarios no pueden recuperarse.
+#### C. Inyección de Reglas de Negocio por Entidad
+*   **Módulo Productos:** Validación del atributo `gama` contra un dominio cerrado permitido (`Alta`, `Media`, `Baja`, `Sin Dato`), reasignando desvíos a `'Sin Dato'`.
+*   **Módulo Clientes:** Neutralización de fechas de nacimiento inverosímiles (edades fuera del rango 0–100 años) y rectificación automatizada de anacronismos cronológicos donde la fecha de registro era anterior a la de nacimiento.
+*   **Módulo Pedidos:** Ajuste de costos logísticos forzando `$0.0` en órdenes canceladas o retiros en tienda. Para envíos a domicilio con costo incoherente (`<= 0`), se imputa la mediana agrupada por `[Año Fiscal / Tipo Envio]`.
+*   **Módulo Detalle de Pedidos:** Corrección de cantidades negativas o nulas (`<= 0`), recálculo del precio neto final y generación de un **indicador binario analítico (`flag_margen_negativo`)** para alertar sobre transacciones vendidas por debajo del costo unitario.
 
-#### Reglas de negocio por entidad
-- **Productos:** Validación de dominios permitidos y normalización de valores inválidos.
-- **Clientes:** Tratamiento de edades y fechas de nacimiento inconsistentes.
-- **Pedidos:** Normalización de costos de envío según estado y modalidad de entrega.
-- **Detalle de pedidos:** Corrección de cantidades inválidas, imputación de precios/costos y recálculo del precio unitario según descuento.
-- Generación de un indicador para identificar líneas con margen negativo.
+#### D. Control de Integridad Referencial
+*   **Failsafe de Clientes (Sintético `-1`):** Inyección de un registro de cliente predeterminado (*Consumidor Final*, `ID -1`) y reasignación automatizada de pedidos huérfanos hacia este ID para no perder la facturación global en el modelo analítico.
+*   **Depuración en Cascada:** Eliminación de líneas de detalle que hagan referencia a órdenes de compra (`pedido_id`) o productos (`producto_id`) inexistentes en los maestros limpios.
 
-#### Integridad referencial
-- Reasignación de pedidos con clientes inexistentes al cliente de contingencia `-1`.
-- Eliminación de líneas de detalle sin pedido padre válido.
-- Eliminación de líneas asociadas a productos inexistentes.
-
-*Ver script de limpieza y normalización:* [`/src/clean.py`](./src/clean.py)
+📄 *Ver script completo de limpieza y normalización:* [`/src/clean.py`](./src/clean.py)
 
 ---
 
-### ⚙️ `transform.py` — Transformación y Consolidación de Datos 
+### ⚙️ 4. `transform.py` — Consolidación Dimensional y Lógica de Negocio
+Módulo encargado de consolidar la tabla de hechos (`fact_pedidos_final`) integrando la cabecera de pedidos con el detalle transaccional, resolviendo el prorrateo logístico y ordenando el modelo dimensional resultante.
 
-Aplica la lógica de negocio final, prorratea costos operativos y consolida los datasets finales.
+*   **Entradas:** DataFrames limpios (`pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean`).
+*   **Salidas:** Tupla con DataFrames listos para ingesta `(fact_consolidada, clientes_clean, productos_clean)`.
 
-- **Entradas (Memoria):**
-  - DataFrames limpios (`pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean`).
-- **Salidas (Memoria):**
-  - Modelo dimensional final: `fact_pedidos_final`, `dim_clientes`, `dim_productos`.
-- **Detalle técnico:**
+#### A. Consolidación de Hechos y Prorrateo Logístico
+*   **Conteo Vectorizado de Ítems:** Cálculo de la densidad de ítems por pedido mediante `groupby().transform('count')` sobre `detalle_clean`.
+*   **Prorrateo de Envío por Línea:** Distribución equitativa del costo logístico fijo del pedido (`costo_envio / items_por_pedido`) redondeado a 2 decimales (`costo_envio_linea`). Esto permite medir el margen neto y la rentabilidad real a nivel de ítem.
+*   **Desnormalización Controlada:** Selección de atributos clave de cabecera y fusión mediante `Inner Join` por `pedido_id`.
 
-#### Principales transformaciones
-- **Prorrateo del costo de envío:** Cálculo automatizado de `items_por_pedido` para prorratear equitativamente el costo de envío por cada línea transaccional (`costo_envio_linea`).
-- **Consolidación transaccional:** Fusión (`Inner Join`) entre `fact_detalle_pedidos_clean` y la cabecera `fact_pedidos_clean` sobre `pedido_id`.
-- **Control de integridad de merge:** Logging de advertencia si alguna línea de detalle pierde su cabecera de pedido durante la integración.
-- **tabla de hechos transaccional:** Selección de columnas para generar `fact_pedidos_final` con granularidad de línea transaccional, donde cada registro representa un producto dentro de un pedido.
-- **Preparación de dimensiones:** Estructuración y paso directo de los datasets maestros de clientes y productos limpios.
+#### B. Controles de Integridad y Estructuración Final
+*   **Auditoría de Registro Huérfanos:** Medición de descalce de filas pre y post *merge* (`descartados_merge`). Emite una advertencia en los *logs* si existen líneas de detalle que perdieron su cabecera durante la limpieza previa.
+*   **Ordenamiento y Selección de Esquema:** Ordenamiento cronológico explícito por `fecha_pedido` y filtrado proyectado a las 16 columnas finales requeridas para la tabla de hechos, descartando atributos temporales de cálculo.
+*   **Pasaje de Dimensiones:** Traspaso directo de `dim_clientes` y `dim_productos` hacia la capa de carga (`load.py`).
 
-*Ver script de transformación y consolidación de datos:* [`/src/transform.py`](./src/transform.py)
+📄 *Ver script de transformación:* [`/src/transform.py`](./src/transform.py)
 
 ---
 
-### 💾 `load.py` — Carga y Generación de Datasets Procesados
+### 💾 5. `load.py` — Persistencia y Carga Multicapa
+Módulo encargado de la exportación estructurada y segura de los DataFrames desde la memoria RAM hacia el sistema de archivos (`data/clean/` y `data/processed/`), garantizando la trazabilidad del pipeline y la preparación de archivos para su consumo analítico o ingesta en base de datos.
 
-Módulo encargado de exportar los DataFrames desde la memoria hacia las carpetas correspondientes en disco.
+*   **Entradas (Memoria):** DataFrames intermedios saneados de la capa Clean y DataFrames finales del modelo dimensional.
+*   **Salidas (Disco):**
+    *   **Capa Staging / Clean (`data/clean/`):** `fact_pedidos_clean.csv`, `fact_detalle_pedidos_clean.csv`, `dim_clientes_clean.csv`, `dim_productos_clean.csv`.
+    *   **Capa Procesada / Analytics (`data/processed/`):** `fact_pedidos_final.csv`, `dim_clientes.csv`, `dim_productos.csv`.
 
-- **Entradas (Memoria):**
-  - DataFrames de la capa Clean/Staging.
-  - DataFrames del modelo analítico final.
-- **Salidas (Disco):**
-  - **Capa Staging (`data/clean/`):** `fact_pedidos_clean.csv`, `fact_detalle_pedidos_clean.csv`, `dim_clientes_clean.csv`, `dim_productos_clean.csv`.
-  - **Capa Procesada (`data/processed/`):** `fact_pedidos_final.csv`, `dim_clientes.csv`, `dim_productos.csv`.
-- **Detalle técnico:**
-  - Funciones independientes para la persistencia de datasets Clean/Staging y Processed.
-  - Control preventivo que valida el estado de cada DataFrame y evita generar o sobrescribir archivos si el dataset llega vacío o como `None`.
- 
-*Ver script de carga de datasets procesados:* [`/src/load.py`](./src/load.py)
+#### A. Arquitectura Modular y Principio DRY
+*   **Función Auxiliar Privada (`_save_datasets`):** Encapsula la lógica de I/O y serialización en un único componente reutilizable, abstrayendo el guardado mediante iteración de diccionarios y etiquetado dinámico de *logs* (`layer_tag`).
+*   **Gestión Autogestionada del File System:** Verificación e inicialización automática de las rutas de destino mediante `os.makedirs(..., exist_ok=True)` para prevenir fallos de ejecución por carpetas inexistentes.
+
+#### B. Programación Defensiva y Estandarización I/O
+*   **Guard Clauses contra Corrupción de Datos:** Validación previa de integridad (`if df is None or df.empty`). Si un DataFrame llega vacío o no inicializado, se cancela la escritura en disco y se emite un *warning*, evitando la sobrescritura accidental de archivos previos.
+*   **Estandarización de Serialización:** Persistencia homogénea codificada en `utf-8` y omisión explícita de los índices autogenerados por Pandas (`index=False`) para garantizar una estructura tabular limpia.
+*   **Observabilidad de Carga:** Registro de métricas operativas en *logs* informando la finalización exitosa del guardado junto con el conteo exacto de filas escritas por cada archivo.
+
+📄 *Ver script de carga:* [`/src/load.py`](./src/load.py)
 
 ---
 
@@ -180,158 +162,6 @@ pip install pandas numpy
 # 2. Ejecutar el orquestador principal
 python main.py
 
-```
-
-
----
-
-# 🐍 TechnoShop | Pipeline ETL Modular en Python
-
-Pipeline de ingeniería de datos desarrollado con **Python, Pandas y NumPy** bajo una arquitectura modular para transformar datos transaccionales crudos en conjuntos de datos limpios, consistentes y optimizados para su explotación analítica en SQL y Power BI.
-
-### 🛠️ Stack Técnico Principal
-![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white)
-
----
-
-## 🏗️ Arquitectura del Pipeline
-
-El sistema implementa un diseño multicapa desacoplado basado en buenas prácticas de ingeniería de software (**Raw → Clean/Staging → Processed**). La segregación de responsabilidades garantiza la mantenibilidad y escalabilidad del código.
-
-![Estructura del Pipeline](./pipeline_estructure.png)
-
----
-
-## 🚀 Características Principales
-
-*   **Estructura Decoupled:** Módulos independientes orquestados por entidad mediante funciones auxiliares dedicadas.
-*   **Data Quality Gating:** Auditoría preventiva exhaustiva de anomalías técnicas e integridad referencial antes de la fase de limpieza.
-*   **Trazabilidad Centralizada:** Registro continuo y estructurado de hallazgos mediante un sistema dinámico de logs.
-*   **Data Profiling Automatizado:** Consolidación de métricas de calidad en un reporte estructurado nativo en formato **JSON**.
-*   **Inyección de Lógica Financiera:** Consolidación transaccional fina unificando pedidos y líneas con prorrateo logístico a nivel de ítem.
-
----
-
-## 🛠️ Detalle de Módulos Técnicos
-
-### 📥 1. `extract.py` — Ingesta de Datos Resiliente
-Carga tolerante a fallos de los archivos transaccionales de origen desde la capa de almacenamiento en disco.
-
-*   **Entradas (`data/raw/`):** `fact_pedidos_raw.csv`, `fact_detalle_pedidos_raw.csv`, `dim_clientes_raw.csv`, `dim_productos_raw.csv`.
-*   **Salidas (In-Memory DataFrames):** `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`.
-*   **Enfoque de Ingeniería:** Captura excepciones de infraestructura (archivos ausentes o corruptos) evitando interrupciones abruptas del sistema, mientras documenta de forma estricta en logs el volumen exacto de registros inyectados.
-
-📄 *Ver script de extracción:* [`/src/extract.py`](./src/extract.py)
-
----
-
-### 🔍 2. `inspect.py` — Data Quality Gating & Auditoría
-Módulo encargado del escaneo integral de los datasets antes de la transformación. Centraliza los hallazgos en la salida estándar y genera una firma de calidad reproducible en **JSON**.
-
-*   **Entradas:** DataFrames en memoria (`pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw`).
-*   **Salidas:** Reporte consolidado estructurado (`quality_report.json`).
-
-El framework de auditoría evalúa tres capas críticas:
-
-#### A. Calidad Técnica Estructural
-*   Detección exhaustiva de strings vacíos, espacios en blanco y registros nulos (`NaN`).
-*   Validación de consistencia en dominios de variables categóricas.
-*   Identificación de colisiones y duplicados de Claves Primarias (`PK`) y duplicados exactos de registros.
-*   Validación automatizada de formatos cronológicos inválidos o no parseables.
-
-#### B. Reglas de Negocio Lógicas
-*   Auditoría de anomalías comerciales (costos unitarios superiores al precio de venta).
-*   Validación de consistencia en secuencias lógicas de fechas y estados de órdenes.
-*   Control de rangos y valores fuera de los límites de negocio permitidos.
-
-#### C. Integridad Referencial
-*   Validación cruzada de Claves Foráneas (`FK`) contra Claves Primarias (`PK`) de las dimensiones para prevenir registros huérfanos.
-
-💡 *Ejemplo de estructura de salida del reporte de auditoría:*
-```json
-{
-  "timestamp": "2026-08-28T21:41:00",
-  "entity": "fact_pedidos",
-  "metrics": {
-    "total_records": 1500,
-    "null_values": { "customer_id": 0, "order_date": 3 },
-    "duplicate_pks": 0,
-    "business_rule_violations": { "cost_greater_than_price": 12 }
-  }
-}
-```
-
-📄 *Ver script de auditoría de calidad:* [`/src/inspect.py`](./src/inspect.py)
-
-### 🧼 3. `clean.py` — Sanitización y Normalización de Datos
-Módulo encargado de la corrección, imputación y neutralización de anomalías mediante orquestadores y funciones modulares específicas por entidad, garantizando la trazabilidad estricta en logs.
-
-*   **Entradas:** `pedidos_raw`, `detalle_raw`, `clientes_raw`, `productos_raw` (In-Memory).
-*   **Salidas:** `pedidos_clean`, `detalle_clean`, `clientes_clean`, `productos_clean` (Layer Staging).
-
-El proceso de limpieza implementa técnicas robustas en cuatro dimensiones:
-
-#### A. Refactorización Técnica y Formatos
-*   **Normalización Estructural:** Eliminación de *leading/trailing spaces* y conversión de strings vacíos a nulos reales (`NaN`).
-*   **Seguridad Cronológica:** Conversión asertiva a tipos `datetime` inyectando `NaT` ante datos futuros o fechas inválidas.
-*   **Deduplicación:** Eliminación algorítmica de duplicados exactos y colisiones en llaves de negocio.
-
-#### B. Estrategias Avanzadas de Imputación de Nulos
-*   **Gating de Identificadores:** Descarte inmediato de registros huérfanos sin Clave Primaria (`PK`) válida.
-*   **Failsafe de Dimensiones:** Implementación de registros de contingencia de negocio (Inyección de un *Default Client* con ID `-1`).
-*   **Modelado Heurístico Monetario:** Reconstrucción de precios unitarios mediante spread de lista/descuento e imputación predictiva de precios y costos utilizando **medianas históricas anidadas por Producto/Año y Categoría/Año**.
-
-#### C. Control Avanzado de Integridad Referencial
-*   **Limpieza en Cascada:** Eliminación de líneas de detalle huérfanas sin pedido padre o asociadas a productos inexistentes en el maestro.
-*   **Reasignación de Negocio:** Derivación de pedidos con clientes inválidos hacia el ID de contingencia `-1`.
-
-📄 *Ver script de limpieza:* [`/src/clean.py`](./src/clean.py)
-
----
-
-### ⚙️ 4. `transform.py` — Consolidación Dimensional y Lógica de Negocio
-Aplica el procesamiento analítico final, resuelve cálculos operativos distribuidos y consolida las estructuras de destino.
-
-*   **Entradas:** DataFrames en capa Clean/Staging en memoria.
-*   **Salidas:** Tablas finales optimizadas para el Data Warehouse (`fact_pedidos_final`, `dim_clientes`, `dim_productos`).
-
-*   **Prorrateo Logístico Distribuido:** Cálculo dinámico de la densidad de ítems por orden para prorratear de manera equitativa el costo de envío fijo a nivel de línea transaccional (`costo_envio_linea`).
-*   **Consolidación de Hechos (Fact Denormalization):** Ejecución de un `Inner Join` controlado entre detalles y cabeceras mediante `pedido_id` para establecer una **granularidad atómica a nivel de ítem**.
-*   **Failsafe de Integración:** Sistema de logging preventivo que emite alertas críticas si alguna línea transaccional pierde su cabecera de pedido durante el merge.
-
-📄 *Ver script de transformación:* [`/src/transform.py`](./src/transform.py)
-
----
-
-### 💾 5. `load.py` — Persistencia y Generación de Capas
-Módulo responsable de escribir y materializar los DataFrames desde la memoria hacia estructuras físicas en disco de manera desacoplada.
-
-*   **Entradas:** DataFrames procesados e intermedios.
-*   **Salidas (Persistencia física):**
-    *   **Capa Staging (`data/clean/`):** Almacenamiento seguro de estructuras intermedias sanitizadas.
-    *   **Capa Procesada (`data/processed/`):** Almacenamiento optimizado de tablas listas para explotación analítica.
-*   **Mecanismo de Control:** Implementación de guardas lógicas (*guard clauses*) que bloquean la escritura o sobrescritura de archivos si un dataset llega vacío o como `None`.
-
-📄 *Ver script de carga:* [`/src/load.py`](./src/load.py)
-
----
-
-## 🎛️ 6. `main.py` — Orquestador Central del Pipeline
-
-Punto de entrada (*Entry Point*) principal del sistema. Controla y secuencia el flujo lógico completo de la arquitectura (**Extract ➔ Inspect ➔ Clean ➔ Save Clean ➔ Transform ➔ Save Processed**), centralizando el flujo de logs en tiempo real y exponiendo el reporte JSON de calidad.
-
-📄 *Ver orquestador principal:* [`/main.py`](./main.py)
-
-### 🚀 Guía de Despliegue y Ejecución
-
-Para inicializar y ejecutar el pipeline completo desde la raíz del módulo:
-
-```bash
-# 1. Instalar el stack de dependencias requeridas
-pip install pandas numpy
-
-# 2. Ejecutar el pipeline de datos
-python main.py
 ```
 
 
