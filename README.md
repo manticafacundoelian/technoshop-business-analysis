@@ -112,7 +112,7 @@ Para revertir la destrucción de margen y blindar la base operativa del negocio,
 
 Desarrollé un pipeline de datos robusto y desacoplado utilizando **Python y Pandas** para transformar fuentes transaccionales crudas en estructuras óptimas para almacenamiento y análisis dimensional.
 
-*   **Granularidad Fina:** Integré y normalicé las entidades de pedidos (`orders`) y líneas de pedido (`order_items`) para establecer una base transaccional unificada a nivel de ítem.
+*   **Granularidad Fina:** Integré y normalicé las entidades de pedidos (`pedidos`) y líneas de pedido (`detalle_pedidos`) para establecer una base transaccional unificada a nivel de ítem.
 *   **Data Quality Assurance (`inspect.py`):** Programé un módulo de auditoría automatizado que valida tipos de datos, nulos e integridad referencial, exportando reportes de diagnóstico en **JSON**.
 *   **Lógica de Negocio Inyectada (`clean.py` & `transform.py`):** Implementé algoritmos para la imputación dimensional de precios faltantes y el **prorrateo matemático del costo de envío** por ítem.
 *   **Persistencia Decoupled:** El pipeline segrega los datos en dos capas de almacenamiento local: **Clean** (datos saneados) y **Processed** (datos listos para producción).
