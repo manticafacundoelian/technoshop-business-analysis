@@ -133,7 +133,7 @@ Repositorio de bases de datos analíticas para realizar un diagnóstico financie
 
 *   **Vista Analítica Centralizada:** Creación de la vista enriquecida **`fact_pedidos_analitica`**, centralizando fórmulas financieras y métricas derivadas complejas directo en el motor de base de datos.
 *   **Análisis Multidimensional:** Framework de scripts estructurados para auditar Evolución General ➔ Estructura de Costos ➔ Pricing ➔ Mix de Productos ➔ Performance por Canal.
-*   **Técnicas Avanzadas Aplicadas:** Uso intensivo de **CTEs (`WITH`)** para modularidad, Window Functions (`LAG`, `ROW_NUMBER`)** para cálculos YoY y rankings de SKUs rentables.
+*   **Técnicas Avanzadas Aplicadas:** Uso intensivo de **CTEs (`WITH`)** para modularidad, **Window Functions (`LAG`, `ROW_NUMBER`)** para cálculos YoY y rankings de SKUs rentables.
 *   **Data Validation:** Ejecución de pruebas de validación cruzada (Cross-Validation) para garantizar consistencia métrica al 100% entre SQL y Power BI.
 
 📂 *Ver scripts de bases de datos y consultas de diagnóstico:* [`/sql_queries`](./sql_queries/README.md)
