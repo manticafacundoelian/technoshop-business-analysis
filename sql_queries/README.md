@@ -60,13 +60,11 @@ Evaluación de la estructura interna del P&L analizando la participación de cad
 *   **Insight de Negocio:** El **Costo de Mercadería absorbió el margen al escalar del 66.07% al 78.85% del Revenue Neto** (+12.78 p.p.), mientras que el costo de envío sobre ventas se duplicó, pasando del **1.98% al 4.13%**. El resto de las pérdidas operativas se mantuvieron en niveles mínimos.
 *   📄 *Consulta SQL:* [`02_drivers_costo.sql`](./02_drivers_costo.sql)
 
-### 3. Pricing — ¿Los precios acompañaron la evolución de los costos?
-
-Comparación interanual del precio y costo promedio por producto, evitando que el volumen de ventas distorsione la evaluación de la estrategia de pricing.
-
-**Hallazgo:** entre 2024 y 2025 el precio promedio por producto aumentó **+17,39%**, mientras el costo promedio aumentó **+45,10%**, reduciendo el spread promedio precio–costo en **35%**.
-
-📄 *Consulta SQL:* [`03_precio_vs_costo.sql`](./03_precio_vs_costo.sql)
+### 3. Estrategia de Pricing — ¿Los precios acompañaron la aceleración de los costos?
+Auditoría del comportamiento indexado de precios frente a costos a nivel unitario de producto para evaluar la elasticidad y la contracción del spread.
+*   **Enfoque Técnico:** Implementación de un modelo de doble agregación anidada mediante CTEs para aislar el promedio macro por producto, mitigando sesgos por distorsión de volumen masivo (Análisis No Ponderado).
+*   **Insight de Negocio:** Entre 2024 y 2025, el precio promedio por producto aumentó un **+17.39%**, mientras que el costo promedio se disparó un **+45.10%**. Esta asimetría redujo el spread promedio precio-costo en un **-35%**, confirmando una deficiente política de fijación de precios frente al avance de los costos de los proveedores.
+*   📄 *Consulta SQL:* [`03_precio_vs_costo.sql`](./03_precio_vs_costo.sql)
 
 ### 4. Mix de ventas — ¿Cambió la composición de los productos vendidos?
 
