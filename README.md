@@ -112,9 +112,9 @@ Para revertir la destrucción de margen y blindar la base operativa del negocio,
 
 Desarrollé un pipeline de datos robusto y desacoplado utilizando **Python y Pandas** para transformar fuentes transaccionales crudas en estructuras óptimas para almacenamiento y análisis dimensional.
 
-*   **Granularidad Fina:** Integré y normalicé las entidades de pedidos (`pedidos`) y líneas de pedido (`detalle_pedidos`) para establecer una base transaccional unificada a nivel de ítem.
-*   **Data Quality Assurance (`inspect.py`):** Programé un módulo de auditoría automatizado que valida tipos de datos, nulos e integridad referencial, exportando reportes de diagnóstico en **JSON**.
-*   **Lógica de Negocio Inyectada (`clean.py` & `transform.py`):** Implementé algoritmos para la imputación dimensional de precios faltantes y el **prorrateo matemático del costo de envío** por ítem.
+*   **Granularidad Fina:** Integré y normalicé las entidades de pedidos (`fact_pedidos`) y líneas de pedido (`fact_detalle_pedidos`) para establecer una base transaccional unificada a nivel de ítem (`fact_pedidos_final`).
+*   **Data Quality Assurance (`inspect.py`):** Programé un módulo de auditoría automatizado que valida tipos de datos, nulos e integridad referencial, entregando reportes de diagnóstico en **JSON**.
+*   **Lógica de Negocio Inyectada (`clean.py` & `transform.py`):** Implementé algoritmos de imputación avanzados (entre ellos la imputación dimensional de precios faltantes) y el **prorrateo matemático del costo de envío** por ítem, entre otras cosas.
 *   **Persistencia Decoupled:** El pipeline segrega los datos en dos capas de almacenamiento local: **Clean** (datos saneados) y **Processed** (datos listos para producción).
 
 ![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)
@@ -127,12 +127,12 @@ Desarrollé un pipeline de datos robusto y desacoplado utilizando **Python y Pan
 
 Diseñé el repositorio de bases de datos analíticas consumiendo los datasets procesados para realizar un diagnóstico financiero profundo y progresivo sobre la salud del negocio.
 
-*   **Modelado de Vistas:** Construí la vista enriquecida **`fact_pedidos_analitica`** en MySQL, centralizando fórmulas financieras y métricas derivadas complejas directamente en el motor de BD.
+*   **Modelado de Vistas:** Construí la vista enriquecida **`fact_pedidos_analitica`** en SQL, centralizando fórmulas financieras y métricas derivadas complejas directamente en el motor de BD.
 *   **Análisis Multidimensional:** Ejecuté un framework de análisis secuencial: *Evolución general ➔ Costos ➔ Pricing ➔ Mix de Productos ➔ Performance por Canal.*
 *   **Técnicas Avanzadas Aplicadas:**
     *   **CTEs (`WITH`):** Estructuración de scripts legibles y optimizados por capas lógicas.
     *   **Window Functions (`LAG`, `ROW_NUMBER`):** Cálculo exacto de variaciones interanuales (YoY) y rankings de SKUs rentables.
-    *   **Data Validation:** Ejecución de pruebas de validación cruzada (Cross-Validation) para garantizar consistencia métrica al 100% entre MySQL y Power BI.
+    *   **Data Validation:** Ejecución de pruebas de validación cruzada (Cross-Validation) para garantizar consistencia métrica al 100% entre SQL y Power BI.
 
 📂 *Ver scripts de bases de datos y consultas de diagnóstico:* [`/sql_queries`](./sql_queries/README.md)
 </details>
@@ -143,7 +143,7 @@ Diseñé el repositorio de bases de datos analíticas consumiendo los datasets p
 Construí el modelo analítico de cara al usuario final aplicando las mejores prácticas de modelado dimensional y diseño UX/UI financiero.
 
 *   **Esquema en Estrella (Star Schema):** Diseñé un modelo altamente optimizado compuesto por la tabla de hechos `fact_pedidos_final` conectada directamente a tres tablas de dimensiones: `dim_clientes`, `dim_productos` y `dim_calendario`.
-*   **Arquitectura DAX Avanzada:** Desarrollé un repositorio de medidas calculadas para centralizar la inteligencia de negocio (Revenue Neto, Margen, Ticket Promedio, Tasas de Churn y Retención).
+*   **Arquitectura DAX Avanzada:** Desarrollé un repositorio de medidas calculadas para centralizar la inteligencia de negocio (Revenue Neto, Margen, Ticket Promedio, Tasas de Churn, Retención, etc.).
 
 *Ver modelo, medidas y dashboard completos:* [`/powerbi`](./powerbi/README.md)
 
