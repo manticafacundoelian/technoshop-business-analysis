@@ -69,7 +69,9 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural e
 ![Dashboard Retención Clientes](./powerbi/retencion_clientes.gif)
 </details>
 
-*Descargar reporte en Power BI:* [`/technoshop_business_analysis.pbix`](./powerbi/technoshop_business_analysis.pbix)
+📄 *Descargar reporte interactivo completo:* [`/technoshop_business_analysis.pbix`](./powerbi/technoshop_business_analysis.pbix)
+
+---
 
 ## 🎯 Recomendaciones Estratégicas Basadas en Evidencia
 
@@ -108,16 +110,16 @@ Para revertir la destrucción de margen y blindar la base operativa del negocio,
 <details>
 <summary><b>🐍 1. Pipeline ETL Modular (Python + Pandas)</b></summary><br>
 
-Desarrollé un pipeline de datos ETL modular utilizando **Python y Pandas** para transformar fuentes transaccionales crudas en estructuras óptimas para almacenamiento y análisis dimensional.  
+Pipeline de datos ETL modular construido en Python y Pandas para transformar fuentes transaccionales crudas en estructuras saneadas y listas para análisis.
 
 ![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)
 
 #### Características Principales del Pipeline
 
-* **Arquitectura Modular y Desacoplada:** Pipeline estructurado en componentes independientes (`extract`, `inspect`, `clean`, `transform`, `load`) bajo el principio de responsabilidad única y orquestación centralizada.
-* **Data Quality Gating (Pre-Limpieza):** Auditoría preventiva no destructiva que detecta anomalías técnicas, violaciones de reglas de negocio y fallos de integridad referencial antes de modificar los datos.
-* **Sanitización Heurística Extensiva:** Procesamiento adaptativo de limpieza que abarca normalización, deduplicación en múltiples niveles e imputación lógica orientada a la conservación de información y blindaje de relaciones.
-* **Lógica Financiera y Granularidad Atómica:** Desnormalización controlada de órdenes y líneas transaccionales para fijar una granularidad a nivel de ítem (`fact_pedidos_final`), incorporando **prorrateo logístico distribuido** para el análisis de *Unit Economics*.
+* **Arquitectura Modular y Desacoplada:** Pipeline estructurado en componentes independientes (`extract`, `inspect`, `clean`, `transform`, `load`) bajo el principio de responsabilidad única y orquestación centralizada (`main`).
+* **Data Quality Gating (Pre-Limpieza):** Auditoría preventiva no destructiva que detecta anomalías técnicas, violaciones de reglas de negocio e inconsistencias relacionales antes de modificar los datos.
+* **Sanitización Heurística Extensiva:** Normalización, deduplicación en múltiples niveles e imputaciones lógicas orientadas a la conservación de información y blindaje de relaciones.
+* **Lógica Financiera y Granularidad Atómica:** Desnormalización controlada de órdenes y detalles fijando una granularidad a nivel de ítem (`fact_pedidos_final`) e incorporando **prorrateo logístico distribuido** para el análisis de *Unit Economics*.
 * **Observabilidad y Data Profiling:** Sistema dinámico de *logging* estructurado para trazabilidad continua en tiempo de ejecución y exportación automatizada de un reporte integral de calidad en formato **JSON**.
 * **Persistencia Multicapa:** Separación explícita del almacenamiento en carpetas de *Staging* (`data/clean/`) y modelo analítico final (`data/processed/`) con mecanismos de programación defensiva para evitar corrupción por DataFrames vacíos.
 
@@ -127,14 +129,12 @@ Desarrollé un pipeline de datos ETL modular utilizando **Python y Pandas** para
 <details>
 <summary><b>🛢️ 2. Investigación Analítica Avanzada (SQL)</b></summary><br>
 
-Diseñé el repositorio de bases de datos analíticas consumiendo los datasets procesados para realizar un diagnóstico financiero profundo y progresivo sobre la salud del negocio.
+Repositorio de bases de datos analíticas para realizar un diagnóstico financiero profundo y progresivo sobre los datos procesados.
 
-*   **Modelado de Vistas:** Construí la vista enriquecida **`fact_pedidos_analitica`** en SQL, centralizando fórmulas financieras y métricas derivadas complejas directamente en el motor de BD.
-*   **Análisis Multidimensional:** Ejecuté un framework de análisis secuencial: *Evolución general ➔ Costos ➔ Pricing ➔ Mix de Productos ➔ Performance por Canal.*
-*   **Técnicas Avanzadas Aplicadas:**
-    *   **CTEs (`WITH`):** Estructuración de scripts legibles y optimizados por capas lógicas.
-    *   **Window Functions (`LAG`, `ROW_NUMBER`):** Cálculo exacto de variaciones interanuales (YoY) y rankings de SKUs rentables.
-    *   **Data Validation:** Ejecución de pruebas de validación cruzada (Cross-Validation) para garantizar consistencia métrica al 100% entre SQL y Power BI.
+*   **Vista Analítica Centralizada:** Creación de la vista enriquecida **`fact_pedidos_analitica`**, centralizando fórmulas financieras y métricas derivadas complejas directo en el motor de base de datos.
+*   **Análisis Multidimensional:** Framework de scripts estructurados para auditar Evolución General ➔ Estructura de Costos ➔ Pricing ➔ Mix de Productos ➔ Performance por Canal.
+*   **Técnicas Avanzadas Aplicadas:** Uso intensivo de **CTEs (`WITH`)** para modularidad, Window Functions (`LAG`, `ROW_NUMBER`)** para cálculos YoY y rankings de SKUs rentables.
+*   **Data Validation:** Ejecución de pruebas de validación cruzada (Cross-Validation) para garantizar consistencia métrica al 100% entre SQL y Power BI.
 
 📂 *Ver scripts de bases de datos y consultas de diagnóstico:* [`/sql_queries`](./sql_queries/README.md)
 </details>
@@ -142,10 +142,10 @@ Diseñé el repositorio de bases de datos analíticas consumiendo los datasets p
 <details>
 <summary><b>📐 3. Modelado Semántico y Dashboard (Power BI)</b></summary><br>
 
-Construí el modelo analítico de cara al usuario final aplicando las mejores prácticas de modelado dimensional y diseño UX/UI financiero.
+Modelo semántico final aplicando las mejores prácticas de modelado dimensional y diseño UX/UI financiero.
 
-*   **Esquema en Estrella (Star Schema):** Diseñé un modelo altamente optimizado compuesto por la tabla de hechos `fact_pedidos_final` conectada directamente a tres tablas de dimensiones: `dim_clientes`, `dim_productos` y `dim_calendario`.
-*   **Arquitectura DAX Avanzada:** Desarrollé un repositorio de medidas calculadas para centralizar la inteligencia de negocio (Revenue Neto, Margen, Ticket Promedio, Tasas de Churn, Retención, etc.).
+*   **Esquema en Estrella (Star Schema):** Modelo altamente optimizado compuesto por la tabla de hechos `fact_pedidos_final` conectada directamente a tres tablas de dimensiones: `dim_clientes`, `dim_productos` y `dim_calendario`.
+*   **Arquitectura DAX Avanzada:** Repositorio de medidas calculadas para centralizar la inteligencia de negocio (Revenue Neto, Margen, Ticket Promedio, Tasas de Churn, Retención, etc.).
 
 *Ver modelo, medidas y dashboard completos:* [`/powerbi`](./powerbi/README.md)
 
