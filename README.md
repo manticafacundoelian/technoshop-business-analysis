@@ -147,6 +147,6 @@ Modelo semántico final aplicando las mejores prácticas de modelado dimensional
 *   **Esquema en Estrella (Star Schema):** Modelo altamente optimizado compuesto por la tabla de hechos `fact_pedidos_final` conectada directamente a tres tablas de dimensiones: `dim_clientes`, `dim_productos` y `dim_calendario`.
 *   **Arquitectura DAX Avanzada:** Repositorio de medidas calculadas para centralizar la inteligencia de negocio (Revenue Neto, Margen, Ticket Promedio, Tasas de Churn, Retención, etc.).
 
-*Ver modelo, medidas y dashboard completos:* [`/powerbi`](./powerbi/README.md)
+📂 *Ver modelo, medidas y dashboard completos:* [`/powerbi`](./powerbi/README.md)
 
 </details>
