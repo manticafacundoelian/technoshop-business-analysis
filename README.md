@@ -3,21 +3,23 @@
 ### Introducción:  
 Este proyecto abarca el ciclo completo de un proceso de analítica de datos: desde la construcción de un **pipeline ETL modular en Python**, pasando por la **investigación analítica en SQL**, hasta la elaboración de un **dashboard interactivo en Power BI**, a partir del cual se obtienen conclusiones y recomendaciones estratégicas.  
 
-Para priorizar la perspectiva de negocio, este README presenta primero los hallazgos, el impacto y las recomendaciones, y posteriormente la arquitectura técnica que permitió obtenerlos.
+Para priorizar la perspectiva de negocio, este README presenta primero los hallazgos, el impacto y las recomendaciones estratégicas, y posteriormente la arquitectura técnica que permitió obtenerlos.
 
 ### Objetivo: 
-Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones.
+Identificar las causas raíz de la caída de rentabilidad de una empresa de retail tecnológico entre 2023 y 2025 y elaborar recomendaciones estratégicas basadas en evidencia para apoyar la toma de decisiones ejecutivas.
 
 ### Stack Técnico Principal:  
 ![Python](https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-013243?style=flat-square&logo=numpy&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%2300758F.svg?style=flat-square&logo=sqlite&logoColor=white) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)  
 
 ---
 
-## Problema de Negocio
+## 📉 Problema de Negocio
 
-Si bien el volumen de pedidos se mantiene relativamente estable, el negocio experimenta una fuerte destrucción de valor: la **Ganancia Neta** se derrumbó un **-57.13%**.  
+A pesar de que el volumen operativo general se mantiene relativamente estable (+3.07% de pedidos entregados), la empresa sufre una severa destrucción de valor: la **Ganancia Neta consolidada se derrumbó un -57.13%**, pasando de $169.402 a $72.627, con una compresión del Margen Neto de casi la mitad (30.46% → 16.90%). 
 
-## Storytelling de Negocio — Hallazgos del Análisis en Power BI
+---
+
+## 📊 Storytelling de Negocio — Hallazgos del Análisis en Power BI
 <details>
 <summary><b>1. Vista Ejecutiva — ¿Qué pasó con el negocio? (Clic para expandir)</b></summary><br>
 
@@ -25,26 +27,22 @@ Al cierre del año fiscal 2025, el volumen operativo general se mantiene relativ
 
 Este deterioro presenta **dinámicas opuestas entre canales**:
 
-* El **Canal Físico** sufrió una contracción del **-71,69% en su Ganancia Neta** (**$87.136 vs. $24.667**), acompañada por una fuerte pérdida de escala: sus **pedidos cayeron de 641 a 422 (-34,32%)** y su **Ticket Promedio se redujo un -32,49%**, hasta **$275**.
+* **Canal Físico:** Sufrió una contracción del **-71,69% en su Ganancia Neta** (**$87.136 vs. $24.667**), acompañada por una fuerte pérdida de escala: sus **pedidos cayeron un -34,32%** (641 a 422) y su **Ticket Promedio se redujo un -32,49%** ($275).
+* **Canal Online:** La demanda migró masivamente hacia el canal digital, expandiendo sus órdenes de **793 a 1.056 (+33,42%)**. Sin embargo, este volumen no se tradujo en rentabilidad: su **Ganancia Neta cayó un -41,70%** (**$82.265 a $47.959**), aun registrando un Ticket Promedio superior ($297).
 
-* En contraste, la demanda migró masivamente hacia el **Canal Online**, que actuó como motor de volumen al expandir sus órdenes de **793 a 1.056 (+33,42%)**. Sin embargo, este crecimiento no se tradujo en mayor rentabilidad: su **Ganancia Neta también cayó un -41,70%**, pasando de **$82.265 a $47.959**, aun con un Ticket Promedio superior (**$297**).
-
-En conjunto, los resultados muestran que **el crecimiento del volumen Online no fue suficiente para compensar la destrucción de rentabilidad en ambos canales**. Esto indica que el deterioro del negocio no responde únicamente a una contracción de la demanda, sino a una **pérdida de rentabilidad por operación**, cuya causa debe analizarse en la estructura de costos y márgenes.
-
+**Conclusión:** El crecimiento del canal Online no compensó la destrucción de margen transversal. El problema no responde a una falta de demanda, sino a una **pérdida severa de rentabilidad por operación**.
 
 ![Vista Ejecutiva](./powerbi/vista_ejecutiva.gif)
 </details>
 
 <details>
-<summary><b>2. Diagnóstico de Rentabilidad — ¿Por qué cayó la rentabilidad? (Clic para expandir)</b></summary><br>
+<summary><b>2. Diagnóstico de Rentabilidad — ¿Por qué cayó la rentabilidad? (Clic para expandir)</b></summary><br>  
+
+La rentabilidad global fue fuertemente erosionada por un deterioro estructural en la relación precio–costo y un incremento en la presión logística del canal digital:
+
+* **Deterioro de la relación precio–costo:** El **% Costo de Mercadería (CMV)** sobre el Revenue Neto aumentó del **66,07% al 78,85% (+12,78 p.p.)**. Mientras el **precio unitario promedio creció un +17,39%**, el **costo unitario promedio se disparó un +45,08%**, reduciendo críticamente el spread comercial **(-27,69 p.p.)**. 
+* **Presión logística en Canal Online:** El **% Costo Logístico** en Online pasó del **3,90% al 5,66%** sobre la facturación. Aunque el canal elevó su Revenue Neto un **+16,18%**, la absorción del costo de envío redujo su Margen Neto del **30,46% al 15,28%**.
   
-La rentabilidad global fue fuertemente erosionada por un deterioro estructural de la relación precio–costo, acompañado por un incremento del costo logístico del canal digital.
-
-* **Deterioro de la relación precio–costo:** El **% Costo de Mercadería** sobre el Revenue Neto aumentó del **66,07% al 78,85% (+12,78 p.p.)** entre 2024 y 2025. El deterioro se replica prácticamente por igual en ambos canales: **Físico (66,61% → 78,74%)** y **Online (65,54% → 78,89%)**. La investigación precio–costo muestra el origen del problema: mientras el **precio unitario promedio aumentó un +17,39%**, el **costo unitario promedio creció un +45,08%**, comprimiendo significativamente el spread entre precio y costo **(-27,69 p.p.)**. Este deterioro constituye el **principal factor identificado detrás de la contracción del margen**.
-
-* **Presión logística sobre el canal Online:** El **% Costo Logístico** consolidado aumentó del **1,98% al 4,13%**. El impacto se concentra en el canal Online, donde pasó del **3,90% al 5,66%**. Si bien el canal absorbió el crecimiento de la demanda y elevó su Revenue Neto un **+16,18%**, su Ganancia Neta cayó un **-41,70%** y su Margen Neto se redujo del **30,46% al 15,28%**. La logística, por tanto, actúa como un **factor adicional de erosión del margen**, pero no explica por sí sola el deterioro estructural observado en ambos canales.
-
-
 ![Diagnostico de Rentabilidad](./powerbi/diagnostico_rentabilidad.gif)
 </details>
 
@@ -55,7 +53,7 @@ La rentabilidad global fue fuertemente erosionada por un deterioro estructural d
 
 * **Mitigación y dispersión en Accesorios:** *Accesorios* constituye el principal pulmón financiero del Canal Online, aportando **$12.927 en Ganancia Neta**, con un **27,66% de margen** y **1.300 unidades vendidas**. Sin embargo, el análisis a nivel de producto revela una **alta dispersión interna**: dentro de una misma categoría conviven productos con márgenes superiores al **40%** y otros por debajo del **-10%**. Por lo tanto, el buen desempeño consolidado de la categoría **oculta comportamientos muy heterogéneos entre sus productos**, haciendo necesario analizar el catálogo a nivel de SKU para identificar qué artículos sostienen y cuáles erosionan la rentabilidad.
 
-* **Efecto del costo logístico en productos de bajo valor (Canal Online):** La operación digital registra **5 Productos No Rentables**. El análisis del *Mix de Catálogo* muestra que varios productos de bajo precio terminan cruzando la barrera del **0% de margen**, debido al impacto que representa el costo de envío sobre operaciones de bajo valor. Al auditar el *Top 5 con Menor Ganancia*, la fuga de valor está liderada por el *Organizador de Cables* (**-$92**), el *Limpiador de Pantallas* (**-$64**) y el *Chromecast Google TV* (**-$22**). El hallazgo evidencia que, bajo la estructura actual de costos, **el envío fijo puede convertir productos de bajo ticket en operaciones deficitarias**, aun cuando la categoría a la que pertenecen mantenga un margen consolidado positivo.
+* **Efecto del costo logístico en productos de bajo valor (Canal Online):**  La operación digital registra **5 productos con margen negativo**. El costo logístico fijo convierte operaciones de bajo ticket en pérdidas netas, lideradas por el *Organizador de Cables* (**-$92**), *Limpiador de Pantallas* (**-$64**) y *Chromecast Google TV* (**-$22**). El hallazgo evidencia que, bajo la estructura actual de costos, **el envío fijo puede convertir productos de bajo ticket en operaciones deficitarias**, aun cuando la categoría a la que pertenecen mantenga un margen consolidado positivo.
 
 ![Dashboard Performance de Producto](./powerbi/performance_productos.gif)
 </details>
@@ -110,14 +108,18 @@ Para revertir la destrucción de margen y blindar la base operativa del negocio,
 <details>
 <summary><b>🐍 1. Pipeline ETL Modular (Python + Pandas)</b></summary><br>
 
-Desarrollé un pipeline de datos robusto y desacoplado utilizando **Python y Pandas** para transformar fuentes transaccionales crudas en estructuras óptimas para almacenamiento y análisis dimensional.
-
-*   **Granularidad Fina:** Integré y normalicé las entidades de pedidos (`fact_pedidos`) y líneas de pedido (`fact_detalle_pedidos`) para establecer una base transaccional unificada a nivel de ítem (`fact_pedidos_final`).
-*   **Data Quality Assurance (`inspect.py`):** Programé un módulo de auditoría automatizado que valida tipos de datos, nulos e integridad referencial, entregando reportes de diagnóstico en **JSON**.
-*   **Lógica de Negocio Inyectada (`clean.py` & `transform.py`):** Implementé algoritmos de imputación avanzados (entre ellos la imputación dimensional de precios faltantes) y el **prorrateo matemático del costo de envío** por ítem, entre otras cosas.
-*   **Persistencia Decoupled:** El pipeline segrega los datos en dos capas de almacenamiento local: **Clean** (datos saneados) y **Processed** (datos listos para producción).
+Desarrollé un pipeline de datos ETL modular utilizando **Python y Pandas** para transformar fuentes transaccionales crudas en estructuras óptimas para almacenamiento y análisis dimensional.  
 
 ![Estructura del Pipeline](./pipeline_python/pipeline_estructure.png)
+
+#### Características Principales del Pipeline
+
+* **Arquitectura Modular y Desacoplada:** Pipeline estructurado en componentes independientes (`extract`, `inspect`, `clean`, `transform`, `load`) bajo el principio de responsabilidad única y orquestación centralizada.
+* **Data Quality Gating (Pre-Limpieza):** Auditoría preventiva no destructiva que detecta anomalías técnicas, violaciones de reglas de negocio y fallos de integridad referencial antes de modificar los datos.
+* **Sanitización Heurística Extensiva:** Procesamiento adaptativo de limpieza que abarca normalización, deduplicación en múltiples niveles e imputación lógica orientada a la conservación de información y blindaje de relaciones.
+* **Lógica Financiera y Granularidad Atómica:** Desnormalización controlada de órdenes y líneas transaccionales para fijar una granularidad a nivel de ítem (`fact_pedidos_final`), incorporando **prorrateo logístico distribuido** para el análisis de *Unit Economics*.
+* **Observabilidad y Data Profiling:** Sistema dinámico de *logging* estructurado para trazabilidad continua en tiempo de ejecución y exportación automatizada de un reporte integral de calidad en formato **JSON**.
+* **Persistencia Multicapa:** Separación explícita del almacenamiento en carpetas de *Staging* (`data/clean/`) y modelo analítico final (`data/processed/`) con mecanismos de programación defensiva para evitar corrupción por DataFrames vacíos.
 
 📂 *Ver documentación, arquitectura modular y código fuente del pipeline:* [`/pipeline_python`](./pipeline_python/README.md)
 </details>
