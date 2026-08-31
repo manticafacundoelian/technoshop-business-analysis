@@ -66,13 +66,11 @@ Auditoría del comportamiento indexado de precios frente a costos a nivel unitar
 *   **Insight de Negocio:** Entre 2024 y 2025, el precio promedio por producto aumentó un **+17.39%**, mientras que el costo promedio se disparó un **+45.10%**. Esta asimetría redujo el spread promedio precio-costo en un **-35%**, confirmando una deficiente política de fijación de precios frente al avance de los costos de los proveedores.
 *   📄 *Consulta SQL:* [`03_precio_vs_costo.sql`](./03_precio_vs_costo.sql)
 
-### 4. Mix de ventas — ¿Cambió la composición de los productos vendidos?
-
-Análisis de participación de unidades y Revenue por categoría, comparando 2024 vs. 2025 y complementando el análisis con Revenue por unidad y Margen Neto.
-
-**Hallazgo:** la participación de Accesorios pasó de **73,76% a 79,89% de las unidades**, mientras Computación y Telefonía perdieron participación. El cambio de mix explica la reducción del valor promedio ponderado por unidad, pero no explica por sí solo la caída del margen, ya que todas las categorías deterioraron su rentabilidad.
-
-📄 *Consulta SQL:* [`04_mix_categorias.sql`](./04_mix_categorias.sql)
+### 4. Análisis del Mix de Ventas — ¿La composición del catálogo alteró la rentabilidad ponderada?
+Evaluación del market share interno de cada categoría analizando variaciones cruzadas de posicionamiento en unidades físicas, facturación y su impacto directo en el margen neto final.
+*   **Enfoque Técnico:** Construcción de un pipeline relacional mediante tres CTEs anidados (`categoria_anual` ➔ `totales` ➔ `mix`) para calcular cuotas relativas, complementado con técnicas avanzadas de **pivoteo dinámico por agregación condicional (`MAX(CASE WHEN`)** para aislar deltas interanuales en puntos porcentuales (p.p.).
+*   **Insight de Negocio:** La categoría *Accesorios* expandió agresivamente su share operativo al saltar del **73.76% al 79.89% de las unidades totales** (+6.13 p.p.), desplazando a categorías core de alto valor como *Computación* y *Telefonía*. Si bien esta sustitución explica mecánicamente la caída del ingreso medio por unidad vendida (`delta_revenue_por_unidad`), la consulta demuestra que el problema real es estructural y no solo de mezcla: **todas las categorías experimentaron una fuerte compresión individual en sus deltas de margen (`delta_margen_pp`)**, inhabilitando el mix de productos como justificación única de la crisis.
+*   📄 *Consulta SQL:* [`04_mix_categorias.sql`](./04_mix_categorias.sql)
 
 ### 5. Canal y logística — ¿El crecimiento Online agravó la presión sobre el margen?
 
