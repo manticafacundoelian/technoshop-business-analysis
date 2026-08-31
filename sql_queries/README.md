@@ -1,66 +1,64 @@
-# TechnoShop | Investigación analítica — SQL
+# 🛢️ TechnoShop | Investigación Analítica Avanzada en SQL
 
-Esta carpeta contiene las consultas SQL utilizadas para investigar la evolución de la rentabilidad de TechnoShop y determinar los principales factores asociados a su deterioro.
+Este módulo contiene el repositorio de scripts lógicos y consultas estructuradas en SQL diseñadas para diagnosticar la evolución de la rentabilidad de TechnoShop, aislar los componentes de fuga de valor y determinar los factores macro y micro detrás de la contracción del margen neto.
 
-### Stack técnico: ![SQL](https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=sqlite&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) 
-
----
-
-## Flujo de investigación
-
-La investigación sigue una secuencia progresiva, donde cada etapa profundiza el diagnóstico de la anterior:
-
-**Evolución del negocio → Costos → Pricing → Mix → Canal → Producto**
+### Stack Técnico Principal: ![SQL](https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=sqlite&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) 
 
 ---
 
-## Estructura
+## 🗺️ Framework Secuencial de Investigación
 
-- `00_view_fact_pedidos_analitica.sql` — Capa analítica y lógica de negocio reutilizable.
-- `01_evolucion_negocio.sql` — Diagnóstico general de la evolución del negocio.
-- `02_drivers_costo.sql` — Descomposición de los componentes de rentabilidad.
-- `03_precio_vs_costo.sql` — Evolución del precio, costo y spread.
-- `04_mix_categorias.sql` — Cambios en la composición de ventas.
-- `05_canal_online_vs_fisico.sql` — Análisis de canales y presión logística.
-- `06_productos_prioritarios.sql` — Identificación de productos con deterioro de rentabilidad.
+El proceso analítico se diseñó bajo una metodología iterativa y progresiva. Cada consulta actúa como un nivel de granularidad más profundo que responde a una hipótesis de negocio e inicializa la etapa siguiente:
+
+```text
+📊 Evolución del Negocio  ➔  📉 Drivers de Costo  ➔  🏷️ Estrategia de Pricing
+                                                               │
+┌──────────────────────────────────────────────────────────────┘
+▼
+📦 Mix de Categorías       ➔  🚚 Logística y Canales ➔  🎯 SKUs y Productos Críticos
+```
+
+---
+
+## 📂 Arquitectura del Repositorio
+
+*   **`00_view_fact_pedidos_analitica.sql`** — Capa analítica intermedia y centralización de la lógica de negocio.
+*   **`01_evolucion_negocio.sql`** — Análisis macro y auditoría de variaciones interanuales (YoY).
+*   **`02_drivers_costo.sql`** — Descomposición vertical y participación de la estructura de costos sobre el revenue.
+*   **`03_precio_vs_costo.sql`** — Evaluación del spread marginal e impacto de las estrategias de pricing unitario.
+*   **`04_mix_categorias.sql`** — Análisis del mix de cartera y efectos de sustitución de volumen ponderado.
+*   **`05_canal_online_vs_fisico.sql`** — Evaluación cruzada de performance transaccional y presión de costos de última milla.
+*   **`06_productos_prioritarios.sql`** — Identificación analítica de SKUs críticos para priorización de intervención comercial.
 
 ---
 
 ## Capa analítica — View `fact_pedidos_analitica`
 
-Antes de desarrollar las consultas de investigación se construyó una **View analítica** sobre `fact_pedidos_final`. Su objetivo es centralizar la lógica de negocio y métricas de rentabilidad utilizadas por los análisis posteriores.
+Como paso previo a la fase de investigación, se construyó una **Vista Analítica** sobre la tabla optimizada `fact_pedidos_final`. Este componente actúa como una capa de transformación lógica reutilizable encargada de centralizar las reglas financieras del negocio.
 
 La View:
 
-- Filtra y clasifica la información según el **estado del pedido**, diferenciando pedidos entregados de cancelados y devueltos.
-- Calcula métricas de línea reutilizables como **Revenue Bruto, Descuentos, Revenue Neto, Costo de Mercadería, Costo de Envío y Ganancia Neta Real**.
-- Centraliza las reglas de cálculo para mantener consistencia entre las distintas consultas.
-- Reduce la repetición de lógica en las consultas posteriores y facilita la construcción de análisis más complejos.
+*   **Gating Transaccional:** Homogeneiza el universo de análisis aislando las órdenes efectivamente entregadas de los estados de cancelación o devolución.
+*   **Cálculo Atómico de Métricas:** Consolida a nivel de línea las variables base para reportabilidad: **Revenue Bruto, Descuentos Otorgados, Revenue Neto, Costo de Mercadería, Costo de Envío y Ganancia Neta Real**.
+*   **Single Source of Truth:** Centraliza las ecuaciones eliminando redundancias de código en los scripts secundarios y blindando la consistencia métrica.
 
-
-*Consulta SQL:* [`00_view_fact_pedidos_analitica.sql`](./00_view_fact_pedidos_analitica.sql)
+📄 *Ver definición de la vista:* [`00_view_fact_pedidos_analitica.sql`](./00_view_fact_pedidos_analitica.sql)
 
 ---
 
-## Investigación de rentabilidad
+## 🔎 Ejecución de la Investigación de Rentabilidad
 
-Con los datos procesados por el pipeline, el análisis se estructuró como una investigación progresiva, donde cada consulta responde una pregunta de negocio y habilita la siguiente.
+### 1. Diagnóstico Ejecutivo — ¿Qué pasó macroeconómicamente con el negocio?
+Análisis temporal interanual enfocado en el volumen operativo, ingresos netos, rentabilidad real y ticket medio por orden.
+*   **Enfoque Técnico:** Implementación de funciones de desfase **`LAG()`** para auditorías de variación interanual (YoY).
+*   **Insight de Negocio:** Al cierre de 2025, a pesar de una expansión del **+3.07%** en órdenes entregadas (1,478 vs. 1,434), el Revenue Neto se contrajo un **-19.07%** y la Ganancia Neta Real colapsó un **-57.13%**, reduciendo el margen neto general del **31.90% al 16.90%**.
+*   📄 *Consulta SQL:* [`01_evolucion_negocio.sql`](./01_evolucion_negocio.sql)
 
-### 1. Diagnóstico ejecutivo — ¿Qué pasó con el negocio?
-
-Análisis anual de pedidos, Revenue Neto, Ganancia Neta Real, Margen Neto y Ticket Promedio, incorporando variaciones interanuales mediante `LAG()`.
-
-**Hallazgo:** en 2025 los pedidos entregados crecieron un **+3,07%**, mientras el Revenue Neto cayó **-19,07%**, la Ganancia Neta Real **-57,13%** y el Margen Neto pasó de **31,90% a 16,90%**.
-
-*Consulta SQL:* [`01_evolucion_negocio.sql`](./01_evolucion_negocio.sql)
-
-### 2. Descomposición de rentabilidad — ¿Qué componentes deterioraron el resultado?
-
-Desagregación de Revenue Neto, Costo de Mercadería, Costos de Envío, Pérdidas por pedidos no exitosos y Ganancia Neta Real, analizando tanto sus valores absolutos como su participación sobre el Revenue.
-
-**Hallazgo:** el Costo de Mercadería pasó de representar el **66,07% al 78,85% del Revenue Neto**, mientras el costo logístico sobre Revenue aumentó del **1,98% al 4,13%**.
-
-*Consulta SQL:* [`02_drivers_costo.sql`](./02_drivers_costo.sql)
+### 2. Descomposición de Costos — ¿Qué elementos pulverizaron el resultado operativo?
+Evaluación de la estructura interna del P&L analizando la participación de cada costo sobre el ingreso neto final.
+*   **Enfoque Técnico:** Implementación de Análisis Vertical combinado con variaciones interanuales (YoY) mediante **`LAG()`** sobre múltiples métricas monetarias en simultáneo.
+*   **Insight de Negocio:** El **Costo de Mercadería absorbió el margen al escalar del 66.07% al 78.85% del Revenue Neto** (+12.78 p.p.), mientras que el costo de envío sobre ventas se duplicó, pasando del **1.98% al 4.13%**. El resto de las pérdidas operativas se mantuvieron en niveles mínimos.
+*   📄 *Consulta SQL:* [`02_drivers_costo.sql`](./02_drivers_costo.sql)
 
 ### 3. Pricing — ¿Los precios acompañaron la evolución de los costos?
 
@@ -68,7 +66,7 @@ Comparación interanual del precio y costo promedio por producto, evitando que e
 
 **Hallazgo:** entre 2024 y 2025 el precio promedio por producto aumentó **+17,39%**, mientras el costo promedio aumentó **+45,10%**, reduciendo el spread promedio precio–costo en **35%**.
 
-*Consulta SQL:* [`03_precio_vs_costo.sql`](./03_precio_vs_costo.sql)
+📄 *Consulta SQL:* [`03_precio_vs_costo.sql`](./03_precio_vs_costo.sql)
 
 ### 4. Mix de ventas — ¿Cambió la composición de los productos vendidos?
 
@@ -76,7 +74,7 @@ Análisis de participación de unidades y Revenue por categoría, comparando 202
 
 **Hallazgo:** la participación de Accesorios pasó de **73,76% a 79,89% de las unidades**, mientras Computación y Telefonía perdieron participación. El cambio de mix explica la reducción del valor promedio ponderado por unidad, pero no explica por sí solo la caída del margen, ya que todas las categorías deterioraron su rentabilidad.
 
-*Consulta SQL:* [`04_mix_categorias.sql`](./04_mix_categorias.sql)
+📄 *Consulta SQL:* [`04_mix_categorias.sql`](./04_mix_categorias.sql)
 
 ### 5. Canal y logística — ¿El crecimiento Online agravó la presión sobre el margen?
 
@@ -84,7 +82,7 @@ Comparación de Revenue, participación del canal, costos logísticos y margen e
 
 **Hallazgo:** Online pasó de representar **50,86% a 73,01% del Revenue**, mientras el costo de envío sobre Revenue aumentó de **3,90% a 5,66%**. Sin embargo, el margen también cayó en el canal Físico, por lo que la logística constituye un factor adicional y no la causa estructural principal.
 
-*Consulta SQL:* [`05_canal_online_vs_fisico.sql`](./05_canal_online_vs_fisico.sql)
+📄 *Consulta SQL:* [`05_canal_online_vs_fisico.sql`](./05_canal_online_vs_fisico.sql)
 
 ### 6. Productos prioritarios — ¿Dónde conviene intervenir?
 
@@ -92,7 +90,7 @@ Comparación interanual del Revenue, Ganancia Neta y Margen por producto para id
 
 **Hallazgo:** pendiente de completar.
 
-*Consulta SQL:* [`06_productos_prioritarios.sql`](./06_productos_prioritarios.sql)
+📄 *Consulta SQL:* [`06_productos_prioritarios.sql`](./06_productos_prioritarios.sql)
 
 ---
 
